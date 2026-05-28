@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://paysage-caen-seo.emergent.host/sitemap.xml
+Sitemap: https://lesjardiniersnormands.fr/sitemap.xml
