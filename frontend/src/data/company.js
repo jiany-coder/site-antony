@@ -19,5 +19,5 @@ export const COMPANY = {
   social: {
     google: "https://www.google.com/search?q=pro+%C3%A9lagage+14",
   },
-  site: "https://lesjardiniersnormands.fr",
+  site: "https://paysage-caen-seo.emergent.host",
 };
