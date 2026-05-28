@@ -1,0 +1,45 @@
+{
+  "summary": "Backend-only testing for Les Jardiniers Normands / Pro Élagage 14 API. 10/10 pytest cases passed covering health endpoints, contact form submission with Resend email delivery, validation (422) for malformed payloads, MongoDB persistence, _id cleanup, and CORS. Resend confirmed actually sending emails (email_sent=true, email_id returned).",
+  "backend_issues": {
+    "critical": [],
+    "minor": [
+      {"endpoint": "POST /api/contact", "issue": "RESEND_API_KEY is committed in /app/backend/.env (real key visible). Should be considered for rotation post-launch."},
+      {"endpoint": "GET /api/contacts", "issue": "No authentication/authorization — leads (PII: name/email/phone/message) are publicly readable by anyone. Should be protected before production."},
+      {"endpoint": "POST /api/contact", "issue": "No rate limiting on contact endpoint — vulnerable to spam/abuse. Consider adding throttling or captcha."},
+      {"endpoint": "POST /api/contact", "issue": "Resend is in test mode (sender onboarding@resend.dev, only verified recipient schmittantony4@gmail.com). Must verify a custom sending domain before going live to send from a branded address and to arbitrary recipients."}
+    ]
+  },
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "test_report_links": [
+    "/app/backend/tests/test_contact_api.py",
+    "/app/test_reports/pytest/pytest_results.xml"
+  ],
+  "action_items": [
+    "(Optional, non-blocking) Add auth to GET /api/contacts to protect leads PII.",
+    "(Optional, non-blocking) Add rate limiting / honeypot / captcha on POST /api/contact.",
+    "(Required before production launch) Verify a custom sending domain in Resend and switch SENDER_EMAIL accordingly.",
+    "(Security) Rotate the RESEND_API_KEY since it has been committed to .env in the repo."
+  ],
+  "critical_code_review_comments": [
+    "server.py is well-structured (~140 lines) — no need to split.",
+    "Resend send wrapped in try/except so a Resend outage still persists the lead with email_sent=false — good resilience.",
+    "Mongo _id is correctly excluded via projection {\"_id\": 0} on GET /api/contacts.",
+    "Pydantic validation (EmailStr + Field min/max) covers required-field and email-shape edge cases — 422 returned correctly.",
+    "HTML email content escapes <,> to prevent injection — good.",
+    "CORS_ORIGINS=* is permissive but acceptable for a public marketing site contact form.",
+    "Minor: @app.on_event('shutdown') is deprecated in FastAPI; consider migrating to lifespan context manager (non-blocking)."
+  ],
+  "updated_files": [
+    "/app/backend/tests/test_contact_api.py (new)"
+  ],
+  "success_rate": {"backend": "100%", "frontend": "skipped"},
+  "test_credentials": "None required — Resend key in /app/backend/.env.",
+  "seed_data_creation": "2 TEST_-prefixed contact records inserted via POST /api/contact during testing (visible in MongoDB collection 'contacts').",
+  "retest_needed": false,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "Backend API surface tested: /api/, /api/health, POST /api/contact (happy + 4 validation cases), GET /api/contacts, CORS preflight + GET. Resend integration verified working (real email_id returned). Pytest file at /app/backend/tests/test_contact_api.py can be re-run as regression suite. If frontend testing is requested next, focus on: contact form submission flow, French copy correctness on 11 service pages + 12 city pages + 12 blog articles, sitemap/robots presence, Open Graph tags, structured data (JSON-LD) for LocalBusiness."
+}
