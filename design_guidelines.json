@@ -1,0 +1,125 @@
+{
+  "theme": "light",
+  "archetype": "1 (Organic & Earthy)",
+  "rationale": "High-end landscaping and tree surgery demands a premium, nature-oriented approach. We avoid generic SaaS styles, opting instead for a 'luxury botanical magazine' aesthetic that inspires profound trust and professional authority.",
+  "typography": {
+    "fonts": {
+      "headings": {
+        "family": "Cormorant Garamond, serif",
+        "css_import": "@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap');",
+        "description": "Used exclusively for large headings. Brings editorial elegance and premium artisanal feel."
+      },
+      "body": {
+        "family": "Manrope, sans-serif",
+        "css_import": "@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap');",
+        "description": "Used for paragraphs, buttons, and functional UI text. Ensures strict legibility and modern structure."
+      }
+    },
+    "hierarchy": {
+      "h1": "text-5xl sm:text-6xl font-serif font-light tracking-tighter text-[#0A0F0D] leading-none",
+      "h2": "text-3xl sm:text-4xl lg:text-5xl font-serif font-medium tracking-tight text-[#0A0F0D] leading-[1.1]",
+      "h3": "text-2xl sm:text-3xl font-serif font-medium text-[#1F3D2B] leading-snug",
+      "h4": "text-xl font-serif font-semibold text-[#0A0F0D]",
+      "body_large": "text-lg font-sans text-[#4A5550] leading-relaxed",
+      "body_base": "text-base font-sans text-[#4A5550] leading-relaxed",
+      "body_small": "text-sm font-sans text-[#4A5550] leading-normal",
+      "overline": "text-xs sm:text-sm font-sans uppercase tracking-[0.2em] font-bold text-[#1F3D2B]"
+    },
+    "rules": [
+      "Never use Inter or Roboto.",
+      "Headings strictly bounded to max text-6xl to avoid cartoonish proportions.",
+      "Always apply tracking-tight to headings and tracking-[0.2em] to overlines."
+    ]
+  },
+  "colors": {
+    "brand": {
+      "primary": "#1F3D2B",
+      "primary_hover": "#14281C",
+      "secondary": "#F2EBD9",
+      "secondary_hover": "#E6DBBF"
+    },
+    "surface": {
+      "background": "#FDFBF7",
+      "card_light": "#FFFFFF",
+      "card_tinted": "#F4F1EA"
+    },
+    "text": {
+      "heading": "#0A0F0D",
+      "body": "#4A5550",
+      "inverse": "#FDFBF7"
+    },
+    "accents": {
+      "success": "#2A523A",
+      "border": "#E5E0D5"
+    }
+  },
+  "layout_and_spacing": {
+    "philosophy": "Generous Spacing (Tailwind Scale). E1 Strategy: Use 2-3x more spacing than typical designs to create 'breathing room' and a luxurious gallery feel.",
+    "containers": {
+      "main": "max-w-7xl mx-auto px-6 sm:px-8 lg:px-12",
+      "narrow": "max-w-4xl mx-auto px-6"
+    },
+    "sections": {
+      "standard": "py-24 sm:py-32",
+      "compact": "py-16 sm:py-20"
+    },
+    "grid_bento": "grid grid-cols-1 md:grid-cols-8 lg:grid-cols-12 gap-8 lg:gap-12",
+    "surface_treatments": {
+      "glassmorphism_header": "backdrop-blur-xl bg-[#FDFBF7]/80 border-b border-[#1F3D2B]/10 shadow-sm",
+      "premium_card": "bg-white p-8 lg:p-12 border border-[#E5E0D5] shadow-[0_8px_30px_rgba(0,0,0,0.04)] rounded-2xl",
+      "image_radius": "rounded-[2rem]"
+    }
+  },
+  "components": {
+    "buttons": {
+      "primary": "inline-flex items-center justify-center bg-[#1F3D2B] text-[#FDFBF7] px-8 py-4 rounded-full font-sans font-semibold text-base transition-all duration-300 hover:bg-[#14281C] hover:-translate-y-1 hover:shadow-lg focus:ring-2 focus:ring-[#1F3D2B] focus:ring-offset-2 focus:ring-offset-[#FDFBF7]",
+      "secondary": "inline-flex items-center justify-center bg-[#F2EBD9] text-[#1F3D2B] px-8 py-4 rounded-full font-sans font-semibold text-base transition-all duration-300 hover:bg-[#E6DBBF] hover:-translate-y-1 hover:shadow-md border border-[#1F3D2B]/10",
+      "outline": "inline-flex items-center justify-center bg-transparent text-[#1F3D2B] px-8 py-4 rounded-full font-sans font-semibold text-base border-2 border-[#1F3D2B] transition-all duration-300 hover:bg-[#1F3D2B] hover:text-[#FDFBF7]"
+    },
+    "header": {
+      "structure": "Split/Double logo structure. Left: Les Jardiniers Normands. Right side or inline: Pro Elagage 14 badge.",
+      "behavior": "Sticky with glassmorphism surface treatment."
+    },
+    "interactive": {
+      "before_after_slider": "Use a robust before/after visual component. Implement with a draggable handle (left=before, right=after). Frame it in a premium container with rounded-2xl.",
+      "floating_cta": "Mobile-first floating action buttons in bottom right (Phone & WhatsApp). Display gracefully on desktop.",
+      "testimonial_cards": "Minimalist UI, prominent 5-star Lucide icons (text-yellow-500), displaying customer name and high-contrast text."
+    }
+  },
+  "motion_and_interactions": {
+    "reveal": "Use framer-motion. `initial={{ opacity: 0, y: 20 }}` to `animate={{ opacity: 1, y: 0 }}`. Transition: `duration: 0.6, ease: [0.22, 1, 0.36, 1]`.",
+    "hover_cards": "Subtle lift (`-translate-y-1` or `-translate-y-2`) with expanded ambient shadow.",
+    "parallax": "Apply light parallax (`y` mapping on scroll) to hero background images and floating decorative elements."
+  },
+  "media_assets": {
+    "logos": {
+      "jardiniers_normands": "https://customer-assets.emergentagent.com/job_paysage-caen-seo/artifacts/xgkb4d4x_logo%20jardinier%20normand.png",
+      "pro_elagage": "https://customer-assets.emergentagent.com/job_paysage-caen-seo/artifacts/c5eorlq6_logo%20pro%20el.png"
+    },
+    "hero": {
+      "background_primary": "https://images.unsplash.com/photo-1597201278257-3687be27d954?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTN8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBsYW5kc2NhcGUlMjBnYXJkZW4lMjBkZXNpZ258ZW58MHx8fHwxNzc5OTU4MTA2fDA&ixlib=rb-4.1.0&q=85",
+      "overlay_instructions": "Maximum overlay bg-black/30 or gradient to transparent. Must ensure text contrast without killing image vibrancy."
+    },
+    "services": {
+      "elagage": "https://images.unsplash.com/photo-1474742509976-ddec6b387356?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwzfHxsdW1iZXJqYWNrJTIwdHJlZSUyMGN1dHRpbmclMjBjaGFpbnNhd3xlbnwwfHx8fDE3Nzk5NTgxMzV8MA&ixlib=rb-4.1.0&q=85",
+      "paysagisme": "https://images.unsplash.com/photo-1576897955702-24ad19680db3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2MTJ8MHwxfHNlYXJjaHwyfHxiZWF1dGlmdWwlMjBsYW5kc2NhcGVkJTIwZ2FyZGVuJTIwaG91c2V8ZW58MHx8fHwxNzc5OTU4MTM1fDA&ixlib=rb-4.1.0&q=85",
+      "entretien": "https://images.pexels.com/photos/3280078/pexels-photo-3280078.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    "features": {
+      "garden_house": "https://images.pexels.com/photos/32500250/pexels-photo-32500250.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "tree_climbing": "https://images.unsplash.com/photo-1762903938137-49b0a145e241?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA6ODl8MHwxfHNlYXJjaHwxfHxhcmJvcmlzdCUyMGNsaW1iaW5nJTIwdHJlZSUyMHN1cmdlcnl8ZW58MHx8fHwxNzc5OTU4MTA2fDA&ixlib=rb-4.1.0&q=85"
+    }
+  },
+  "seo_and_structure_requirements": [
+    "Strictly follow semantic HTML (nav, main, section, article, footer, h1-h6 hierarchy).",
+    "Include LocalBusiness JSON-LD schema with Calvados coverage (Caen, Deauville, etc.).",
+    "Dynamic meta tags via react-helmet.",
+    "Implement an SEO FAQ accordion using Shadcn Accordion component if available, styled to match the premium theme.",
+    "Internal linking footer with links to all 11 service pages and 12 city pages."
+  ],
+  "technical_testing_rules": [
+    "ALL interactive elements MUST include a data-testid attribute.",
+    "Examples: data-testid='cta-devis-header', data-testid='slider-before-after', data-testid='mobile-menu-toggle', data-testid='floating-whatsapp'."
+  ],
+  "iconography": "Use 'lucide-react' for all icons. Stroke width strictly 1.5 for elegance. Recommended: Leaf, Trees, ShieldCheck (for EEAT), Phone, MapPin, CheckCircle2."
+}
