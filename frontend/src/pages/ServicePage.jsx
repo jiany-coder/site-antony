@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams, Link, Navigate } from "react-router-dom";
+import { useLocation, Link, Navigate } from "react-router-dom";
 import { CheckCircle2, ArrowRight, Phone, Star, Shield, Award, Clock, MapPin } from "lucide-react";
 import SEO, { buildLocalBusinessSchema, buildFAQSchema } from "../components/SEO";
 import { COMPANY } from "../data/company";
@@ -41,6 +41,38 @@ const SERVICE_DETAILS = {
       },
     ],
   },
+  "jardinier-caen": {
+    intro: "Un jardinier professionnel à Caen, c'est l'assurance d'un jardin impeccable toute l'année, sans stress et sans matériel à acheter. Les Jardiniers Normands proposent un entretien régulier ou ponctuel, adapté à votre rythme et à votre budget, dans toute l'agglomération caennaise.",
+    benefits: [
+      "Contrat annuel d'entretien sur mesure (forfait mensuel)",
+      "Prestations ponctuelles : remise en état, débroussaillage",
+      "Crédit d'impôt 50% pour les particuliers (services à la personne)",
+      "Matériel professionnel et entretenu (sécurité maximale)",
+      "Évacuation et recyclage des déchets verts inclus",
+    ],
+    sections: [
+      {
+        h: "Que comprend l'intervention d'un jardinier à Caen ?",
+        p: "Notre offre de jardinier couvre l'ensemble de l'entretien courant : tonte régulière de pelouse (hauteur adaptée saison par saison), taille des haies de tous types (charme, hêtre, thuya, laurier, photinia…), désherbage manuel ou mécanique, soin et fertilisation des massifs, ramassage et compostage des feuilles mortes, scarification du gazon, plantation de bulbes et de saisonnières. Nous adaptons chaque passage à l'état réel de votre jardin et à la saison.",
+      },
+      {
+        h: "Contrat annuel ou prestation ponctuelle ?",
+        p: "Le contrat annuel est notre formule la plus appréciée à Caen : un calendrier de passages programmés (mensuel, bimensuel, quinzaine) selon votre surface, avec un référent unique qui connaît votre jardin. Vous bénéficiez d'un suivi régulier, d'un tarif fixe et du crédit d'impôt 50% sur le total annuel. La prestation ponctuelle convient si votre jardin a besoin d'une remise en état avant une vente, après les vacances, ou pour un événement.",
+      },
+      {
+        h: "Crédit d'impôt 50% : faites jusqu'à 2 500 € d'économie",
+        p: "Les prestations d'entretien courant de jardin (tonte, taille de haie, débroussaillage, désherbage) sont éligibles au crédit d'impôt service à la personne, plafonné à 5 000 € de dépenses par an par foyer fiscal. Concrètement, si vous dépensez 1 200 € par an chez nous, l'État vous rembourse 600 €. Nous établissons l'attestation fiscale annuelle nécessaire à votre déclaration d'impôts.",
+      },
+      {
+        h: "Notre méthode jardinier à Caen",
+        p: "Premier rendez-vous gratuit chez vous : nous évaluons votre jardin, identifions les zones critiques, écoutons vos attentes. Devis détaillé sous 48h. Une fois validé, votre jardinier référent passe selon le planning convenu, avec son matériel professionnel (tondeuses autoportées, taille-haie thermique, débroussailleuses). En fin de prestation, le jardin est laissé propre, déchets verts évacués et recyclés. Vous recevez un compte-rendu après chaque passage.",
+      },
+      {
+        h: "Pourquoi choisir Les Jardiniers Normands à Caen ?",
+        p: "Notre force est notre ancrage local. Nous connaissons chaque quartier de Caen — Vaucelles, Saint-Jean, Calvaire-Saint-Pierre, Haie Vigné, Pierre Heuzé, Beaulieu — et adaptons nos passages aux particularités de chacun. Notre équipe est stable (peu de turnover), nos jardiniers sont salariés (pas de sous-traitance), formés en interne et équipés. Nous travaillons aussi pour des copropriétés, syndics et entreprises avec des contrats sur-mesure.",
+      },
+    ],
+  },
   "elagage-caen": {
     intro: "Pro Élagage 14, branche spécialisée des Jardiniers Normands, intervient dans toute la région caennaise pour l'élagage de précision, la taille raisonnée et la sécurisation d'arbres en milieu urbain comme rural.",
     benefits: [
@@ -69,6 +101,38 @@ const SERVICE_DETAILS = {
       },
     ],
   },
+  "entretien-exterieur-caen": {
+    intro: "Confiez tout votre extérieur à un seul interlocuteur de confiance. À Caen, Les Jardiniers Normands proposent une offre globale d'entretien extérieur : jardin, toiture, façade, allée, terrasse, élagage. Une seule équipe, un seul devis, une qualité d'exécution constante.",
+    benefits: [
+      "Un interlocuteur unique pour tous vos travaux extérieurs",
+      "Devis global ou par lot, parfaitement transparent",
+      "Coordination des interventions (planning groupé)",
+      "Économies sur les frais de déplacement",
+      "Contrat de maintenance annuel possible",
+    ],
+    sections: [
+      {
+        h: "Qu'inclut l'entretien extérieur global à Caen ?",
+        p: "Notre offre d'entretien extérieur à Caen est conçue comme un service clé en main. Elle comprend l'entretien du jardin (tonte, taille, désherbage), la taille et l'élagage des arbres, le nettoyage et démoussage de toiture, le nettoyage des façades et pignons, l'entretien des allées et terrasses (démoussage, nettoyage haute pression), le ramassage automnal des feuilles, la mise en hiver des plantations sensibles. Bref, tout ce qui touche à l'extérieur de votre maison ou de votre copropriété.",
+      },
+      {
+        h: "Pourquoi un seul prestataire pour tout votre extérieur ?",
+        p: "Faire appel à plusieurs entreprises (paysagiste, élagueur, démousseur, façadier) coûte plus cher, complexifie la coordination et multiplie les contacts. En centralisant chez Les Jardiniers Normands à Caen, vous gagnez du temps, vous obtenez de meilleurs tarifs (mutualisation des déplacements et des moyens) et vous bénéficiez d'une cohérence d'exécution. Un seul devis, un seul numéro, un seul interlocuteur.",
+      },
+      {
+        h: "Contrat de maintenance annuel : la tranquillité d'esprit",
+        p: "Notre formule la plus complète à Caen : un contrat annuel personnalisé qui planifie automatiquement toutes les interventions sur 12 mois. Tonte de mars à novembre, taille des haies en juin et septembre, élagage en hiver, démoussage tous les 3 à 5 ans, ramassage feuilles en automne, mise en hiver. Vous n'avez plus à y penser : nous gérons tout selon le calendrier optimal de chaque prestation. Tarif fixe mensuel, ajustable.",
+      },
+      {
+        h: "Pour qui ? Particuliers, copropriétés, entreprises à Caen",
+        p: "Notre offre d'entretien extérieur s'adresse aussi bien aux particuliers de Caen (maisons individuelles, propriétés avec piscine, biens haut de gamme) qu'aux copropriétés (syndics, ASL) et aux entreprises (sièges sociaux, sites industriels, hôtels). Nous adaptons les passages et les forfaits à la nature du site et à son niveau d'exigence.",
+      },
+      {
+        h: "Tarifs entretien extérieur à Caen",
+        p: "Notre tarification est transparente, sans surprise. Pour un jardin résidentiel classique (300 à 500 m²) avec entretien régulier + 2 tailles de haie + démoussage toiture tous les 4 ans, comptez entre 80 et 250 €/mois lissés sur l'année. Devis personnalisé gratuit sous 48h. N'oubliez pas que la partie entretien courant ouvre droit au crédit d'impôt 50%, soit une économie substantielle.",
+      },
+    ],
+  },
 };
 
 const DEFAULT_SECTIONS = (service) => [
@@ -91,7 +155,8 @@ const DEFAULT_SECTIONS = (service) => [
 ];
 
 export default function ServicePage() {
-  const { slug } = useParams();
+  const { pathname } = useLocation();
+  const slug = pathname.slice(1); // remove leading slash
   const service = getService(slug);
 
   if (!service) return <Navigate to="/" replace />;

@@ -18,10 +18,10 @@ import BeforeAfter from "../components/BeforeAfter";
 const ELAGAGE_PHOTOS = [
   "https://images.unsplash.com/photo-1762903938137-49b0a145e241?auto=format&fit=crop&w=1200&q=80",
   "https://images.unsplash.com/photo-1474742509976-ddec6b387356?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?auto=format&fit=crop&w=1200&q=80",
+  "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80",
   "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80",
   "https://images.unsplash.com/photo-1426604966848-d7adac402bff?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&q=80",
+  "https://images.unsplash.com/photo-1426604966848-d7adac402bff?auto=format&fit=crop&w=1200&q=80",
 ];
 
 export default function Home() {
@@ -206,7 +206,7 @@ export default function Home() {
           </div>
           <div className="lg:col-span-7 reveal">
             <BeforeAfter
-              before="https://images.unsplash.com/photo-1564417947365-8dbc9d0e718e?auto=format&fit=crop&w=1400&q=80"
+              before="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1400&q=80"
               after="https://images.pexels.com/photos/32500250/pexels-photo-32500250.jpeg?auto=compress&cs=tinysrgb&w=1400"
             />
           </div>
@@ -234,14 +234,16 @@ export default function Home() {
                 </div>
                 <h3 className="font-serif text-2xl text-[#0A0F0D] mb-3">{c.name}</h3>
                 <p className="text-sm text-[#4A5550] mb-5 leading-relaxed">{c.intro || "Intervention rapide et entretien sur mesure dans toute la ville et ses alentours."}</p>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-x-2 gap-y-1">
                   {c.slug === "caen" ? (
                     <Link to="/paysagiste-caen" className="text-xs font-sans font-semibold text-[#1F3D2B] link-underline">Paysagiste {c.name} →</Link>
                   ) : (
                     <>
-                      <Link to={`/paysagiste-${c.slug}`} className="text-xs font-sans font-semibold text-[#1F3D2B] link-underline">Paysagiste →</Link>
-                      <span className="text-[#E5E0D5]">|</span>
-                      <Link to={`/jardinier-${c.slug}`} className="text-xs font-sans font-semibold text-[#1F3D2B] link-underline">Jardinier →</Link>
+                      <Link to={`/paysagiste-${c.slug}`} className="text-xs font-sans font-semibold text-[#1F3D2B] link-underline">Paysagiste</Link>
+                      <span className="text-[#E5E0D5]">·</span>
+                      <Link to={`/jardinier-${c.slug}`} className="text-xs font-sans font-semibold text-[#1F3D2B] link-underline">Jardinier</Link>
+                      <span className="text-[#E5E0D5]">·</span>
+                      <Link to={`/elagage-${c.slug}`} className="text-xs font-sans font-semibold text-[#1F3D2B] link-underline">Élagage</Link>
                     </>
                   )}
                 </div>

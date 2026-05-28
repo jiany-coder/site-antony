@@ -16,9 +16,6 @@ import Contact from "./pages/Contact";
 import MentionsLegales from "./pages/MentionsLegales";
 import NotFound from "./pages/NotFound";
 
-import { SERVICES } from "./data/services";
-import { CITIES } from "./data/cities";
-
 function App() {
   return (
     <HelmetProvider>
@@ -33,16 +30,38 @@ function App() {
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/mentions-legales" element={<MentionsLegales />} />
 
-            {SERVICES.map((s) => (
-              <Route key={s.slug} path={`/${s.slug}`} element={<ServicePage />} />
-            ))}
+            <Route path="/paysagiste-caen" element={<ServicePage />} />
+            <Route path="/jardinier-caen" element={<ServicePage />} />
+            <Route path="/elagage-caen" element={<ServicePage />} />
+            <Route path="/abattage-arbre-caen" element={<ServicePage />} />
+            <Route path="/dessouchage-caen" element={<ServicePage />} />
+            <Route path="/demoussage-toiture-caen" element={<ServicePage />} />
+            <Route path="/nettoyage-facade-caen" element={<ServicePage />} />
+            <Route path="/nettoyage-pignon-caen" element={<ServicePage />} />
+            <Route path="/taille-haie-caen" element={<ServicePage />} />
+            <Route path="/entretien-jardin-caen" element={<ServicePage />} />
+            <Route path="/entretien-exterieur-caen" element={<ServicePage />} />
 
-            {CITIES.map((c) => (
-              <Route key={`p-${c.slug}`} path={`/paysagiste-${c.slug}`} element={<CityPage kind="paysagiste" />} />
-            ))}
-            {CITIES.map((c) => (
-              <Route key={`j-${c.slug}`} path={`/jardinier-${c.slug}`} element={<CityPage kind="jardinier" />} />
-            ))}
+            <Route path="/paysagiste-deauville" element={<CityPage kind="paysagiste" />} />
+            <Route path="/paysagiste-trouville" element={<CityPage kind="paysagiste" />} />
+            <Route path="/paysagiste-lisieux" element={<CityPage kind="paysagiste" />} />
+            <Route path="/paysagiste-falaise" element={<CityPage kind="paysagiste" />} />
+            <Route path="/paysagiste-argences" element={<CityPage kind="paysagiste" />} />
+            <Route path="/paysagiste-ouistreham" element={<CityPage kind="paysagiste" />} />
+
+            <Route path="/jardinier-deauville" element={<CityPage kind="jardinier" />} />
+            <Route path="/jardinier-trouville" element={<CityPage kind="jardinier" />} />
+            <Route path="/jardinier-lisieux" element={<CityPage kind="jardinier" />} />
+            <Route path="/jardinier-falaise" element={<CityPage kind="jardinier" />} />
+            <Route path="/jardinier-argences" element={<CityPage kind="jardinier" />} />
+            <Route path="/jardinier-ouistreham" element={<CityPage kind="jardinier" />} />
+
+            <Route path="/elagage-deauville" element={<CityPage kind="elagage" />} />
+            <Route path="/elagage-trouville" element={<CityPage kind="elagage" />} />
+            <Route path="/elagage-lisieux" element={<CityPage kind="elagage" />} />
+            <Route path="/elagage-falaise" element={<CityPage kind="elagage" />} />
+            <Route path="/elagage-argences" element={<CityPage kind="elagage" />} />
+            <Route path="/elagage-ouistreham" element={<CityPage kind="elagage" />} />
 
             <Route path="*" element={<NotFound />} />
           </Routes>

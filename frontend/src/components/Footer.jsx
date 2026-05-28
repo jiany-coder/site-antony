@@ -53,6 +53,11 @@ export default function Footer() {
                 <Link to={`/jardinier-${c.slug}`} className="hover:text-[#F2EBD9] text-[#FDFBF7]/75">Jardinier {c.name}</Link>
               </li>
             ))}
+            {CITIES.map((c) => (
+              <li key={"e-" + c.slug}>
+                <Link to={`/elagage-${c.slug}`} className="hover:text-[#F2EBD9] text-[#FDFBF7]/75">Élagage {c.name}</Link>
+              </li>
+            ))}
           </ul>
         </div>
 

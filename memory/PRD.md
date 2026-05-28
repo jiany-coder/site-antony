@@ -1,57 +1,57 @@
 # PRD — Les Jardiniers Normands / Pro Élagage 14
 
 ## Problem statement
-Créer un site internet PREMIUM extrêmement optimisé pour le référencement naturel local pour Les Jardiniers Normands (marque principale) et Pro Élagage 14 (branche élagage/abattage/technique), avec pour objectif de DOMINER GOOGLE sur les recherches paysagiste/jardinier/élagage dans le Calvados (Caen, Deauville, Trouville, Lisieux, Falaise, Argences, Ouistreham...).
+Créer un site internet PREMIUM extrêmement optimisé pour le référencement naturel local pour Les Jardiniers Normands (marque principale) et Pro Élagage 14 (branche élagage/abattage/technique), avec pour objectif de DOMINER GOOGLE sur les recherches paysagiste/jardinier/élagage dans le Calvados.
 
 ## User personas
-- **Particulier propriétaire à Caen / Calvados** : cherche un paysagiste ou jardinier de confiance, devis rapide.
-- **Propriétaire de villa à Deauville / Trouville** : exige du haut de gamme, exécution irréprochable.
-- **Copropriété / syndic** : recherche contrat d'entretien annuel.
-- **Particulier avec arbre dangereux** : demande d'élagage / abattage en urgence.
+- Particulier propriétaire à Caen / Calvados
+- Propriétaire de villa à Deauville / Trouville
+- Copropriété / syndic
+- Particulier avec arbre dangereux (élagage / abattage en urgence)
 
 ## Architecture & stack
-- **Frontend**: React 19 + react-router-dom + react-helmet-async + sonner + framer-motion + lucide-react + Tailwind + Shadcn UI
+- **Frontend**: React 19 + react-router-dom 7 + react-helmet-async + sonner + framer-motion + lucide-react + Tailwind + Shadcn UI
 - **Backend**: FastAPI + Motor (MongoDB) + Resend (envoi email)
 - **DB**: MongoDB (collection `contacts`)
 - **Email**: Resend API → schmittantony4@gmail.com
-- **SEO**: react-helmet par page, JSON-LD LocalBusiness, FAQPage, Article, sitemap.xml (41 URLs), robots.txt, meta géolocalisation FR-14
+- **SEO**: react-helmet par page, JSON-LD LocalBusiness, FAQPage, Article, sitemap.xml (47 URLs), robots.txt
 
-## Routes implémentées (V1)
-- `/` Accueil premium SEO complet
-- 11 pages services Caen : `/paysagiste-caen`, `/jardinier-caen`, `/elagage-caen`, `/abattage-arbre-caen`, `/dessouchage-caen`, `/demoussage-toiture-caen`, `/nettoyage-facade-caen`, `/nettoyage-pignon-caen`, `/taille-haie-caen`, `/entretien-jardin-caen`, `/entretien-exterieur-caen`
-- 12 pages villes : `/paysagiste-{ville}` & `/jardinier-{ville}` pour Deauville, Trouville, Lisieux, Falaise, Argences, Ouistreham
-- `/blog` + 12 articles SEO longue traîne (`/blog/:slug`)
+## Routes (V1.1)
+- `/` Accueil premium SEO
+- 11 pages services Caen (toutes hardcodées)
+- 18 pages villes : paysagiste-, jardinier-, elagage- × 6 villes (deauville, trouville, lisieux, falaise, argences, ouistreham)
+- `/blog` + 12 articles
 - `/a-propos`, `/realisations`, `/contact`, `/mentions-legales`
 
-## Implemented (28 Feb 2026)
-- ✅ Header sticky glass + 2 logos (logo Pro Élagage retiré du desktop par lisibilité, présent dans hero)
-- ✅ Hero magazine éditorial avec photo paysagiste plein écran + double badge logo
-- ✅ Trust bar 6 items (Assurance, Devis gratuit, Intervention rapide, 10+ ans, Élagueurs certifiés, Crédit d'impôt)
-- ✅ Galerie 6 photos d'élagage (bento layout)
-- ✅ Cards services premium avec lucide icons
-- ✅ Before/After slider draggable
-- ✅ Stats bar Calvados
-- ✅ Villes grid + zones desservies maillage interne
-- ✅ Testimonials 9 avis 5★ (style avis Google)
-- ✅ FAQ accordion Shadcn
-- ✅ CTASection bottom universal
-- ✅ 12 articles blog SEO (800-1200 mots chacun, markdown rendu)
-- ✅ Formulaire contact avec envoi email Resend → schmittantony4@gmail.com (TESTÉ, fonctionne)
-- ✅ Floating CTA WhatsApp + téléphone
-- ✅ Footer riche maillage interne (services × villes × pages)
-- ✅ SEO complet: meta dynamiques, canonical, OG, Twitter, JSON-LD LocalBusiness/FAQPage/Article, sitemap.xml 41 URLs, robots.txt
-- ✅ Typographie premium Cormorant Garamond (serif) + Manrope (sans)
+## Implemented & Iterations
+### V1 (28 Feb 2026)
+- Site complet : 11 services + 12 villes + 12 blog articles + pages annexes
+- Formulaire contact Resend → schmittantony4@gmail.com (testé OK)
+- Backend testing 100% passé
+- Header double logo, hero magazine, trust bar, galerie élagage, services cards, before/after slider, stats bar, FAQ, CTAs, footer maillage interne
+- Sitemap XML, robots.txt, JSON-LD
 
-## Backlog (post-V1)
-- **P1**: Page admin pour consulter les leads (`/admin/contacts`) avec authentification simple
-- **P1**: Génération sitemap.xml dynamique côté serveur
-- **P1**: Galerie réalisations admin pour upload photos
-- **P2**: Domaine personnalisé + vérification DNS Resend (sortir du test mode)
-- **P2**: Google Reviews widget temps réel via API Google Places
-- **P2**: Variantes SEO supplémentaires (entretien-jardin-deauville, élagage-lisieux, etc.)
-- **P2**: Blog admin pour ajouter des articles via interface
+### V1.1 (28 Feb 2026 - même journée)
+- **Nouveau logo Pro Élagage 14** (badge circulaire avec elagueur silhouette + carte Calvados) - intégré header + hero + footer
+- **Pages SEO premium custom** ajoutées pour `jardinier-caen` (5 sections expertes) et `entretien-exterieur-caen` (5 sections expertes)
+- **6 nouvelles pages élagage par ville** : `/elagage-deauville`, `/elagage-trouville`, `/elagage-lisieux`, `/elagage-falaise`, `/elagage-argences`, `/elagage-ouistreham`
+- **Bug critique routing fixé** : React Router 7 ne supportant pas le pattern `/prefix-:slug`, toutes les routes sont maintenant hardcodées (11 services + 18 villes)
+- **Photos non-pertinentes remplacées** : audit visuel de toutes les images via AI, remplacement systématique de 10+ URLs problématiques (architecte, salade Caprese, portrait) par photos vérifiées jardin/arbre/paysage
+- **Bibliothèque centrale d'images** : `/app/frontend/src/data/images.js` avec uniquement des URLs vérifiées
+- **Sitemap mis à jour** : 47 URLs au lieu de 41
 
 ## Credentials
-- Resend API key: configurée dans `/app/backend/.env`
-- Sender: `onboarding@resend.dev` (test mode)
+- Resend API key dans `/app/backend/.env`
+- Sender: `onboarding@resend.dev` (test mode — domaine custom à vérifier avant prod)
 - Owner email: `schmittantony4@gmail.com`
+
+## Backlog (post-V1.1)
+- **P1**: Vérifier domaine custom dans Resend pour sortir du test mode (envoi vers tous destinataires)
+- **P1**: Rotation de la clé Resend (committée dans .env)
+- **P1**: Page admin `/admin/contacts` avec authentification simple pour consulter les leads
+- **P1**: Rate limiting + honeypot/captcha sur POST /api/contact (anti-spam)
+- **P2**: Auth sur GET /api/contacts (PII non protégée actuellement)
+- **P2**: Variantes SEO supplémentaires (taille-haie-deauville, demoussage-lisieux, etc.)
+- **P2**: Blog admin pour ajouter des articles via interface
+- **P2**: Widget avis Google temps réel via API Google Places
+- **P2**: Migration `@app.on_event('shutdown')` vers FastAPI lifespan context manager

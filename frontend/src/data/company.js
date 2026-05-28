@@ -14,7 +14,7 @@ export const COMPANY = {
   whatsapp: "+33780044390",
   logos: {
     jardiniers: "https://customer-assets.emergentagent.com/job_paysage-caen-seo/artifacts/xgkb4d4x_logo%20jardinier%20normand.png",
-    proElagage: "https://customer-assets.emergentagent.com/job_paysage-caen-seo/artifacts/c5eorlq6_logo%20pro%20el.png",
+    proElagage: "https://customer-assets.emergentagent.com/job_paysage-caen-seo/artifacts/pvwtitso_pro%20%C3%A9lagage%2014.jpg",
   },
   social: {
     google: "https://www.google.com/search?q=pro+%C3%A9lagage+14",

@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams, Navigate, Link } from "react-router-dom";
+import { useLocation, Navigate, Link } from "react-router-dom";
 import { ArrowRight, Phone, MapPin, CheckCircle2 } from "lucide-react";
 import SEO, { buildLocalBusinessSchema, buildFAQSchema } from "../components/SEO";
 import { COMPANY } from "../data/company";
@@ -13,22 +13,30 @@ import ContactForm from "../components/ContactForm";
 import CTASection from "../components/CTASection";
 
 export default function CityPage({ kind }) {
-  // kind = "paysagiste" or "jardinier"
-  const { slug } = useParams();
+  // kind = "paysagiste" | "jardinier" | "elagage"
+  const { pathname } = useLocation();
+  // Extract slug from URL like /paysagiste-deauville -> deauville
+  const slug = pathname.replace(/^\/(paysagiste|jardinier|elagage)-/, "");
   const city = getCity(slug);
   if (!city) return <Navigate to="/" replace />;
 
   const isPays = kind === "paysagiste";
-  const role = isPays ? "Paysagiste" : "Jardinier";
-  const roleShort = isPays ? "paysagiste" : "jardinier";
+  const isElag = kind === "elagage";
+  const role = isPays ? "Paysagiste" : isElag ? "Élagueur" : "Jardinier";
+  const roleShort = isPays ? "paysagiste" : isElag ? "élagage" : "jardinier";
+  const brandLabel = isElag ? "Pro Élagage 14" : "Les Jardiniers Normands";
 
-  const title = `${role} à ${city.name} | ${COMPANY.brand} — Calvados`;
+  const title = `${role} à ${city.name} | ${brandLabel} — Calvados`;
   const description = isPays
     ? `${role} à ${city.name} ⭐ Création de jardin, aménagement extérieur, plantation. Devis gratuit Calvados ☎ ${COMPANY.phone}`
+    : isElag
+    ? `Élagage à ${city.name} ⭐ Élagueur grimpeur certifié, taille raisonnée, abattage sécurisé. Devis gratuit Calvados ☎ ${COMPANY.phone}`
     : `${role} à ${city.name} ⭐ Entretien jardin, tonte, taille haie, désherbage. Crédit d'impôt 50%. Devis gratuit ☎ ${COMPANY.phone}`;
 
   const heroImage = isPays
     ? "https://images.unsplash.com/photo-1576897955702-24ad19680db3?auto=format&fit=crop&w=2000&q=85"
+    : isElag
+    ? "https://images.unsplash.com/photo-1762903938137-49b0a145e241?auto=format&fit=crop&w=2000&q=85"
     : "https://images.pexels.com/photos/3280078/pexels-photo-3280078.jpeg?auto=compress&cs=tinysrgb&w=2000";
 
   return (
@@ -56,7 +64,7 @@ export default function CityPage({ kind }) {
             <span className="italic block">— Calvados</span>
           </h1>
           <p className="text-lg sm:text-xl text-[#FDFBF7]/85 max-w-2xl mt-7 leading-relaxed">
-            {city.intro} Notre équipe locale intervient à {city.name} et ses alentours pour {isPays ? "concevoir et créer" : "entretenir avec soin"} votre jardin.
+            {city.intro} Notre équipe locale intervient à {city.name} et ses alentours pour {isPays ? "concevoir et créer" : isElag ? "élaguer, abattre et sécuriser vos arbres avec" : "entretenir avec soin"} votre {isElag ? "patrimoine arboré" : "jardin"}.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mt-9">
             <Link to="/contact" className="inline-flex items-center justify-center gap-2 bg-[#F2EBD9] text-[#1F3D2B] px-8 py-4 rounded-full font-sans font-semibold text-base hover:bg-white hover:-translate-y-1 hover:shadow-xl transition-all" data-testid="city-cta-devis">
@@ -72,23 +80,25 @@ export default function CityPage({ kind }) {
       <section className="py-24">
         <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 prose-blog">
           <h2 className="font-serif text-3xl sm:text-4xl text-[#0A0F0D] font-medium tracking-tight mb-5">
-            {role} à {city.name} : un savoir-faire au service de votre extérieur
+            {role} à {city.name} : un savoir-faire au service de {isElag ? "vos arbres" : "votre extérieur"}
           </h2>
           <p className="text-lg leading-[1.75]">
-            {city.name} ({city.code}, {city.population}) fait partie de notre zone d'intervention prioritaire. Située à {city.distance.replace("de Caen", "de notre siège caennais")}, la commune bénéficie d'un service réactif et personnalisé. {isPays ? `Notre rôle de paysagiste à ${city.name} couvre l'ensemble du cycle de création : étude, conception, aménagement, plantation et livraison clé en main.` : `Notre offre de jardinier à ${city.name} couvre tout l'entretien courant : tonte de pelouse, taille de haie, désherbage, soin des massifs, ramassage de feuilles.`}
+            {city.name} ({city.code}, {city.population}) fait partie de notre zone d'intervention prioritaire. Située à {city.distance.replace("de Caen", "de notre siège caennais")}, la commune bénéficie d'un service réactif et personnalisé. {isPays ? `Notre rôle de paysagiste à ${city.name} couvre l'ensemble du cycle de création : étude, conception, aménagement, plantation et livraison clé en main.` : isElag ? `Pro Élagage 14 intervient à ${city.name} pour l'élagage de précision, la taille raisonnée, l'abattage par démontage en milieu contraint et le dessouchage mécanique. Nos grimpeurs sont certifiés, équipés et assurés.` : `Notre offre de jardinier à ${city.name} couvre tout l'entretien courant : tonte de pelouse, taille de haie, désherbage, soin des massifs, ramassage de feuilles.`}
           </p>
 
           <h2 className="font-serif text-3xl sm:text-4xl text-[#0A0F0D] font-medium tracking-tight mt-12 mb-5">
-            {isPays ? "Création de jardins paysagers" : "Entretien régulier ou ponctuel"} à {city.name}
+            {isPays ? "Création de jardins paysagers" : isElag ? "Élagage, abattage, dessouchage" : "Entretien régulier ou ponctuel"} à {city.name}
           </h2>
           <p className="text-lg leading-[1.75]">
             {isPays
               ? `Que vous habitiez en centre-ville de ${city.name} ou dans les quartiers résidentiels alentour, nous adaptons nos créations à votre style de vie et à votre terrain. Jardin contemporain, jardin de campagne normande, espace de réception avec terrasse et piscine : chaque projet est unique. Nous travaillons avec des essences adaptées au climat de la Côte de Nacre / Pays d'Auge et à l'exposition de votre parcelle.`
+              : isElag
+              ? `Notre équipe Pro Élagage 14 réalise à ${city.name} l'élagage d'arbres de toutes essences (chênes, hêtres, frênes, tilleuls, érables, peupliers, conifères), l'abattage par démontage avec rétention quand l'espace est contraint (proximité bâtiment ou ligne électrique), le dessouchage mécanique au rogneuse, et l'évacuation complète des déchets verts. Toutes nos interventions sont assurées en RC professionnelle.`
               : `Vous pouvez opter pour un contrat annuel d'entretien (forfait mensuel) ou pour une prestation ponctuelle (remise en état, taille de haie, débroussaillage). Nos prestations d'entretien courant à ${city.name} ouvrent droit au crédit d'impôt de 50%, soit une économie significative sur votre facture annuelle.`}
           </p>
 
           <h2 className="font-serif text-3xl sm:text-4xl text-[#0A0F0D] font-medium tracking-tight mt-12 mb-5">
-            Pourquoi choisir Les Jardiniers Normands à {city.name} ?
+            Pourquoi choisir {isElag ? "Pro Élagage 14" : "Les Jardiniers Normands"} à {city.name} ?
           </h2>
           <ul className="space-y-3 list-none ml-0">
             {[
@@ -159,7 +169,7 @@ export default function CityPage({ kind }) {
         </div>
       </section>
 
-      <CTASection title={`Confiez votre ${roleShort} à ${city.name} à des experts`} subtitle="Devis gratuit, sans engagement, sous 24h." />
+      <CTASection title={isElag ? `Confiez vos arbres à ${city.name} aux experts` : `Confiez votre ${roleShort} à ${city.name} à des experts`} subtitle="Devis gratuit, sans engagement, sous 24h." />
     </>
   );
 }

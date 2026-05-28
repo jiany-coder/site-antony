@@ -5,20 +5,20 @@ import BeforeAfter from "../components/BeforeAfter";
 import CTASection from "../components/CTASection";
 
 const GALLERY = [
-  { before: "https://images.unsplash.com/photo-1564417947365-8dbc9d0e718e?auto=format&fit=crop&w=1200&q=80", after: "https://images.pexels.com/photos/32500250/pexels-photo-32500250.jpeg?auto=compress&cs=tinysrgb&w=1200", title: "Création complète – Caen", desc: "Aménagement paysager 350 m² avec terrasse bois et plantation d'essences locales." },
-  { before: "https://images.unsplash.com/photo-1576919228236-a097c32a5cd4?auto=format&fit=crop&w=1200&q=80", after: "https://images.unsplash.com/photo-1576897955702-24ad19680db3?auto=format&fit=crop&w=1200&q=80", title: "Refonte jardin – Deauville", desc: "Restructuration complète d'un jardin de villa avec piscine et pool house." },
-  { before: "https://images.pexels.com/photos/8989485/pexels-photo-8989485.jpeg?auto=compress&cs=tinysrgb&w=1200", after: "https://images.unsplash.com/photo-1762903938137-49b0a145e241?auto=format&fit=crop&w=1200&q=80", title: "Élagage chêne centenaire – Lisieux", desc: "Élagage de précision en taille raisonnée sur un sujet remarquable de 25m." },
+  { before: "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80", after: "https://images.pexels.com/photos/32500250/pexels-photo-32500250.jpeg?auto=compress&cs=tinysrgb&w=1200", title: "Création complète – Caen", desc: "Aménagement paysager 350 m² avec terrasse bois et plantation d'essences locales." },
+  { before: "https://images.unsplash.com/photo-1576897955702-24ad19680db3?auto=format&fit=crop&w=1200&q=80", after: "https://images.unsplash.com/photo-1576897955702-24ad19680db3?auto=format&fit=crop&w=1200&q=80", title: "Refonte jardin – Deauville", desc: "Restructuration complète d'un jardin de villa avec piscine et pool house." },
+  { before: "https://images.pexels.com/photos/8989485/pexels-photo-32500250.jpeg?auto=compress&cs=tinysrgb&w=1200", after: "https://images.unsplash.com/photo-1762903938137-49b0a145e241?auto=format&fit=crop&w=1200&q=80", title: "Élagage chêne centenaire – Lisieux", desc: "Élagage de précision en taille raisonnée sur un sujet remarquable de 25m." },
 ];
 
 const PHOTOS = [
   "https://images.unsplash.com/photo-1474742509976-ddec6b387356?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80",
+  "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80",
+  "https://images.unsplash.com/photo-1597201278257-3687be27d954?auto=format&fit=crop&w=1200&q=80",
   "https://images.pexels.com/photos/3280078/pexels-photo-3280078.jpeg?auto=compress&cs=tinysrgb&w=1200",
   "https://images.unsplash.com/photo-1597201278257-3687be27d954?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?auto=format&fit=crop&w=1200&q=80",
+  "https://images.unsplash.com/photo-1426604966848-d7adac402bff?auto=format&fit=crop&w=1200&q=80",
   "https://images.pexels.com/photos/32500250/pexels-photo-32500250.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  "https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&w=1200&q=80",
+  "https://images.unsplash.com/photo-1762903938137-49b0a145e241?auto=format&fit=crop&w=1200&q=80",
 ];
 
 export default function Realisations() {
