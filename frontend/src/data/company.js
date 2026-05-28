@@ -18,6 +18,7 @@ export const COMPANY = {
   },
   social: {
     google: "https://www.google.com/search?q=pro+%C3%A9lagage+14",
+    reviewLink: "https://www.google.com/search?q=les+jardiniers+normands+caen#lrd=0x0:0x0,3,,,,",
   },
   site: "https://paysage-caen-seo.emergent.host",
 };

@@ -14,6 +14,7 @@ import TrustBar from "../components/TrustBar";
 import StatsBar from "../components/StatsBar";
 import CTASection from "../components/CTASection";
 import BeforeAfter from "../components/BeforeAfter";
+import GoogleReviewBanner from "../components/GoogleReviewBanner";
 
 const ELAGAGE_PHOTOS = [
   "https://images.unsplash.com/photo-1762903938137-49b0a145e241?auto=format&fit=crop&w=1200&q=80",
@@ -271,6 +272,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <GoogleReviewBanner />
 
       {/* FAQ */}
       <section className="py-24 sm:py-32" data-testid="faq-section">

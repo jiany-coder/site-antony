@@ -42,20 +42,15 @@ export default function Footer() {
         {/* Villes */}
         <div className="md:col-span-3">
           <h4 className="font-sans font-bold uppercase tracking-[0.2em] text-xs text-[#F2EBD9] mb-5">Zones desservies</h4>
-          <ul className="space-y-2 text-sm">
-            {CITIES.map((c) => (
+          <ul className="space-y-1.5 text-sm">
+            {CITIES.slice(0, 8).map((c) => (
               <li key={c.slug}>
-                <Link to={`/paysagiste-${c.slug}`} className="hover:text-[#F2EBD9] text-[#FDFBF7]/75">Paysagiste {c.name}</Link>
+                <Link to={`/paysagiste-${c.slug}`} className="hover:text-[#F2EBD9] text-[#FDFBF7]/75 link-underline">Paysagiste {c.name}</Link>
               </li>
             ))}
-            {CITIES.map((c) => (
-              <li key={"j-" + c.slug}>
-                <Link to={`/jardinier-${c.slug}`} className="hover:text-[#F2EBD9] text-[#FDFBF7]/75">Jardinier {c.name}</Link>
-              </li>
-            ))}
-            {CITIES.map((c) => (
+            {CITIES.slice(0, 8).map((c) => (
               <li key={"e-" + c.slug}>
-                <Link to={`/elagage-${c.slug}`} className="hover:text-[#F2EBD9] text-[#FDFBF7]/75">Élagage {c.name}</Link>
+                <Link to={`/elagage-${c.slug}`} className="hover:text-[#F2EBD9] text-[#FDFBF7]/75 link-underline">Élagage {c.name}</Link>
               </li>
             ))}
           </ul>
@@ -75,9 +70,24 @@ export default function Footer() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 mt-12 pt-8 border-t border-[#FDFBF7]/10">
-        <p className="text-xs text-[#FDFBF7]/55 leading-relaxed">
+        <p className="text-xs text-[#FDFBF7]/55 leading-relaxed mb-4">
           <strong className="text-[#F2EBD9]">Communes desservies dans le Calvados (14)</strong> : {COVERED_TOWNS.join(" · ")}.
         </p>
+        <details className="text-xs text-[#FDFBF7]/55 mb-4">
+          <summary className="cursor-pointer hover:text-[#F2EBD9] font-semibold mb-3">▾ Voir toutes les pages villes (paysagiste · jardinier · élagueur)</summary>
+          <div className="mt-3 flex flex-wrap gap-x-3 gap-y-1.5">
+            {CITIES.map((c) => (
+              <span key={c.slug} className="inline-flex flex-wrap gap-x-2">
+                <Link to={`/paysagiste-${c.slug}`} className="hover:text-[#F2EBD9]">Paysagiste {c.name}</Link>
+                <span className="text-[#FDFBF7]/30">·</span>
+                <Link to={`/jardinier-${c.slug}`} className="hover:text-[#F2EBD9]">Jardinier {c.name}</Link>
+                <span className="text-[#FDFBF7]/30">·</span>
+                <Link to={`/elagage-${c.slug}`} className="hover:text-[#F2EBD9]">Élagage {c.name}</Link>
+                <span className="text-[#FDFBF7]/30 mr-1">|</span>
+              </span>
+            ))}
+          </div>
+        </details>
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mt-6">
           <p className="text-xs text-[#FDFBF7]/55">© {new Date().getFullYear()} Les Jardiniers Normands · Pro Élagage 14 — Tous droits réservés.</p>
           <p className="text-xs text-[#FDFBF7]/55">Site optimisé SEO local Calvados</p>

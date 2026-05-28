@@ -1,5 +1,74 @@
-// Blog SEO complet — 12 articles longue traîne
+// Blog SEO complet — 13 articles longue traîne
 export const BLOG_POSTS = [
+  {
+    slug: "jardin-juin-juillet-normandie-guide-2026",
+    title: "Que faire au jardin en juin et juillet en Normandie ? Le guide saisonnier 2026",
+    excerpt: "Tonte, taille, arrosage, traitements bio : les gestes essentiels pour un jardin normand éclatant en plein été.",
+    cover: "https://images.unsplash.com/photo-1597201278257-3687be27d954?auto=format&fit=crop&w=1600&q=80",
+    date: "2026-05-28",
+    readTime: "9 min",
+    category: "Saisonnier",
+    keywords: ["jardin juin normandie", "jardin juillet normandie", "entretien jardin été", "que faire au jardin"],
+    content: `En Normandie, juin et juillet sont les mois clés du jardin. La pousse est explosive, les hortensias se préparent à fleurir, les haies débordent et la pelouse demande une attention hebdomadaire. Voici votre guide saisonnier 2026 pour ne rien laisser au hasard dans le Calvados.
+
+## Juin : le mois de la pousse maximale
+
+### Tonte de pelouse : adaptez la hauteur
+Sous le climat océanique du Calvados, l'herbe pousse vite. En juin, tondez **1 fois par semaine** avec une lame réglée à **5-6 cm de hauteur**. Une coupe trop courte favorise le dessèchement et les mousses. Préférez le **mulching** : les déchets fins fertilisent naturellement le sol et conservent l'humidité.
+
+### Première taille de haie (avant la nidification… ou après)
+La haie a explosé après le printemps. La taille de juin se fait **après le 1er juillet** dans l'idéal, pour respecter la fin de nidification des oiseaux (la LPO et la réglementation environnementale recommandent de ne pas tailler entre le 15 mars et le 31 juillet). Si vous devez tailler en juin, vérifiez visuellement l'absence de nid dans votre haie.
+
+Taille en 3 faces (2 côtés + dessus), forme **légèrement trapézoïdale** (plus large en bas) pour que la lumière atteigne toute la haie.
+
+### Désherbage et paillage des massifs
+Profitez du sol encore humide pour désherber **manuellement** entre vos plantations. Puis **paillez** (BRF, paille, écorces) sur 5-7 cm pour limiter l'évaporation et empêcher les nouvelles repousses d'herbes folles.
+
+### Surveillance des maladies fongiques
+Le climat normand (chaleur + humidité) favorise oïdium, mildiou, taches noires du rosier. Inspectez régulièrement et traitez avec des produits biologiques autorisés (purin de prêle, savon noir, soufre). Évitez d'arroser le soir : l'humidité résiduelle nocturne favorise les champignons.
+
+## Juillet : maintenir la beauté malgré la chaleur
+
+### Arrosage stratégique
+Arrosez **2 à 3 fois par semaine maximum**, mais en profondeur (15-20 minutes par zone). Les arrosages courts et fréquents créent des racines superficielles fragiles. Arrosez tôt le matin (6h-9h) ou le soir tardif pour limiter l'évaporation.
+
+Les plantations de l'année (rosiers, arbustes, arbres) ont besoin de plus d'eau que les sujets établis : prévoyez un arrosage de secours pendant les vagues de chaleur.
+
+### Taille des arbres fruitiers (cerisiers, pruniers)
+Juillet est **la meilleure période** pour tailler les fruitiers à noyau, **juste après la récolte**. La taille en vert limite les écoulements de sève et permet de bien voir l'architecture de l'arbre. Supprimez les rejets, les branches mortes, et équilibrez la frondaison.
+
+### Tonte plus haute en cas de sécheresse
+Si juillet est sec (ce qui devient courant en Normandie), remontez la hauteur de tonte à **6-7 cm**. Une herbe plus haute fait de l'ombre au sol, limite l'évaporation et résiste mieux. Espacez les tontes (tous les 10-12 jours).
+
+### Récolte du potager
+Tomates, courgettes, haricots, salades : c'est l'apogée du potager normand. Pensez à pailler les pieds de tomates et à les tailler (gourmands) pour concentrer la sève vers les fruits.
+
+## Les gestes à ne PAS oublier
+
+### Démoussage de toiture : préparez l'automne
+Profitez de l'été sec pour faire **démousser votre toiture** avant les pluies hivernales. La mousse retient l'humidité et abîme les tuiles. Un traitement hydrofuge protège votre toit pendant 8 à 10 ans.
+
+### Taille d'entretien des massifs fleuris
+Les rosiers remontants apprécient une petite taille post-floraison pour relancer une seconde vague de fleurs en août-septembre. Coupez les fleurs fanées (lavandes, hortensias, vivaces) pour stimuler une nouvelle floraison.
+
+### Vérification de l'arrosage automatique
+Si vous avez un système d'arrosage programmable, vérifiez les buses, les pressions et les horaires. C'est aussi le moment d'ajouter un capteur de pluie pour économiser l'eau.
+
+## Quand faire appel à un professionnel ?
+
+Juin et juillet sont des mois intenses. Si vous manquez de temps, voici ce que nos jardiniers prennent en charge dans le Calvados :
+- **Passage hebdomadaire** : tonte, désherbage, taille légère
+- **Taille complète des haies** (juin ou septembre)
+- **Démoussage de toiture** estival
+- **Élagage de précision** pour préparer l'automne
+- **Entretien complet du potager**
+
+Les Jardiniers Normands proposent des contrats annuels modulables avec **crédit d'impôt 50%**. Devis gratuit sous 24h.
+
+## Conclusion
+
+Un jardin normand de juin-juillet, c'est un équilibre entre activité (tonte, taille, arrosage) et observation (maladies, parasites, stress hydrique). Avec ces gestes simples, vous traversez l'été serein. Et si vous voulez profiter de votre jardin plutôt que de l'entretenir, on s'en occupe pour vous ☎ 07 80 04 43 90.`,
+  },
   {
     slug: "quand-elaguer-arbre-calvados",
     title: "Quand élaguer un arbre dans le Calvados ? Le guide complet",
