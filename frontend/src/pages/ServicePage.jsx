@@ -102,7 +102,7 @@ const SERVICE_DETAILS = {
     ],
   },
   "entretien-exterieur-caen": {
-    intro: "Confiez tout votre extérieur à un seul interlocuteur de confiance. À Caen, Les Jardiniers Normands proposent une offre globale d'entretien extérieur : jardin, toiture, façade, allée, terrasse, élagage. Une seule équipe, un seul devis, une qualité d'exécution constante.",
+    intro: "Confiez tout votre extérieur à un seul interlocuteur de confiance. À Caen, Les Jardiniers Normands proposent une offre globale d'entretien extérieur : entretien jardin, taille de haies, élagage, abattage, dessouchage, allée et terrasse. Une seule équipe, un seul devis, une qualité d'exécution constante.",
     benefits: [
       "Un interlocuteur unique pour tous vos travaux extérieurs",
       "Devis global ou par lot, parfaitement transparent",
@@ -113,15 +113,15 @@ const SERVICE_DETAILS = {
     sections: [
       {
         h: "Qu'inclut l'entretien extérieur global à Caen ?",
-        p: "Notre offre d'entretien extérieur à Caen est conçue comme un service clé en main. Elle comprend l'entretien du jardin (tonte, taille, désherbage), la taille et l'élagage des arbres, le nettoyage et démoussage de toiture, le nettoyage des façades et pignons, l'entretien des allées et terrasses (démoussage, nettoyage haute pression), le ramassage automnal des feuilles, la mise en hiver des plantations sensibles. Bref, tout ce qui touche à l'extérieur de votre maison ou de votre copropriété.",
+        p: "Notre offre d'entretien extérieur à Caen est conçue comme un service clé en main. Elle comprend l'entretien du jardin (tonte, désherbage, soin des massifs), la taille des haies, l'élagage et l'abattage des arbres, le dessouchage mécanique, l'entretien des allées et terrasses, le ramassage automnal des feuilles, la mise en hiver des plantations sensibles. Bref, tout ce qui concerne vos espaces verts et arbres autour de votre maison ou de votre copropriété.",
       },
       {
         h: "Pourquoi un seul prestataire pour tout votre extérieur ?",
-        p: "Faire appel à plusieurs entreprises (paysagiste, élagueur, démousseur, façadier) coûte plus cher, complexifie la coordination et multiplie les contacts. En centralisant chez Les Jardiniers Normands à Caen, vous gagnez du temps, vous obtenez de meilleurs tarifs (mutualisation des déplacements et des moyens) et vous bénéficiez d'une cohérence d'exécution. Un seul devis, un seul numéro, un seul interlocuteur.",
+        p: "Faire appel à plusieurs entreprises (paysagiste, élagueur, jardinier) coûte plus cher, complexifie la coordination et multiplie les contacts. En centralisant chez Les Jardiniers Normands à Caen, vous gagnez du temps, vous obtenez de meilleurs tarifs (mutualisation des déplacements et des moyens) et vous bénéficiez d'une cohérence d'exécution. Un seul devis, un seul numéro, un seul interlocuteur.",
       },
       {
         h: "Contrat de maintenance annuel : la tranquillité d'esprit",
-        p: "Notre formule la plus complète à Caen : un contrat annuel personnalisé qui planifie automatiquement toutes les interventions sur 12 mois. Tonte de mars à novembre, taille des haies en juin et septembre, élagage en hiver, démoussage tous les 3 à 5 ans, ramassage feuilles en automne, mise en hiver. Vous n'avez plus à y penser : nous gérons tout selon le calendrier optimal de chaque prestation. Tarif fixe mensuel, ajustable.",
+        p: "Notre formule la plus complète à Caen : un contrat annuel personnalisé qui planifie automatiquement toutes les interventions sur 12 mois. Tonte de mars à novembre, taille des haies en juin et septembre, élagage en hiver, ramassage feuilles en automne, mise en hiver. Vous n'avez plus à y penser : nous gérons tout selon le calendrier optimal de chaque prestation. Tarif fixe mensuel, ajustable.",
       },
       {
         h: "Pour qui ? Particuliers, copropriétés, entreprises à Caen",
@@ -129,7 +129,7 @@ const SERVICE_DETAILS = {
       },
       {
         h: "Tarifs entretien extérieur à Caen",
-        p: "Notre tarification est transparente, sans surprise. Pour un jardin résidentiel classique (300 à 500 m²) avec entretien régulier + 2 tailles de haie + démoussage toiture tous les 4 ans, comptez entre 80 et 250 €/mois lissés sur l'année. Devis personnalisé gratuit sous 48h. N'oubliez pas que la partie entretien courant ouvre droit au crédit d'impôt 50%, soit une économie substantielle.",
+        p: "Notre tarification est transparente, sans surprise. Pour un jardin résidentiel classique (300 à 500 m²) avec entretien régulier + 2 tailles de haie + un élagage annuel, comptez entre 80 et 250 €/mois lissés sur l'année. Devis personnalisé gratuit sous 48h. N'oubliez pas que la partie entretien courant ouvre droit au crédit d'impôt 50%, soit une économie substantielle.",
       },
     ],
   },

@@ -38,9 +38,6 @@ function App() {
             <Route path="/elagage-caen" element={<ServicePage />} />
             <Route path="/abattage-arbre-caen" element={<ServicePage />} />
             <Route path="/dessouchage-caen" element={<ServicePage />} />
-            <Route path="/demoussage-toiture-caen" element={<ServicePage />} />
-            <Route path="/nettoyage-facade-caen" element={<ServicePage />} />
-            <Route path="/nettoyage-pignon-caen" element={<ServicePage />} />
             <Route path="/taille-haie-caen" element={<ServicePage />} />
             <Route path="/entretien-jardin-caen" element={<ServicePage />} />
             <Route path="/entretien-exterieur-caen" element={<ServicePage />} />
