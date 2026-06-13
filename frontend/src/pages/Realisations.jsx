@@ -5,18 +5,18 @@ import BeforeAfter from "../components/BeforeAfter";
 import CTASection from "../components/CTASection";
 
 const GALLERY = [
-  { before: "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80", after: "https://images.pexels.com/photos/32500250/pexels-photo-32500250.jpeg?auto=compress&cs=tinysrgb&w=1200", title: "Création complète – Caen", desc: "Aménagement paysager 350 m² avec terrasse bois et plantation d'essences locales." },
+  { before: "https://customer-assets.emergentagent.com/job_paysage-caen-seo/artifacts/349b4rlo_abe%2023.jpg", after: "https://images.pexels.com/photos/32500250/pexels-photo-32500250.jpeg?auto=compress&cs=tinysrgb&w=1200", title: "Création complète – Caen", desc: "Aménagement paysager 350 m² avec terrasse bois et plantation d'essences locales." },
   { before: "https://images.unsplash.com/photo-1576897955702-24ad19680db3?auto=format&fit=crop&w=1200&q=80", after: "https://images.unsplash.com/photo-1576897955702-24ad19680db3?auto=format&fit=crop&w=1200&q=80", title: "Refonte jardin – Deauville", desc: "Restructuration complète d'un jardin de villa avec piscine et pool house." },
   { before: "https://images.pexels.com/photos/8989485/pexels-photo-32500250.jpeg?auto=compress&cs=tinysrgb&w=1200", after: "https://images.unsplash.com/photo-1762903938137-49b0a145e241?auto=format&fit=crop&w=1200&q=80", title: "Élagage chêne centenaire – Lisieux", desc: "Élagage de précision en taille raisonnée sur un sujet remarquable de 25m." },
 ];
 
 const PHOTOS = [
   "https://images.unsplash.com/photo-1474742509976-ddec6b387356?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80",
+  "https://customer-assets.emergentagent.com/job_paysage-caen-seo/artifacts/349b4rlo_abe%2023.jpg",
   "https://images.unsplash.com/photo-1597201278257-3687be27d954?auto=format&fit=crop&w=1200&q=80",
   "https://images.pexels.com/photos/3280078/pexels-photo-3280078.jpeg?auto=compress&cs=tinysrgb&w=1200",
   "https://images.unsplash.com/photo-1597201278257-3687be27d954?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1426604966848-d7adac402bff?auto=format&fit=crop&w=1200&q=80",
+  "https://customer-assets.emergentagent.com/job_paysage-caen-seo/artifacts/er21hu1d_abe%2024.jpg",
   "https://images.pexels.com/photos/32500250/pexels-photo-32500250.jpeg?auto=compress&cs=tinysrgb&w=1200",
   "https://images.unsplash.com/photo-1762903938137-49b0a145e241?auto=format&fit=crop&w=1200&q=80",
 ];

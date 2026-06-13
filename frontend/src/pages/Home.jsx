@@ -19,10 +19,10 @@ import GoogleReviewBanner from "../components/GoogleReviewBanner";
 const ELAGAGE_PHOTOS = [
   "https://images.unsplash.com/photo-1762903938137-49b0a145e241?auto=format&fit=crop&w=1200&q=80",
   "https://images.unsplash.com/photo-1474742509976-ddec6b387356?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1426604966848-d7adac402bff?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1426604966848-d7adac402bff?auto=format&fit=crop&w=1200&q=80",
+  "https://customer-assets.emergentagent.com/job_paysage-caen-seo/artifacts/349b4rlo_abe%2023.jpg",
+  "https://customer-assets.emergentagent.com/job_paysage-caen-seo/artifacts/349b4rlo_abe%2023.jpg",
+  "https://customer-assets.emergentagent.com/job_paysage-caen-seo/artifacts/er21hu1d_abe%2024.jpg",
+  "https://customer-assets.emergentagent.com/job_paysage-caen-seo/artifacts/er21hu1d_abe%2024.jpg",
 ];
 
 export default function Home() {
@@ -207,7 +207,7 @@ export default function Home() {
           </div>
           <div className="lg:col-span-7 reveal">
             <BeforeAfter
-              before="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1400&q=80"
+              before="https://customer-assets.emergentagent.com/job_paysage-caen-seo/artifacts/1d6uj5ep_abe%2026.jpg"
               after="https://images.pexels.com/photos/32500250/pexels-photo-32500250.jpeg?auto=compress&cs=tinysrgb&w=1400"
             />
           </div>
