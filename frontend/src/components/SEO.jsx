@@ -1,5 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
+import { useLocation } from "react-router-dom";
 import { COMPANY } from "../data/company";
 
 const SEO = ({
@@ -11,9 +12,11 @@ const SEO = ({
   jsonLd,
   noindex = false,
 }) => {
+  const location = useLocation();
   const fullTitle = title || `${COMPANY.brand} | Paysagiste, Jardinier, Élagueur dans le Calvados`;
   const desc = description || `Paysagiste, jardinier et élagueur professionnel à Caen et dans tout le Calvados. Devis gratuit ☎ ${COMPANY.phone}`;
-  const url = canonical || COMPANY.site;
+  const path = location.pathname === "/" ? "/" : location.pathname.replace(/\/$/, "");
+  const url = canonical || `${COMPANY.site}${path}`;
   const img = image || COMPANY.logos.jardiniers;
 
   return (

@@ -1,0 +1,35 @@
+{
+  "summary": "Verified Google-Ads malware-flag remediation: PostHog + emergent-main.js scripts fully removed from index.html; canonical, sitemap.xml (324/324 URLs), robots.txt all point to https://www.lesjardiniersnormands.fr. Backend regression 10/10 pytest passed. Frontend: all 8 nav pages load (200), no PostHog references anywhere, contact form POST /api/contact returns 200 with email_sent=true (Resend id returned). Only one minor SEO defect found: dynamic canonical on service pages defaults to site root instead of the page-specific URL.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": [],
+    "seo_issues": [
+      {
+        "screen": "/paysagiste-caen, /elagage-caen (and likely every page that does not pass a canonical prop)",
+        "issue": "react-helmet <link rel='canonical'> resolves to 'https://www.lesjardiniersnormands.fr/' (site root) instead of the page's own URL. Root cause: SEO.jsx line 16 `const url = canonical || COMPANY.site;` — pages do not pass a `canonical` prop, so every page ends up self-canonicalising to the homepage. This causes duplicate-canonical across the whole site and will hurt SEO (though it does NOT re-trigger the Google Ads malware flag). Fix: either pass a canonical prop from each page (e.g. `${COMPANY.site}${location.pathname}`) or default to it inside SEO.jsx using useLocation()."
+      }
+    ]
+  },
+  "test_report_links": [
+    "/app/backend/tests/test_contact_api.py",
+    "/app/test_reports/pytest/pytest_results.xml"
+  ],
+  "action_items": [
+    "Fix per-page canonical URLs in SEO.jsx (currently every route canonicalises to https://www.lesjardiniersnormands.fr/). Use useLocation() or pass canonical prop from each page."
+  ],
+  "critical_code_review_comments": [
+    "public/index.html is now clean (no PostHog, no emergent-main.js) — malware pattern removed at source.",
+    "sitemap.xml: 324/324 <loc> on production domain, zero references to emergent.host / preview URL.",
+    "robots.txt correctly references https://www.lesjardiniersnormands.fr/sitemap.xml.",
+    "SEO.jsx default canonical falls back to COMPANY.site (root) — this is a real SEO defect for all inner pages. Recommended to derive canonical from React Router useLocation."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "100%", "frontend": "95%"},
+  "test_credentials": "None required.",
+  "seed_data_creation": "1 TEST_UI_Client contact record inserted via UI-driven POST /api/contact during this run.",
+  "retest_needed": false,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "Google Ads 'Site infected' remediation verified end-to-end. PostHog + emergent-main.js are gone from index.html; canonical/sitemap/robots all point to the prod www.lesjardiniersnormands.fr domain. Contact form still works (Resend returns email_id). Only outstanding issue is a per-page canonical bug in SEO.jsx (defaults to site root)."
+}

@@ -40,18 +40,31 @@ Créer un site internet PREMIUM extrêmement optimisé pour le référencement n
 - **Bibliothèque centrale d'images** : `/app/frontend/src/data/images.js` avec uniquement des URLs vérifiées
 - **Sitemap mis à jour** : 47 URLs au lieu de 41
 
+### V1.2 (Jun-Sep 2026)
+- **Silo SEO massif** : passage à 324 URLs (8 services × 99 villes) + 13 articles blog
+- **Photos réelles clients** : intégration des 6 vraies photos de chantier (élagage palmiers, entretien jardin) uploadées par le client, remplacement des 4 photos stock "bizarres" (forêt brumeuse, prairie, montagne, village)
+- **Nettoyage Google Ads "Site infecté" (13 Jun 2026)** :
+  - Suppression du script PostHog (session recording + injection dynamique flagués par Google Safe Browsing)
+  - Suppression du script externe `assets.emergent.sh/scripts/emergent-main.js`
+  - Basculement du domaine canonique vers `https://www.lesjardiniersnormands.fr` (sitemap 324/324, robots.txt, company.js)
+  - Fix canonical par page : `SEO.jsx` utilise désormais `useLocation()` pour générer une URL canonique unique par route au lieu du site root
+  - Audit exhaustif : 0 tracking, 0 iframe suspect, 0 dépendance analytics dans package.json, 0 injection dynamique de script
+- **Testing** : `iteration_2.json` — backend 10/10, frontend nav + canonicals + sitemap OK
+
 ## Credentials
 - Resend API key dans `/app/backend/.env`
 - Sender: `onboarding@resend.dev` (test mode — domaine custom à vérifier avant prod)
 - Owner email: `schmittantony4@gmail.com`
+- **Domaine production** : `https://www.lesjardiniersnormands.fr` (SSL Emergent OK)
 
-## Backlog (post-V1.1)
+## Backlog (post-V1.2)
+- **P0**: Redéployer en prod pour pousser le fix "Site infecté" + demander réexamen Google Ads
 - **P1**: Vérifier domaine custom dans Resend pour sortir du test mode (envoi vers tous destinataires)
 - **P1**: Rotation de la clé Resend (committée dans .env)
 - **P1**: Page admin `/admin/contacts` avec authentification simple pour consulter les leads
 - **P1**: Rate limiting + honeypot/captcha sur POST /api/contact (anti-spam)
 - **P2**: Auth sur GET /api/contacts (PII non protégée actuellement)
-- **P2**: Variantes SEO supplémentaires (taille-haie-deauville, demoussage-lisieux, etc.)
-- **P2**: Blog admin pour ajouter des articles via interface
-- **P2**: Widget avis Google temps réel via API Google Places
+- **P2**: Widget avis Google temps réel via API Google Places (une fois GBP validé)
+- **P2**: Bandeau cookies RGPD (uniquement nécessaire si tracking réintroduit)
+- **P2**: Migration Next.js/SSR pour SEO maximal
 - **P2**: Migration `@app.on_event('shutdown')` vers FastAPI lifespan context manager
