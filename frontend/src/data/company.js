@@ -22,10 +22,10 @@ export const COMPANY = {
   },
   site: "https://paysage-caen-seo.emergent.host",
   legal: {
-    name: "Les Jardiniers Normands",
+    name: "Schmitt Antony",
     form: "Entreprise individuelle",
-    siret: "SIRET à compléter",
-    tva: "N° TVA à compléter (ou mention « TVA non applicable, art. 293 B du CGI » si micro-entreprise)",
+    siret: "891 548 802 00026",
+    tva: "FR40 891 548 802",
     publisher: "Antony Schmitt",
   },
 };
