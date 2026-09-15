@@ -21,4 +21,11 @@ export const COMPANY = {
     reviewLink: "https://www.google.com/search?q=les+jardiniers+normands+caen#lrd=0x0:0x0,3,,,,",
   },
   site: "https://www.lesjardiniersnormands.fr",
+  legal: {
+    name: "Les Jardiniers Normands",
+    form: "Entreprise individuelle",
+    siret: "SIRET à compléter",
+    tva: "N° TVA à compléter (ou mention « TVA non applicable, art. 293 B du CGI » si micro-entreprise)",
+    publisher: "Antony Schmitt",
+  },
 };

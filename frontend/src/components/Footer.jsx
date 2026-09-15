@@ -65,6 +65,7 @@ export default function Footer() {
             <li><Link to="/blog" className="hover:text-[#F2EBD9]">Blog</Link></li>
             <li><Link to="/contact" className="hover:text-[#F2EBD9]">Contact / Devis</Link></li>
             <li><Link to="/mentions-legales" className="hover:text-[#F2EBD9]">Mentions légales</Link></li>
+            <li><Link to="/politique-de-confidentialite" className="hover:text-[#F2EBD9]">Politique de confidentialité</Link></li>
           </ul>
         </div>
       </div>

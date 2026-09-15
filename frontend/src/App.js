@@ -14,6 +14,7 @@ import About from "./pages/About";
 import Realisations from "./pages/Realisations";
 import Contact from "./pages/Contact";
 import MentionsLegales from "./pages/MentionsLegales";
+import PolitiqueConfidentialite from "./pages/PolitiqueConfidentialite";
 import NotFound from "./pages/NotFound";
 
 import { CITIES } from "./data/cities";
@@ -31,6 +32,7 @@ function App() {
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/mentions-legales" element={<MentionsLegales />} />
+            <Route path="/politique-de-confidentialite" element={<PolitiqueConfidentialite />} />
 
             {/* Services principaux (Caen) */}
             <Route path="/paysagiste-caen" element={<ServicePage />} />
