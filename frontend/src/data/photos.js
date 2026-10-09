@@ -32,7 +32,7 @@ export const GALERIE_ELAGAGE = [
 // Chantiers mis en avant (page Réalisations)
 export const A_LA_UNE = [
   { photo: CHANTIERS.thuyaHauteur, title: "Taille de haie de thuyas – Caen", desc: "Taille de précision d'une haie de thuyas : hauteur et faces régularisées pour une haie nette et dense." },
-  { photo: CHANTIERS.magnoliaMaison, title: "Élagage d'un magnolia – Caen", desc: "Intervention d'élagage sur un magnolia près d'une maison et d'une terrasse, en préservant la forme de l'arbre." },
+  { photo: CHANTIERS.magnoliaMaison, title: "Élagage d'un magnolia – Caen", desc: "Élagage d'un magnolia situé près d'une maison et d'une terrasse, dans un jardin de Caen." },
   { photo: CHANTIERS.photinia, title: "Taille de photinia – Caen", desc: "Taille d'une haie de photinia Red Robin pour retrouver une haie fournie et colorée." },
   { photo: CHANTIERS.massifMuret, title: "Remise en ordre d'un massif – Caen", desc: "Débroussaillage et nettoyage d'un massif le long d'un muret en pierre." },
 ];
