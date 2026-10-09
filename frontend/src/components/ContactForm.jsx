@@ -4,7 +4,7 @@ import { toast } from "sonner";
 import { Send, Loader2 } from "lucide-react";
 import { SERVICES } from "../data/services";
 
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+const API = `${process.env.REACT_APP_BACKEND_URL || ""}/api`;
 
 export default function ContactForm({ defaultService = "", defaultCity = "" }) {
   const [form, setForm] = useState({

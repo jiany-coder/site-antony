@@ -19,6 +19,12 @@ const SEO = ({
   const url = canonical || `${COMPANY.site}${path}`;
   const img = image || COMPANY.logos.jardiniers;
 
+  // Prérendu (build) : on mémorise les balises de la page pour les écrire dans le HTML statique.
+  if (typeof window === "undefined") {
+    globalThis.__HEAD__ = { title: fullTitle, desc, url, img, type, noindex, jsonLd };
+    return null;
+  }
+
   return (
     <Helmet>
       <title>{fullTitle}</title>
@@ -74,7 +80,7 @@ export const buildLocalBusinessSchema = () => ({
   openingHoursSpecification: [{
     "@type": "OpeningHoursSpecification",
     dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
-    opens: "08:00", closes: "19:00",
+    opens: "08:00", closes: "20:00",
   }],
   areaServed: [
     { "@type": "City", name: "Caen" },
@@ -86,11 +92,14 @@ export const buildLocalBusinessSchema = () => ({
     { "@type": "City", name: "Ouistreham" },
     { "@type": "AdministrativeArea", name: "Calvados" },
   ],
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "5.0",
-    reviewCount: "47",
-  },
+  sameAs: [COMPANY.social.gbp, COMPANY.social.gbpElagage],
+  taxID: COMPANY.legal.siret,
+});
+
+export const buildBreadcrumbSchema = (items) => ({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: items.map(([name, item], i) => ({ "@type": "ListItem", position: i + 1, name, item })),
 });
 
 export const buildFAQSchema = (faq) => ({
