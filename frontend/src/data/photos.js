@@ -36,3 +36,13 @@ export const A_LA_UNE = [
   { photo: CHANTIERS.photinia, title: "Taille de photinia – Caen", desc: "Taille d'une haie de photinia Red Robin pour retrouver une haie fournie et colorée." },
   { photo: CHANTIERS.massifMuret, title: "Remise en ordre d'un massif – Caen", desc: "Débroussaillage et nettoyage d'un massif le long d'un muret en pierre." },
 ];
+
+// Photos par page de service (clé = slug)
+export const SERVICE_PHOTOS = {
+  "taille-haie-caen": [CHANTIERS.thuyaHauteur, CHANTIERS.thuyaToit, CHANTIERS.laurierMuret, CHANTIERS.photinia, CHANTIERS.haieMixte, CHANTIERS.thuyaFruitiers],
+  "elagage-caen": [CHANTIERS.magnoliaTerrasse, CHANTIERS.magnoliaMaison, CHANTIERS.laurierEchelle, CHANTIERS.grandeHaie],
+  "tonte-pelouse-caen": [CHANTIERS.pelouseBalustres, CHANTIERS.pelouseEntretien, CHANTIERS.massifMuret, CHANTIERS.terrasseMurets],
+  "jardinier-caen": [CHANTIERS.pelouseBalustres, CHANTIERS.pelouseEntretien, CHANTIERS.massifMuret, CHANTIERS.entreePortail],
+  "entretien-jardin-caen": [CHANTIERS.pelouseEntretien, CHANTIERS.massifMuret, CHANTIERS.terrasseMurets, CHANTIERS.entreePortail],
+  "entretien-exterieur-caen": [CHANTIERS.terrasseMurets, CHANTIERS.entreePortail, CHANTIERS.massifMuret, CHANTIERS.pelouseBalustres, CHANTIERS.thuyaToit],
+};

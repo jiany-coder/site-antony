@@ -3,6 +3,7 @@ import { useLocation, Link, Navigate } from "react-router-dom";
 import { CheckCircle2, ArrowRight, Phone, Star, Shield, Award, Clock, MapPin } from "lucide-react";
 import SEO, { buildLocalBusinessSchema, buildFAQSchema } from "../components/SEO";
 import { COMPANY } from "../data/company";
+import { SERVICE_PHOTOS } from "../data/photos";
 import { SERVICES, getService, ICONS } from "../data/services";
 import { CITIES } from "../data/cities";
 import { TESTIMONIALS } from "../data/testimonials";
@@ -13,6 +14,34 @@ import ContactForm from "../components/ContactForm";
 import CTASection from "../components/CTASection";
 
 const SERVICE_DETAILS = {
+  "tonte-pelouse-caen": {
+    intro: "Une pelouse bien tondue change tout l'aspect d'un jardin. À Caen et dans le Calvados, Les Jardiniers Normands assurent la tonte de votre pelouse, au rythme qui vous convient : un passage régulier toute la saison ou une intervention ponctuelle pour remettre un terrain en état.",
+    benefits: [
+      "Passage régulier ou intervention ponctuelle",
+      "Finitions des bordures et des angles",
+      "Ramassage et évacuation de l'herbe coupée",
+      "Hauteur de coupe adaptée à la saison et à votre pelouse",
+      "Devis gratuit, intervention sous 24 h après acceptation du devis",
+    ],
+    sections: [
+      {
+        h: "Tonte de pelouse à Caen : comment ça se passe ?",
+        p: "Après un devis gratuit, nous convenons avec vous de la fréquence de passage, selon la surface, la saison et l'usage de votre pelouse. À chaque intervention, nous tondons, soignons les bordures et les angles, puis nous nettoyons les allées et terrasses. L'herbe coupée peut être ramassée et évacuée, ou laissée sur place en mulching selon votre préférence.",
+      },
+      {
+        h: "Quelle fréquence de tonte choisir ?",
+        p: "En pleine croissance, au printemps et au début de l'automne, un passage toutes les une à deux semaines garde une pelouse dense et régulière. En été sec, la tonte se fait plus haute et plus espacée pour protéger le gazon. Nous adaptons le rythme à votre jardin plutôt que d'appliquer un calendrier unique.",
+      },
+      {
+        h: "Une pelouse laissée trop longtemps : pas de problème",
+        p: "Si l'herbe a pris de la hauteur ou si le terrain n'a pas été entretenu depuis un moment, nous reprenons la pelouse en plusieurs étapes, avec un débroussaillage si nécessaire, avant de passer à un entretien régulier. Nous pouvons aussi associer la tonte à la taille de vos haies et à l'entretien de vos massifs, pour un extérieur propre en une seule venue.",
+      },
+      {
+        h: "Où intervenons-nous ?",
+        p: "Nous intervenons à Caen, Hérouville-Saint-Clair, Mondeville, Ifs, Bayeux, Ouistreham, Lisieux, Falaise, Deauville et dans les communes alentours du Calvados. Appelez-nous au 07 80 04 43 90 ou demandez votre devis gratuit en ligne.",
+      },
+    ],
+  },
   "paysagiste-caen": {
     intro: "À Caen, faire appel à un paysagiste compétent transforme radicalement votre extérieur. Notre équipe Les Jardiniers Normands conçoit, aménage et entretient des jardins sur mesure dans toute la métropole caennaise.",
     benefits: [
@@ -182,7 +211,7 @@ export default function ServicePage() {
         title={service.metaTitle}
         description={service.metaDescription}
         canonical={`${COMPANY.site}/${slug}`}
-        image={service.image}
+        image={service.image.startsWith("/") ? `${COMPANY.site}${service.image}` : service.image}
         jsonLd={[buildLocalBusinessSchema(), buildFAQSchema(GLOBAL_FAQ)]}
       />
 
@@ -254,6 +283,22 @@ export default function ServicePage() {
           ))}
         </div>
       </section>
+
+      {/* CHANTIERS RÉELS */}
+      {SERVICE_PHOTOS[slug] && (
+        <section className="py-20 bg-[#F4F1EA]" data-testid="service-photos">
+          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+            <h2 className="font-serif text-3xl sm:text-4xl text-[#0A0F0D] font-light mb-10">Nos chantiers à Caen</h2>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+              {SERVICE_PHOTOS[slug].map((p, i) => (
+                <div key={i} className="aspect-[4/5] overflow-hidden rounded-2xl">
+                  <img src={p.src} alt={p.alt} width={p.w} height={p.h} loading="lazy" className="w-full h-full object-cover" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {TESTIMONIALS.length > 0 && (
       <section className="py-20 bg-[#F4F1EA]">

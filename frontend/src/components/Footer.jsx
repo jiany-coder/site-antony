@@ -91,7 +91,7 @@ export default function Footer() {
         </details>
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mt-6">
           <p className="text-xs text-[#FDFBF7]/55">© {new Date().getFullYear()} Les Jardiniers Normands · Pro Élagage 14 — Tous droits réservés.</p>
-          <p className="text-xs text-[#FDFBF7]/55">Site optimisé SEO local Calvados</p>
+          <p className="text-xs text-[#FDFBF7]/55">Site créé par <strong className="font-semibold text-[#F2EBD9]/80">Next Business</strong></p>
         </div>
       </div>
     </footer>
