@@ -22,7 +22,7 @@ export const COMPANY = {
     google: "https://www.google.com/search?q=pro+%C3%A9lagage+14",
     reviewLink: "https://search.google.com/local/writereview?placeid=ChIJT3aLzJpS6QwRcdAARNmjOvE",
   },
-  site: "https://lesjardiniers.fr",
+  site: "https://lesjardiniersnormands.com",
   legal: {
     name: "Schmitt Antony",
     form: "Entreprise individuelle",

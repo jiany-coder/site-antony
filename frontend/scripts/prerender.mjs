@@ -41,7 +41,10 @@ await build({
 const require = createRequire(import.meta.url);
 const { render, routes } = require(path.join(tmp, "server.cjs"));
 
-const SITE = (process.env.SITE_URL || "https://lesjardiniers.fr").replace(/\/$/, "");
+// Domaine : une seule source de vérité, src/data/company.js (champ site).
+const companySrc = fs.readFileSync(path.join(root, "src/data/company.js"), "utf8");
+const SITE = (process.env.SITE_URL || (companySrc.match(/site:\s*"([^"]+)"/) || [])[1] || "").replace(/\/$/, "");
+if (!SITE) throw new Error("Domaine introuvable (champ site de company.js)");
 const template = fs.readFileSync(path.join(buildDir, "index.html"), "utf8");
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
 const ld = (o) => JSON.stringify(o).replace(/</g, "\\u003c");
