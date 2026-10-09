@@ -1,4 +1,4 @@
-// Blog SEO complet — 13 articles longue traîne
+// Blog SEO — 11 articles longue traîne
 export const BLOG_POSTS = [
   {
     slug: "jardin-juin-juillet-normandie-guide-2026",
@@ -9,9 +9,9 @@ export const BLOG_POSTS = [
     readTime: "9 min",
     category: "Saisonnier",
     keywords: ["jardin juin normandie", "jardin juillet normandie", "entretien jardin été", "que faire au jardin"],
-    content: `En Normandie, juin et juillet sont les mois clés du jardin. La pousse est explosive, les hortensias se préparent à fleurir, les haies débordent et la pelouse demande une attention hebdomadaire. Voici votre guide saisonnier 2026 pour ne rien laisser au hasard dans le Calvados.
+    content: `En Normandie, juin et juillet sont les mois clés du jardin. La poussée est explosive, les hortensias se préparent à fleurir, les haies débordent et la pelouse demande une attention hebdomadaire. Voici votre guide saisonnier 2026 pour ne rien laisser au hasard dans le Calvados.
 
-## Juin : le mois de la pousse maximale
+## Juin : le mois de la poussée maximale
 
 ### Tonte de pelouse : adaptez la hauteur
 Sous le climat océanique du Calvados, l'herbe pousse vite. En juin, tondez **1 fois par semaine** avec une lame réglée à **5-6 cm de hauteur**. Une coupe trop courte favorise le dessèchement et les mousses. Préférez le **mulching** : les déchets fins fertilisent naturellement le sol et conservent l'humidité.
@@ -45,9 +45,6 @@ Tomates, courgettes, haricots, salades : c'est l'apogée du potager normand. Pen
 
 ## Les gestes à ne PAS oublier
 
-### Démoussage de toiture : préparez l'automne
-Profitez de l'été sec pour faire **démousser votre toiture** avant les pluies hivernales. La mousse retient l'humidité et abîme les tuiles. Un traitement hydrofuge protège votre toit pendant 8 à 10 ans.
-
 ### Taille d'entretien des massifs fleuris
 Les rosiers remontants apprécient une petite taille post-floraison pour relancer une seconde vague de fleurs en août-septembre. Coupez les fleurs fanées (lavandes, hortensias, vivaces) pour stimuler une nouvelle floraison.
 
@@ -59,11 +56,10 @@ Si vous avez un système d'arrosage programmable, vérifiez les buses, les press
 Juin et juillet sont des mois intenses. Si vous manquez de temps, voici ce que nos jardiniers prennent en charge dans le Calvados :
 - **Passage hebdomadaire** : tonte, désherbage, taille légère
 - **Taille complète des haies** (juin ou septembre)
-- **Démoussage de toiture** estival
 - **Élagage de précision** pour préparer l'automne
 - **Entretien complet du potager**
 
-Les Jardiniers Normands proposent des contrats annuels modulables avec **crédit d'impôt 50%**. Devis gratuit sous 24h.
+Les Jardiniers Normands proposent des contrats annuels modulables. Pour un particulier, l'entretien courant peut ouvrir droit, sous conditions, au crédit d'impôt service à la personne. Devis gratuit, intervention sous 24 h après acceptation.
 
 ## Conclusion
 
@@ -106,7 +102,7 @@ Pour certaines essences comme les arbres fruitiers (cerisiers, pruniers), les bo
 - une **assurance responsabilité civile professionnelle** indispensable en cas d'accident ;
 - le **respect de la réglementation** (PLU, distances voisinage, espèces protégées).
 
-À Caen et dans tout le Calvados, **Pro Élagage 14** intervient avec une équipe de grimpeurs certifiés, formés à la taille raisonnée et à la sécurisation d'arbres en milieu urbain comme rural.
+À Caen et dans tout le Calvados, **Pro Élagage 14** intervient avec une équipe de grimpeurs expérimentés, habitués à la taille raisonnée et à la sécurisation d'arbres en milieu urbain comme rural.
 
 ## Réglementation locale dans le Calvados
 
@@ -124,7 +120,7 @@ L'élagage demande méthode, expérience et timing. Faire appel à un élagueur 
   {
     slug: "prix-paysagiste-caen",
     title: "Prix paysagiste à Caen : combien coûte un jardinier en 2025 ?",
-    excerpt: "Guide des tarifs : entretien jardin, création paysagère, élagage, démoussage. Crédit d'impôt et conseils pour bien choisir.",
+    excerpt: "Guide des tarifs : entretien jardin, création paysagère, élagage. Conseils pour bien choisir.",
     cover: "https://images.unsplash.com/photo-1576897955702-24ad19680db3?auto=format&fit=crop&w=1600&q=80",
     date: "2025-03-08",
     readTime: "9 min",
@@ -152,14 +148,9 @@ L'élagage demande méthode, expérience et timing. Faire appel à un élagueur 
 - **Abattage par démontage** : 600 à 2 500 €
 - **Dessouchage** : 100 à 350 € par souche
 
-### Démoussage et nettoyage
-- **Démoussage toiture** : 10 à 25 €/m²
-- **Nettoyage façade** : 8 à 20 €/m²
-- **Nettoyage pignon** : 10 à 18 €/m²
+## Crédit d'impôt : renseignez-vous
 
-## Crédit d'impôt 50% : ne passez pas à côté
-
-Les prestations d'**entretien courant de jardin** (tonte, taille de haie, débroussaillage) ouvrent droit au **crédit d'impôt service à la personne de 50%**, dans la limite de 5 000 €/an. C'est une économie majeure souvent ignorée.
+Les prestations d'**entretien courant de jardin** (tonte, taille de haie, débroussaillage) peuvent ouvrir droit, sous conditions, au **crédit d'impôt service à la personne** pour un particulier. Renseignez-vous sur votre situation et demandez-nous si votre intervention est concernée.
 
 ## Pourquoi nos tarifs sont compétitifs ?
 
@@ -209,8 +200,6 @@ L'automne normand est long et humide. C'est la saison clé pour préparer l'ann�
 - **Aération de la pelouse**, regarnissage
 - **Plantation arbres et arbustes** (sol encore chaud)
 - **Taille des haies persistantes**
-- **Démoussage toiture** avant les pluies hivernales
-- **Nettoyage façade** avant le gel
 
 ## Hiver (décembre – février) : la saison des travaux structurels
 
@@ -222,60 +211,7 @@ L'automne normand est long et humide. C'est la saison clé pour préparer l'ann�
 
 ## Faites-vous accompagner
 
-Un contrat annuel d'entretien jardin permet d'avoir un suivi régulier sans avoir à se soucier du calendrier. Les Jardiniers Normands proposent des **forfaits sur-mesure** dans tout le Calvados, avec **crédit d'impôt 50%**. ☎ 07 80 04 43 90.`,
-  },
-  {
-    slug: "comment-demousser-toiture",
-    title: "Comment démousser une toiture efficacement ? Guide expert",
-    excerpt: "Étapes, produits, prix : tout savoir pour démousser et protéger votre toiture des mousses et lichens en Normandie.",
-    cover: "https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?auto=format&fit=crop&w=1600&q=80",
-    date: "2025-02-15",
-    readTime: "7 min",
-    category: "Démoussage",
-    keywords: ["démoussage toiture", "nettoyer toit", "anti-mousse toiture"],
-    content: `Le climat humide de Normandie favorise la prolifération des mousses, lichens et algues sur les toitures. Voici comment les éliminer durablement.
-
-## Pourquoi démousser sa toiture ?
-
-Les mousses retiennent l'humidité et fragilisent les matériaux. À terme, elles provoquent :
-- **infiltrations d'eau** ;
-- **dégradation des tuiles ou ardoises** ;
-- **augmentation du poids** sur la charpente ;
-- **bouchage des gouttières** ;
-- **perte d'isolation thermique**.
-
-Un démoussage régulier (tous les 3 à 5 ans dans le Calvados) prolonge la durée de vie de votre toiture.
-
-## Les 4 étapes d'un démoussage professionnel
-
-### 1. Inspection préalable
-Diagnostic de la toiture, repérage des tuiles cassées, vérification des gouttières.
-
-### 2. Nettoyage mécanique
-Brossage manuel ou nettoyage haute pression à basse intensité (pour ne pas endommager les tuiles).
-
-### 3. Traitement anti-mousse curatif
-Application d'un produit fongicide professionnel qui élimine les spores en profondeur.
-
-### 4. Traitement hydrofuge (optionnel)
-Imperméabilisation invisible qui protège la toiture pendant 8 à 10 ans.
-
-## Pourquoi éviter le démoussage DIY ?
-
-- **Risque de chute** : 1ère cause d'accidents domestiques graves
-- **Risque de dégrader les tuiles** avec une pression trop forte
-- **Produits non professionnels** moins efficaces
-- **Absence d'assurance décennale**
-
-## Tarifs démoussage toiture dans le Calvados
-
-| Surface | Démoussage seul | + Hydrofuge |
-|---------|----------------|-------------|
-| 80 m² | 800 à 1 600 € | 1 600 à 2 800 € |
-| 120 m² | 1 200 à 2 400 € | 2 400 à 4 200 € |
-| 150 m² | 1 500 à 3 000 € | 3 000 à 5 250 € |
-
-Les Jardiniers Normands démoussent toitures, façades et pignons partout dans le Calvados. **Devis gratuit** ☎ 07 80 04 43 90.`,
+Un contrat annuel d'entretien jardin permet d'avoir un suivi régulier sans avoir à se soucier du calendrier. Les Jardiniers Normands proposent des **forfaits sur-mesure** dans tout le Calvados. Pour un particulier, l'entretien courant peut ouvrir droit, sous conditions, au crédit d'impôt service à la personne. ☎ 07 80 04 43 90.`,
   },
   {
     slug: "reglementation-abattage-arbre",
@@ -339,7 +275,7 @@ Avant toute coupe importante, **consultez votre mairie** ou faites appel à un p
 - Automne : 4 cm puis remontez à 5 cm avant l'hiver
 
 ## 2. Tondez régulièrement
-1 fois/semaine en pleine pousse, jamais plus d'1/3 de la hauteur.
+1 fois/semaine en pleine poussée, jamais plus d'1/3 de la hauteur.
 
 ## 3. Pratiquez le mulching
 Les déchets de tonte fertilisent naturellement le sol et limitent l'évaporation.
@@ -357,13 +293,13 @@ Une fois par an avec une fourche-bêche ou un aérateur mécanique.
 Plutôt que de petits arrosages, privilégiez un arrosage long 2 fois/semaine en été.
 
 ## 8. Regarnissez les zones dénudées
-À l'automne, semez du gazon resistant à la mousse, idéal en Normandie.
+À l'automne, semez du gazon résistant à la mousse, idéal en Normandie.
 
 ## 9. Désherbage sélectif
-Eliminez mauvaises herbes à la main ou avec un désherbant sélectif.
+Éliminez mauvaises herbes à la main ou avec un désherbant sélectif.
 
 ## 10. Confiez l'entretien à un pro
-Un contrat d'entretien annuel garantit la régularité et le savoir-faire. **Crédit d'impôt 50%**.
+Un contrat d'entretien annuel garantit la régularité et le savoir-faire. Pour un particulier, l'entretien courant peut ouvrir droit, sous conditions, au crédit d'impôt service à la personne.
 
 Les Jardiniers Normands entretiennent les pelouses dans tout le Calvados ☎ 07 80 04 43 90.`,
   },
@@ -390,8 +326,8 @@ Notre paysagiste réalise un plan 2D ou 3D avec les zones, circulations, plantat
 ## Étape 4 : préparation du sol
 Décompactage, apport de terre végétale, drainage si nécessaire.
 
-## Étape 5 : maçonnerie paysagère
-Allées, terrasses, murets, bassins, éclairage extérieur.
+## Étape 5 : structure végétale
+Implantation des haies, massifs et arbres, paillage, arrosage.
 
 ## Étape 6 : plantations
 Choix des essences adaptées au climat normand : hortensias, érables, graminées, vivaces locales.
@@ -458,55 +394,6 @@ Souvent oubliée, l'évacuation représente 20 à 30% du temps total. Nos équip
 Les Jardiniers Normands taillent vos haies dans tout le Calvados ☎ 07 80 04 43 90.`,
   },
   {
-    slug: "nettoyage-facade-techniques-tarifs",
-    title: "Nettoyage façade : techniques et tarifs en 2025",
-    excerpt: "Hydrogommage, sablage, haute pression : quelle méthode pour quel résultat ? Les prix dans le Calvados.",
-    cover: "https://images.unsplash.com/photo-1597201278257-3687be27d954?auto=format&fit=crop&w=1600&q=80",
-    date: "2024-12-20",
-    readTime: "8 min",
-    category: "Nettoyage",
-    keywords: ["nettoyage façade", "ravalement", "hydrogommage"],
-    content: `Une façade propre valorise votre patrimoine. Découvrez les différentes techniques de nettoyage et leurs prix.
-
-## Techniques de nettoyage façade
-
-### Nettoyage haute pression
-- Idéal pour **béton, briques** et façades robustes
-- Tarif : 8 à 15 €/m²
-- Ne convient pas aux façades fragiles ou peintes
-
-### Nébulisation
-- Pulvérisation fine d'eau pour décoller crasse et mousses
-- Idéal pour pierres anciennes
-- Tarif : 15 à 25 €/m²
-
-### Hydrogommage
-- Projection d'eau et fines particules abrasives
-- Pour façades pierres, briques, monuments
-- Tarif : 20 à 40 €/m²
-
-### Sablage
-- Plus agressif, pour bois et pierres très encrassées
-- Tarif : 25 à 50 €/m²
-
-### Traitement chimique
-- Application d'un produit fongicide/algicide
-- Combiné aux autres techniques
-- Tarif : +3 à 8 €/m²
-
-## Quand nettoyer ?
-
-- Apparition de **traces noires** ou **vertes**
-- Avant un ravalement
-- Tous les **5 à 10 ans** selon exposition
-
-## Crédit d'impôt et aides
-
-Certains travaux de façade peuvent bénéficier de subventions (ANAH, communes). Nous vous orientons.
-
-Devis gratuit dans tout le Calvados ☎ 07 80 04 43 90.`,
-  },
-  {
     slug: "conseils-paysagiste-normand",
     title: "10 conseils d'un paysagiste normand pour un jardin durable",
     excerpt: "Plantes locales, gestion de l'eau, biodiversité : les meilleures pratiques pour un jardin écologique en Normandie.",
@@ -545,7 +432,7 @@ Tas de bois, mare, herbe haute : refuge pour hérissons, oiseaux, batraciens.
 Interdits aux particuliers depuis 2019. Alternatives : purins, savons noirs, traitements bio.
 
 ## 10. Faites-vous accompagner
-Un paysagiste local connait les particularités du Calvados et vous fait gagner du temps.
+Un paysagiste local connaît les particularités du Calvados et vous fait gagner du temps.
 
 Les Jardiniers Normands conçoivent des jardins durables et adaptés à la Normandie ☎ 07 80 04 43 90.`,
   },
@@ -566,7 +453,7 @@ Les Jardiniers Normands conçoivent des jardins durables et adaptés à la Norma
 - **Sécurité** : pas de trébuchement
 - **Phytosanitaire** : évite parasites et champignons
 - **Replantation** : terrain prêt pour nouveau projet
-- **Aménagement** : terrasse, allée, pelouse
+- **Aménagement** : plantations, massifs, pelouse
 
 ## Les méthodes de dessouchage
 
@@ -602,12 +489,12 @@ Devis gratuit ☎ 07 80 04 43 90.`,
   {
     slug: "pourquoi-elagueur-professionnel",
     title: "Pourquoi faire appel à un élagueur professionnel ? 7 raisons",
-    excerpt: "Sécurité, expertise, assurance : les 7 raisons impératives de confier votre élagage à un pro certifié.",
+    excerpt: "Sécurité, expertise, assurance : les 7 raisons impératives de confier votre élagage à un pro expérimenté.",
     cover: "https://images.unsplash.com/photo-1762903938137-49b0a145e241?auto=format&fit=crop&w=1600&q=80",
     date: "2024-11-12",
     readTime: "7 min",
     category: "Élagage",
-    keywords: ["élagueur professionnel", "pourquoi élagueur", "élagueur certifié"],
+    keywords: ["élagueur professionnel", "pourquoi élagueur", "élagueur professionnel"],
     content: `Élaguer soi-même un arbre semble simple. C'est en réalité l'une des activités les plus dangereuses au jardin. Voici pourquoi un pro est indispensable.
 
 ## 1. La sécurité avant tout
@@ -623,7 +510,7 @@ Un pro adapte sa coupe pour préserver la santé de l'arbre.
 
 ## 3. L'équipement professionnel
 - Cordes statiques et dynamiques
-- Harnais d'élagage certifié EN
+- Harnais d'élagage aux normes EN
 - Tronçonneuse d'élagage
 - Casque, lunettes, jambières anti-coupure
 Investissement total : **5 000 à 10 000 €**.
@@ -642,13 +529,13 @@ Travail propre, à la date prévue, avec engagement de qualité.
 
 ## Comment choisir son élagueur ?
 
-- Certification professionnelle
+- Expérience et références à vérifier
 - Assurance RC pro (à demander)
 - Devis détaillé et gratuit
-- Avis Google vérifiés
+- Avis Google à consulter
 - Local et joignable
 
-**Pro Élagage 14** coche toutes ces cases dans le Calvados ☎ 07 80 04 43 90.`,
+**Pro Élagage 14** répond à chacun de ces points dans le Calvados ☎ 07 80 04 43 90.`,
   },
 ];
 
