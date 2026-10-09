@@ -29,7 +29,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
         <div className="flex items-center justify-between h-20 lg:h-24">
           <Link to="/" className="flex items-center gap-3" data-testid="logo-link">
-            <img src={COMPANY.logos.jardiniers} alt="Les Jardiniers Normands" className="h-14 w-14 lg:h-16 lg:w-16 object-contain" />
+            <img src={COMPANY.logos.jardiniers} alt="Les Jardiniers Normands" width="64" height="64" className="h-14 w-14 lg:h-16 lg:w-16 object-contain" />
             <div className="hidden sm:block leading-tight">
               <div className="font-serif text-[#0A0F0D] text-xl lg:text-2xl font-medium tracking-tight">Les Jardiniers Normands</div>
               <div className="text-[10px] lg:text-xs tracking-[0.18em] uppercase text-[#1F3D2B] font-sans font-semibold">Pro Élagage 14 · Calvados</div>

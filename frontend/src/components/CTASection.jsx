@@ -9,7 +9,7 @@ export default function CTASection({ title, subtitle, accent = "Devis gratuit" }
       <div
         className="absolute inset-0 opacity-25"
         style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1597201278257-3687be27d954?auto=format&fit=crop&w=1600&q=80')",
+          backgroundImage: "url('/photos/taille-haie-thuya-echelle-jardin.webp')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}

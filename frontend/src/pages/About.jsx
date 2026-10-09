@@ -30,8 +30,8 @@ export default function About() {
           </div>
           <div className="lg:col-span-5 reveal">
             <div className="grid grid-cols-2 gap-4">
-              <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1576897955702-24ad19680db3?auto=format&fit=crop&w=800&q=80" alt="" className="rounded-2xl aspect-[3/4] object-cover" />
-              <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1762903938137-49b0a145e241?auto=format&fit=crop&w=800&q=80" alt="" className="rounded-2xl aspect-[3/4] object-cover mt-10" />
+              <img loading="lazy" decoding="async" src="/photos/taille-haie-laurier-muret-pierre.webp" alt="Taille de laurier le long d'un muret en pierre à Caen" width="825" height="1100" className="rounded-2xl aspect-[3/4] object-cover" />
+              <img loading="lazy" decoding="async" src="/photos/elagage-magnolia-terrasse-jardin.webp" alt="Élagage d'un magnolia au-dessus d'une terrasse à Caen" width="825" height="1100" className="rounded-2xl aspect-[3/4] object-cover mt-10" />
             </div>
           </div>
         </div>

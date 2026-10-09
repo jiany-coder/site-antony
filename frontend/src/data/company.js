@@ -13,8 +13,8 @@ export const COMPANY = {
   hours: "Lun-Sam : 8h00 – 20h00",
   whatsapp: "+33780044390",
   logos: {
-    jardiniers: "https://customer-assets.emergentagent.com/job_paysage-caen-seo/artifacts/xgkb4d4x_logo%20jardinier%20normand.png",
-    proElagage: "https://customer-assets.emergentagent.com/job_paysage-caen-seo/artifacts/pvwtitso_pro%20%C3%A9lagage%2014.jpg",
+    jardiniers: "https://lesjardiniersnormands.com/logo-les-jardiniers-normands-192.webp",
+    proElagage: "https://lesjardiniersnormands.com/logo-pro-elagage-14-192.webp",
   },
   social: {
     gbp: "https://www.google.com/maps/place/?q=place_id:ChIJT3aLzJpS6QwRcdAARNmjOvE",

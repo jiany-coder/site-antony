@@ -9,9 +9,9 @@ import ContactForm from "../components/ContactForm";
 import CTASection from "../components/CTASection";
 
 const HERO = {
-  paysagiste: "https://images.unsplash.com/photo-1576897955702-24ad19680db3?auto=format&fit=crop&w=2000&q=85",
+  paysagiste: "/photos/taille-haie-photinia-red-robin.webp",
   elagage: "https://images.unsplash.com/photo-1762903938137-49b0a145e241?auto=format&fit=crop&w=2000&q=85",
-  jardinier: "https://images.pexels.com/photos/3280078/pexels-photo-3280078.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  jardinier: "/photos/taille-haie-mixte-laurier-persistants.webp",
 };
 const SERVICE_LINKS = [
   ["paysagiste", "Paysagiste"],

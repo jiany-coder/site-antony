@@ -13,7 +13,6 @@ import FAQAccordion from "../components/FAQAccordion";
 import TrustBar from "../components/TrustBar";
 import StatsBar from "../components/StatsBar";
 import CTASection from "../components/CTASection";
-import BeforeAfter from "../components/BeforeAfter";
 import GoogleReviewBanner from "../components/GoogleReviewBanner";
 import { GALERIE_ELAGAGE } from "../data/photos";
 
@@ -34,9 +33,9 @@ export default function Home() {
       <section className="relative min-h-[92vh] flex items-center grain" data-testid="hero-section">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1597201278257-3687be27d954?auto=format&fit=crop&w=1400&q=70"
+            src="/photos/taille-grande-haie-thuya-echelle.webp"
             alt="Paysagiste Caen Calvados — jardin paysager premium"
-            width="1400" height="933" fetchPriority="high" decoding="async"
+            width="1100" height="825" fetchPriority="high" decoding="async"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 hero-overlay" />
@@ -172,13 +171,12 @@ export default function Home() {
       <section className="py-24 sm:py-32" data-testid="before-after-section">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-5 reveal">
-            <p className="text-xs font-sans font-bold tracking-[0.3em] uppercase text-[#1F3D2B] mb-4">Avant / Après</p>
+            <p className="text-xs font-sans font-bold tracking-[0.3em] uppercase text-[#1F3D2B] mb-4">Sur le terrain</p>
             <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-[#0A0F0D] font-light leading-tight tracking-tight mb-6">
-              La transformation par <em className="italic">l'expertise</em>
+              Un travail soigné, <em className="italic">chantier après chantier</em>
             </h2>
             <p className="text-lg text-[#4A5550] mb-8 leading-relaxed">
-              Glissez le curseur pour découvrir nos résultats. Chaque chantier raconte une métamorphose, du jardin laissé à l'abandon au paradis vert maîtrisé.
-            </p>
+              Haies, arbres, pelouses : voici de vrais chantiers réalisés à Caen et dans le Calvados, avec évacuation des déchets et un jardin laissé propre.</p>
             <ul className="space-y-3 mb-8">
               {[
                 "Diagnostic complet sur place",
@@ -197,10 +195,10 @@ export default function Home() {
             </Link>
           </div>
           <div className="lg:col-span-7 reveal">
-            <BeforeAfter
-              before="https://customer-assets.emergentagent.com/job_paysage-caen-seo/artifacts/1d6uj5ep_abe%2026.jpg"
-              after="https://images.pexels.com/photos/32500250/pexels-photo-32500250.jpeg?auto=compress&cs=tinysrgb&w=1400"
-            />
+            <div className="grid grid-cols-2 gap-4">
+              <img src="/photos/taille-haie-mixte-laurier-persistants.webp" alt="Taille d'une haie mixte de lauriers et de persistants à Caen" width="960" height="720" loading="lazy" decoding="async" className="rounded-2xl aspect-[3/4] w-full object-cover" />
+              <img src="/photos/taille-haie-photinia-red-robin.webp" alt="Haie de photinia Red Robin taillée à Caen" width="960" height="720" loading="lazy" decoding="async" className="rounded-2xl aspect-[3/4] w-full object-cover mt-10" />
+            </div>
           </div>
         </div>
       </section>
