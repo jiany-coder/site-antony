@@ -34,11 +34,10 @@ export default function MentionsLegales() {
 
           <h2>Hébergeur du site</h2>
           <p>
-            <strong>Emergent Labs, Inc.</strong><br />
-            548 Market St, PMB 17605<br />
-            San Francisco, CA 94104, États-Unis<br />
-            Site web : <a href="https://emergent.sh" target="_blank" rel="noopener noreferrer">https://emergent.sh</a><br />
-            Le site est délivré via le CDN Cloudflare, Inc. — 101 Townsend St, San Francisco, CA 94107, États-Unis.
+            <strong>Cloudflare, Inc.</strong> (Cloudflare Pages)<br />
+            101 Townsend St<br />
+            San Francisco, CA 94107, États-Unis<br />
+            Site web : <a href="https://www.cloudflare.com" target="_blank" rel="noopener noreferrer">https://www.cloudflare.com</a>
           </p>
 
           <h2>Propriété intellectuelle</h2>
