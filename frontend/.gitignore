@@ -21,3 +21,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Fichiers générés par seo-data/export_json.py à chaque build
+/src/data/communes_content.json
+/src/data/cities.json
+/.prerender
+__pycache__/

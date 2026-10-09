@@ -1,10 +1,10 @@
 import React from "react";
 
 const STATS = [
-  { value: "500+", label: "Chantiers réalisés", sub: "Particuliers & pros" },
-  { value: "10", label: "Années d'expérience", sub: "Dans le Calvados" },
-  { value: "98%", label: "Clients satisfaits", sub: "Note moyenne 5/5" },
-  { value: "24h", label: "Délai de réponse", sub: "Devis sous 24h ouvrées" },
+  { value: "98", label: "Communes desservies", sub: "Caen et tout le Calvados" },
+  { value: "20", label: "Ans d'expérience", sub: "Jardin, paysage et arbres" },
+  { value: "2", label: "Marques, une équipe", sub: "Jardiniers Normands · Pro Élagage 14" },
+  { value: "24h", label: "Délai de réponse", sub: "Intervention sous 24 h après devis" },
 ];
 
 export default function StatsBar() {

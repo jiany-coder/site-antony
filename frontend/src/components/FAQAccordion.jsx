@@ -13,6 +13,7 @@ export default function FAQAccordion({ items }) {
             {f.q}
           </AccordionTrigger>
           <AccordionContent
+            forceMount
             className="text-base font-sans text-[#4A5550] leading-relaxed pb-6"
             data-testid={`faq-content-${i}`}
           >

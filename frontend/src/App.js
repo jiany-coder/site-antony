@@ -19,48 +19,56 @@ import NotFound from "./pages/NotFound";
 
 import { CITIES } from "./data/cities";
 
+export function AppRoutes() {
+  return (
+    <>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/a-propos" element={<About />} />
+          <Route path="/realisations" element={<Realisations />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
+          <Route path="/mentions-legales" element={<MentionsLegales />} />
+          <Route path="/politique-de-confidentialite" element={<PolitiqueConfidentialite />} />
+
+          {/* Services principaux (Caen) */}
+          <Route path="/paysagiste-caen" element={<ServicePage />} />
+          <Route path="/jardinier-caen" element={<ServicePage />} />
+          <Route path="/elagage-caen" element={<ServicePage />} />
+          <Route path="/abattage-arbre-caen" element={<ServicePage />} />
+          <Route path="/dessouchage-caen" element={<ServicePage />} />
+          <Route path="/taille-haie-caen" element={<ServicePage />} />
+          <Route path="/entretien-jardin-caen" element={<ServicePage />} />
+          <Route path="/entretien-exterieur-caen" element={<ServicePage />} />
+
+          {/* Pages villes — Paysagiste */}
+          {CITIES.map((c) => (
+            <Route key={`p-${c.slug}`} path={`/paysagiste-${c.slug}`} element={<CityPage kind="paysagiste" />} />
+          ))}
+          {/* Pages villes — Jardinier */}
+          {CITIES.map((c) => (
+            <Route key={`j-${c.slug}`} path={`/jardinier-${c.slug}`} element={<CityPage kind="jardinier" />} />
+          ))}
+          {/* Pages villes — Élagage */}
+          {CITIES.map((c) => (
+            <Route key={`e-${c.slug}`} path={`/elagage-${c.slug}`} element={<CityPage kind="elagage" />} />
+          ))}
+
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Layout>
+      <Toaster position="top-center" richColors closeButton />
+    </>
+  );
+}
+
 function App() {
   return (
     <HelmetProvider>
       <BrowserRouter>
-        <Layout>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/a-propos" element={<About />} />
-            <Route path="/realisations" element={<Realisations />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/:slug" element={<BlogPost />} />
-            <Route path="/mentions-legales" element={<MentionsLegales />} />
-            <Route path="/politique-de-confidentialite" element={<PolitiqueConfidentialite />} />
-
-            {/* Services principaux (Caen) */}
-            <Route path="/paysagiste-caen" element={<ServicePage />} />
-            <Route path="/jardinier-caen" element={<ServicePage />} />
-            <Route path="/elagage-caen" element={<ServicePage />} />
-            <Route path="/abattage-arbre-caen" element={<ServicePage />} />
-            <Route path="/dessouchage-caen" element={<ServicePage />} />
-            <Route path="/taille-haie-caen" element={<ServicePage />} />
-            <Route path="/entretien-jardin-caen" element={<ServicePage />} />
-            <Route path="/entretien-exterieur-caen" element={<ServicePage />} />
-
-            {/* Pages villes — Paysagiste */}
-            {CITIES.map((c) => (
-              <Route key={`p-${c.slug}`} path={`/paysagiste-${c.slug}`} element={<CityPage kind="paysagiste" />} />
-            ))}
-            {/* Pages villes — Jardinier */}
-            {CITIES.map((c) => (
-              <Route key={`j-${c.slug}`} path={`/jardinier-${c.slug}`} element={<CityPage kind="jardinier" />} />
-            ))}
-            {/* Pages villes — Élagage */}
-            {CITIES.map((c) => (
-              <Route key={`e-${c.slug}`} path={`/elagage-${c.slug}`} element={<CityPage kind="elagage" />} />
-            ))}
-
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Layout>
-        <Toaster position="top-center" richColors closeButton />
+        <AppRoutes />
       </BrowserRouter>
     </HelmetProvider>
   );

@@ -5,19 +5,19 @@ export const GLOBAL_FAQ = [
   },
   {
     q: "Le devis est-il vraiment gratuit ?",
-    a: "Oui, totalement gratuit et sans engagement. Nous nous déplaçons sur place pour évaluer précisément les travaux et vous remettons un devis détaillé sous 48 heures.",
+    a: "Oui, totalement gratuit et sans engagement. Nous nous déplaçons sur place pour évaluer précisément les travaux et vous remettons un devis détaillé.",
   },
   {
     q: "Êtes-vous assurés ?",
     a: "Toutes nos prestations sont couvertes par une assurance Responsabilité Civile Professionnelle. Vous êtes intégralement protégé en cas d'incident.",
   },
   {
-    q: "Bénéficie-t-on du crédit d'impôt 50% ?",
-    a: "Oui, les prestations d'entretien de jardin (tonte, taille de haie, débroussaillage) sont éligibles au crédit d'impôt service à la personne de 50%, dans la limite de 5 000 €/an.",
+    q: "Existe-t-il un crédit d'impôt pour l'entretien du jardin ?",
+    a: "Pour un particulier, l'entretien courant du jardin (tonte, taille de haie, débroussaillage) peut ouvrir droit, sous conditions, au crédit d'impôt service à la personne de 50 %. Demandez-nous : nous vous indiquons si votre intervention est concernée.",
   },
   {
     q: "Sous quel délai intervenez-vous ?",
-    a: "En urgence sous 24-48h pour les interventions de sécurité (arbre tombé, branche dangereuse). Pour les prestations classiques, nous planifions sous 7 à 15 jours selon la saison.",
+    a: "Nous intervenons sous 24 h après acceptation du devis.",
   },
   {
     q: "Acceptez-vous les contrats d'entretien annuels ?",

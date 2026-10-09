@@ -4,11 +4,11 @@ import { ShieldCheck, BadgeCheck, Clock, Award, TreePine, Trees } from "lucide-r
 
 const ITEMS = [
   { Icon: ShieldCheck, label: "Assurance RC pro", desc: "Couverture intégrale travaux" },
-  { Icon: BadgeCheck, label: "Devis gratuit", desc: "Sans engagement sous 24h" },
-  { Icon: Clock, label: "Intervention rapide", desc: "Urgences sous 24-48h" },
-  { Icon: Award, label: "10+ ans d'expérience", desc: "Expertise Calvados" },
-  { Icon: TreePine, label: "Élagueurs certifiés", desc: "Grimpeurs qualifiés SST" },
-  { Icon: Trees, label: "Crédit d'impôt 50%", desc: "Entretien jardin éligible" },
+  { Icon: BadgeCheck, label: "Devis gratuit", desc: "Sans engagement" },
+  { Icon: Clock, label: "Intervention sous 24 h", desc: "Après acceptation du devis" },
+  { Icon: Award, label: "20 ans d'expérience", desc: "Métier du jardin et de l'arbre" },
+  { Icon: TreePine, label: "Élagage et abattage", desc: "En grimpe ou depuis le sol" },
+  { Icon: Trees, label: "Déplacement inclus", desc: "Intégré au devis, dans tout le Calvados" },
 ];
 
 export default function TrustBar() {

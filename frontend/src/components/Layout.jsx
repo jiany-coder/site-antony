@@ -9,6 +9,7 @@ export default function Layout({ children }) {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
+    document.documentElement.classList.add("reveal-on");
     // Reveal on scroll
     const obs = new IntersectionObserver(
       (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add("is-visible")),
