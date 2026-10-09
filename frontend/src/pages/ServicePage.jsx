@@ -7,7 +7,7 @@ import { SERVICE_PHOTOS } from "../data/photos";
 import { SERVICES, getService, ICONS } from "../data/services";
 import { CITIES } from "../data/cities";
 import { TESTIMONIALS } from "../data/testimonials";
-import { GLOBAL_FAQ } from "../data/faq";
+import { GLOBAL_FAQ, SERVICE_FAQ } from "../data/faq";
 import FAQAccordion from "../components/FAQAccordion";
 import TestimonialCard from "../components/TestimonialCard";
 import ContactForm from "../components/ContactForm";
@@ -212,7 +212,7 @@ export default function ServicePage() {
         description={service.metaDescription}
         canonical={`${COMPANY.site}/${slug}`}
         image={service.image.startsWith("/") ? `${COMPANY.site}${service.image}` : service.image}
-        jsonLd={[buildLocalBusinessSchema(), buildFAQSchema(GLOBAL_FAQ)]}
+        jsonLd={[buildLocalBusinessSchema(), buildFAQSchema([...(SERVICE_FAQ[service.slug] || []), ...GLOBAL_FAQ.slice(0, 4)])]}
       />
 
       {/* HERO */}
@@ -319,7 +319,7 @@ export default function ServicePage() {
           <div className="lg:col-span-7">
             <p className="text-xs font-sans font-bold tracking-[0.3em] uppercase text-[#1F3D2B] mb-4">Questions fréquentes</p>
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#0A0F0D] font-light leading-tight mb-8">Tout savoir sur cette prestation</h2>
-            <FAQAccordion items={GLOBAL_FAQ} />
+            <FAQAccordion items={[...(SERVICE_FAQ[service.slug] || []), ...GLOBAL_FAQ.slice(0, 4)]} />
           </div>
           <div className="lg:col-span-5">
             <div className="premium-card p-8 sticky top-28">
