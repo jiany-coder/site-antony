@@ -10,7 +10,7 @@ export default function About() {
     <>
       <SEO
         title={`À propos | ${COMPANY.brand} – Paysagiste Calvados`}
-        description="Découvrez Les Jardiniers Normands et Pro Élagage 14 : équipe locale, expertise reconnue, engagement qualité. Paysagistes & élagueurs dans le Calvados depuis plus de 10 ans."
+        description="Découvrez Les Jardiniers Normands et Pro Élagage 14 : équipe locale basée à Caen, 20 ans d'expérience. Paysagistes & élagueurs dans le Calvados."
         canonical={`${COMPANY.site}/a-propos`}
       />
 
@@ -22,7 +22,7 @@ export default function About() {
               Deux marques, <em className="italic">une seule passion</em> : la Normandie verte
             </h1>
             <p className="text-lg text-[#4A5550] leading-relaxed mb-5">
-              <strong className="text-[#0A0F0D]">Les Jardiniers Normands</strong> et <strong className="text-[#0A0F0D]">Pro Élagage 14</strong> forment un duo d'expertises complémentaires dédié à votre extérieur. Basée à Caen, notre entreprise prend soin des jardins, des arbres et du patrimoine vert de tout le Calvados depuis plus d'une décennie.
+              <strong className="text-[#0A0F0D]">Les Jardiniers Normands</strong> et <strong className="text-[#0A0F0D]">Pro Élagage 14</strong> forment un duo d'expertises complémentaires dédié à votre extérieur. Basée à Caen, notre entreprise prend soin des jardins, des arbres et du patrimoine vert de tout le Calvados depuis 20 ans.
             </p>
             <p className="text-lg text-[#4A5550] leading-relaxed">
               Notre philosophie : un travail soigné, un respect total du végétal, des relations humaines vraies avec nos clients. Pas de surenchère, pas de prestation bâclée : juste l'excellence du geste et l'écoute du terrain.
@@ -47,8 +47,8 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { Icon: Leaf, t: "Respect du végétal", d: "Taille douce, plantation raisonnée, gestion durable. Nous travaillons avec la nature, pas contre elle." },
-              { Icon: ShieldCheck, t: "Sécurité absolue", d: "Équipements EPI complets, formations régulières, assurance RC professionnelle. Zéro compromis." },
-              { Icon: Award, t: "Exigence du détail", d: "Du tracé d'une allée au choix d'une variété, chaque détail compte. C'est l'excellence ou rien." },
+              { Icon: ShieldCheck, t: "Sécurité absolue", d: "Équipements EPI complets, assurance RC professionnelle. Zéro compromis." },
+              { Icon: Award, t: "Exigence du détail", d: "Du tracé d'un massif au choix d'une variété, chaque détail compte. C'est l'excellence ou rien." },
               { Icon: Heart, t: "Relation client vraie", d: "Disponibles, transparents, à l'écoute. Notre satisfaction passe par la vôtre." },
             ].map(({ Icon, t, d }) => (
               <div key={t} className="premium-card p-7 reveal">
@@ -73,9 +73,9 @@ export default function About() {
 
           <p className="text-lg leading-[1.75]"><strong>Les Jardiniers Normands</strong> incarnent l'expertise paysagère : création, aménagement, entretien. Une vision globale du jardin comme prolongement vivant de la maison.</p>
 
-          <p className="text-lg leading-[1.75]"><strong>Pro Élagage 14</strong> rassemble notre pôle technique : élagage de précision, abattage par démontage, dessouchage mécanique. Une équipe de grimpeurs certifiés pour intervenir en toute sécurité sur les chantiers les plus délicats.</p>
+          <p className="text-lg leading-[1.75]"><strong>Pro Élagage 14</strong> rassemble notre pôle technique : élagage de précision, abattage par démontage, dessouchage mécanique. Une équipe de grimpeurs expérimentés pour intervenir en toute sécurité sur les chantiers les plus délicats.</p>
 
-          <p className="text-lg leading-[1.75]">Aujourd'hui, plus de <strong>500 chantiers</strong> ont été menés dans tout le Calvados, des petits jardins urbains aux propriétés de la Côte Fleurie. Notre fidélité clients (renouvellement de contrats d'entretien année après année) est notre plus belle récompense.</p>
+          <p className="text-lg leading-[1.75]">Aujourd'hui, avec <strong>20 ans d'expérience</strong>, nous intervenons dans tout le Calvados, des petits jardins urbains aux propriétés de la Côte Fleurie. Notre fidélité clients (renouvellement de contrats d'entretien année après année) est notre plus belle récompense.</p>
         </div>
       </section>
 
