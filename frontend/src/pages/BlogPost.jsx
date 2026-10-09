@@ -3,11 +3,11 @@ import { useParams, Link, Navigate } from "react-router-dom";
 import { Clock, ArrowLeft, ArrowRight, Phone } from "lucide-react";
 import SEO, { buildArticleSchema } from "../components/SEO";
 import { COMPANY } from "../data/company";
-import { BLOG_POSTS, getPost } from "../data/blog";
+import { BLOG_POSTS, getPost } from "../data/blog_all";
 import ContactForm from "../components/ContactForm";
 
 function md(content) {
-  // Lightweight markdown -> HTML (h2/h3, **bold**, lists, paragraphs, tables, hr)
+  // Lightweight markdown -> HTML (h2/h3, **bold**, liens, lists, paragraphs, tables, hr)
   const lines = content.split("\n");
   let html = "";
   let inUl = false, inOl = false, inTable = false;
@@ -18,6 +18,8 @@ function md(content) {
   };
   const inline = (s) =>
     s
+      .replace(/\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-[#1F3D2B] underline">$1</a>')
+      .replace(/\[([^\]]+)\]\((\/[^)]*)\)/g, '<a href="$2" class="text-[#1F3D2B] underline">$1</a>')
       .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
       .replace(/`(.*?)`/g, "<code>$1</code>");
 

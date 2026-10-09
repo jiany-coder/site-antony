@@ -5,7 +5,7 @@ import { StaticRouter } from "react-router";
 import { AppRoutes } from "../src/App";
 import { CITIES } from "../src/data/cities";
 import { SERVICES } from "../src/data/services";
-import { BLOG_POSTS } from "../src/data/blog";
+import { BLOG_POSTS } from "../src/data/blog_all";
 
 export function routes() {
   const list = [

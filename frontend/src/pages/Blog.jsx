@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Clock, ArrowRight } from "lucide-react";
 import SEO from "../components/SEO";
 import { COMPANY } from "../data/company";
-import { BLOG_POSTS } from "../data/blog";
+import { BLOG_POSTS } from "../data/blog_all";
 
 export default function Blog() {
   const [main, ...rest] = BLOG_POSTS;
