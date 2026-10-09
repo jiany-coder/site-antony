@@ -91,7 +91,9 @@ const list = routes();
 
 for (const url of list) {
   const { out, html, head } = page(url);
-  const file = url === "/" ? path.join(buildDir, "index.html") : path.join(buildDir, url.slice(1), "index.html");
+  // /page -> build/page.html : Cloudflare Pages sert cette page à /page (sans barre finale),
+  // ce qui correspond au canonical et au sitemap. (page/index.html redirigerait vers /page/.)
+  const file = url === "/" ? path.join(buildDir, "index.html") : path.join(buildDir, url.slice(1) + ".html");
   fs.mkdirSync(path.dirname(file), { recursive: true });
   fs.writeFileSync(file, out);
   const words = stripTags(html).split(/\s+/).filter(Boolean).length;
