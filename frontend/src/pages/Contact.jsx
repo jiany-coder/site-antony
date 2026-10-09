@@ -9,7 +9,7 @@ export default function Contact() {
   return (
     <>
       <SEO
-        title={`Contact & Devis gratuit | ${COMPANY.brand} – Caen Calvados`}
+        title={`Devis gratuit jardinier Caen | ${COMPANY.brand}`}
         description={`Demandez votre devis gratuit pour paysagisme, élagage ou entretien jardin dans le Calvados. ☎ ${COMPANY.phone} – Réponse sous 24h.`}
         canonical={`${COMPANY.site}/contact`}
         jsonLd={buildLocalBusinessSchema()}

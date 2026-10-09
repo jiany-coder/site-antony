@@ -41,6 +41,7 @@ export function AppRoutes() {
           <Route path="/dessouchage-caen" element={<ServicePage />} />
           <Route path="/taille-haie-caen" element={<ServicePage />} />
           <Route path="/entretien-jardin-caen" element={<ServicePage />} />
+          <Route path="/tonte-pelouse-caen" element={<ServicePage />} />
           <Route path="/entretien-exterieur-caen" element={<ServicePage />} />
 
           {/* Pages villes — Paysagiste */}

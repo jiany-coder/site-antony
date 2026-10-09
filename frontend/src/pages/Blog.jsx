@@ -10,7 +10,7 @@ export default function Blog() {
   return (
     <>
       <SEO
-        title="Blog jardinage & paysagisme Calvados | Les Jardiniers Normands"
+        title="Blog jardinage & paysagisme Calvados | Jardiniers Normands"
         description="Conseils experts paysagisme, élagage, entretien jardin en Normandie. Articles SEO pour particuliers et pros du Calvados."
         canonical={`${COMPANY.site}/blog`}
       />

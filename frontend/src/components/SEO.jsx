@@ -93,6 +93,16 @@ export const buildLocalBusinessSchema = () => ({
     { "@type": "AdministrativeArea", name: "Calvados" },
   ],
   sameAs: [COMPANY.social.gbp, COMPANY.social.gbpElagage],
+  knowsAbout: ["Élagage", "Taille de haie", "Tonte de pelouse", "Entretien de jardin", "Entretien extérieur", "Paysagisme", "Abattage d'arbre", "Dessouchage"],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Services de jardinage, paysagisme et élagage à Caen",
+    itemListElement: [
+      ["Élagage", "/elagage-caen"], ["Taille de haie", "/taille-haie-caen"], ["Tonte de pelouse", "/tonte-pelouse-caen"],
+      ["Entretien de jardin", "/entretien-jardin-caen"], ["Entretien extérieur", "/entretien-exterieur-caen"],
+      ["Jardinier", "/jardinier-caen"], ["Paysagiste", "/paysagiste-caen"], ["Abattage d'arbre", "/abattage-arbre-caen"], ["Dessouchage", "/dessouchage-caen"],
+    ].map(([n, u]) => ({ "@type": "Offer", url: `${COMPANY.site}${u}`, itemOffered: { "@type": "Service", name: n, areaServed: "Caen, Calvados" } })),
+  },
   taxID: COMPANY.legal.siret,
 });
 

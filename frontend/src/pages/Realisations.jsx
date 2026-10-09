@@ -8,7 +8,7 @@ export default function Realisations() {
   return (
     <>
       <SEO
-        title="Réalisations à Caen | Taille de haies, élagage – Les Jardiniers Normands"
+        title="Réalisations à Caen | Haies, élagage – Jardiniers Normands"
         description="Photos de nos chantiers à Caen et dans le Calvados : taille de haies, élagage, entretien de jardin. Devis gratuit ☎ 07 80 04 43 90."
         canonical={`${COMPANY.site}/realisations`}
       />

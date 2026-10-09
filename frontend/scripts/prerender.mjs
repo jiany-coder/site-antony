@@ -117,7 +117,7 @@ fs.writeFileSync(path.join(buildDir, "404.html"), nf.out);
 
 // sitemap, robots, llms.txt, redirections, en-têtes
 const today = new Date().toISOString().slice(0, 10);
-const prio = (u) => (u === "/" ? "1.0" : /^\/(jardinier|paysagiste|elagage)-caen$/.test(u) ? "0.9" : /^\/(jardinier|paysagiste|elagage)-/.test(u) ? "0.6" : "0.7");
+const prio = (u) => (u === "/" ? "1.0" : /^\/(jardinier|paysagiste|elagage|taille-haie|tonte-pelouse|entretien-jardin|entretien-exterieur|abattage-arbre|dessouchage)-caen$/.test(u) ? "0.9" : /^\/(jardinier|paysagiste|elagage)-/.test(u) ? "0.6" : "0.7");
 fs.writeFileSync(path.join(buildDir, "sitemap.xml"),
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
   list.map((u) => `<url><loc>${SITE}${u === "/" ? "/" : u}</loc><lastmod>${today}</lastmod><priority>${prio(u)}</priority></url>`).join("\n") + `\n</urlset>\n`);
@@ -126,7 +126,7 @@ fs.writeFileSync(path.join(buildDir, "llms.txt"), [
   "# Les Jardiniers Normands (marque d'élagage : Pro Élagage 14)", "",
   "> Paysagiste, jardinier et élagueur à Caen et dans le Calvados. Devis gratuit, intervention sous 24 h après acceptation du devis. Tél. 07 80 04 43 90. Lundi au samedi, 8 h à 20 h.", "",
   "## Pages principales",
-  ...["/", "/paysagiste-caen", "/jardinier-caen", "/elagage-caen", "/abattage-arbre-caen", "/dessouchage-caen", "/taille-haie-caen",
+  ...["/", "/paysagiste-caen", "/jardinier-caen", "/elagage-caen", "/abattage-arbre-caen", "/dessouchage-caen", "/taille-haie-caen", "/tonte-pelouse-caen",
     "/entretien-jardin-caen", "/entretien-exterieur-caen", "/realisations", "/a-propos", "/blog", "/contact"].map((u) => `- ${SITE}${u}`), "",
 ].join("\n"));
 

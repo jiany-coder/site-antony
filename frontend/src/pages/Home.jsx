@@ -24,7 +24,7 @@ export default function Home() {
   return (
     <>
       <SEO
-        title="Paysagiste Caen – Jardinier & Élagueur Calvados | Les Jardiniers Normands"
+        title="Paysagiste, Jardinier & Élagueur à Caen | Jardiniers Normands"
         description="🌿 Paysagiste, jardinier et élagueur à Caen et dans tout le Calvados. Création jardin, élagage, abattage, entretien. Devis gratuit ☎ 07 80 04 43 90."
         canonical={`${COMPANY.site}/`}
         jsonLd={jsonLd}

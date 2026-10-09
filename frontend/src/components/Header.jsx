@@ -8,6 +8,8 @@ const NAV = [
   { to: "/paysagiste-caen", label: "Paysagiste" },
   { to: "/elagage-caen", label: "Élagage" },
   { to: "/jardinier-caen", label: "Jardinier" },
+  { to: "/taille-haie-caen", label: "Haies" },
+  { to: "/tonte-pelouse-caen", label: "Tonte" },
   { to: "/realisations", label: "Réalisations" },
   { to: "/blog", label: "Blog" },
   { to: "/a-propos", label: "À propos" },
