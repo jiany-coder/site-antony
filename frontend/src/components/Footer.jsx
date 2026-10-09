@@ -17,7 +17,7 @@ export default function Footer() {
           </div>
           <h3 className="font-serif text-2xl text-[#FDFBF7] mt-6 mb-3">Les Jardiniers Normands</h3>
           <p className="text-sm leading-relaxed mb-6 text-[#FDFBF7]/70">
-            Paysagiste, jardinier et élagueur professionnel basé à Caen. Nous prenons soin de votre extérieur dans tout le Calvados depuis plus de 10 ans.
+            Paysagiste, jardinier et élagueur professionnel basé à Caen. Nous prenons soin de votre extérieur dans tout le Calvados depuis 20 ans.
           </p>
           <ul className="space-y-3 text-sm">
             <li className="flex items-start gap-3"><MapPin className="w-4 h-4 mt-0.5 text-[#F2EBD9]" strokeWidth={1.5} /> {COMPANY.address}</li>
