@@ -32,6 +32,14 @@ const WHY = [
   "Joignables du lundi au samedi, de 8 h à 20 h",
 ];
 
+// Titre limité à 60 caractères : on raccourcit le nom de marque si besoin.
+const cityTitle = (t) => {
+  if (t.length <= 60) return t;
+  const s = t.replace("Les Jardiniers Normands", "Jardiniers Normands");
+  if (s.length <= 60) return s;
+  return s.split(" | ")[0];
+};
+
 export default function CityPage({ kind }) {
   const { pathname } = useLocation();
   const key = pathname.replace(/^\//, "").replace(/\/$/, "");
@@ -64,7 +72,7 @@ export default function CityPage({ kind }) {
 
   return (
     <>
-      <SEO title={d.title} description={d.desc} canonical={url} image={HERO[kind]} jsonLd={ld} />
+      <SEO title={cityTitle(d.title)} description={d.desc} canonical={url} image={HERO[kind]} jsonLd={ld} />
 
       <section className="relative min-h-[60vh] flex items-end">
         <div className="absolute inset-0">

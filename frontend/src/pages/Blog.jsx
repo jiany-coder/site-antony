@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Clock, ArrowRight } from "lucide-react";
-import SEO from "../components/SEO";
+import SEO, { buildPageSchema, buildBreadcrumbSchema } from "../components/SEO";
 import { COMPANY } from "../data/company";
 import { BLOG_POSTS } from "../data/blog_all";
 
@@ -11,8 +11,14 @@ export default function Blog() {
     <>
       <SEO
         title="Blog jardinage & paysagisme Calvados | Jardiniers Normands"
-        description="Conseils experts paysagisme, élagage, entretien jardin en Normandie. Articles SEO pour particuliers et pros du Calvados."
+        description="Conseils de jardinier et d'élagueur à Caen : taille, entretien, pelouse, abattage, règles et saisons. Guides pratiques pour le Calvados."
         canonical={`${COMPANY.site}/blog`}
+        jsonLd={[
+          buildPageSchema("CollectionPage", "Blog jardinage et paysagisme à Caen", `${COMPANY.site}/blog`, "Conseils de jardinier et d'élagueur à Caen et dans le Calvados.", {
+            mainEntity: { "@type": "ItemList", itemListElement: BLOG_POSTS.map((p, i) => ({ "@type": "ListItem", position: i + 1, url: `${COMPANY.site}/blog/${p.slug}`, name: p.title })) },
+          }),
+          buildBreadcrumbSchema([["Accueil", COMPANY.site + "/"], ["Blog", COMPANY.site + "/blog"]]),
+        ]}
       />
       <section className="pt-32 pb-12 bg-[#FDFBF7]">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 text-center reveal">

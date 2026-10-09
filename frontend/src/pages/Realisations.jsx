@@ -1,5 +1,5 @@
 import React from "react";
-import SEO from "../components/SEO";
+import SEO, { buildPageSchema, buildBreadcrumbSchema } from "../components/SEO";
 import { COMPANY } from "../data/company";
 import { GALERIE, A_LA_UNE } from "../data/photos";
 import CTASection from "../components/CTASection";
@@ -11,6 +11,12 @@ export default function Realisations() {
         title="Réalisations à Caen | Haies, élagage – Jardiniers Normands"
         description="Photos de nos chantiers à Caen et dans le Calvados : taille de haies, élagage, entretien de jardin. Devis gratuit ☎ 07 80 04 43 90."
         canonical={`${COMPANY.site}/realisations`}
+        jsonLd={[
+          buildPageSchema("CollectionPage", "Réalisations à Caen", `${COMPANY.site}/realisations`, "Photos de chantiers réels : taille de haies, élagage, entretien de jardin à Caen et dans le Calvados.", {
+            mainEntity: { "@type": "ImageGallery", name: "Chantiers à Caen", image: [...A_LA_UNE.map((g) => g.photo), ...GALERIE].map((p) => ({ "@type": "ImageObject", contentUrl: `${COMPANY.site}${p.src}`, description: p.alt })) },
+          }),
+          buildBreadcrumbSchema([["Accueil", COMPANY.site + "/"], ["Réalisations", `${COMPANY.site}/realisations`]]),
+        ]}
       />
 
       <section className="pt-32 pb-12 bg-[#FDFBF7]">

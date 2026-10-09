@@ -1,6 +1,6 @@
 import React from "react";
 import { Leaf, ShieldCheck, Award, Trees, Heart, MapPin } from "lucide-react";
-import SEO from "../components/SEO";
+import SEO, { buildPageSchema, buildBreadcrumbSchema, buildLocalBusinessSchema } from "../components/SEO";
 import { COMPANY } from "../data/company";
 import CTASection from "../components/CTASection";
 import StatsBar from "../components/StatsBar";
@@ -12,6 +12,11 @@ export default function About() {
         title={`À propos | ${COMPANY.brand} – Paysagiste Calvados`}
         description="Découvrez Les Jardiniers Normands et Pro Élagage 14 : équipe locale basée à Caen, 20 ans d'expérience. Paysagistes & élagueurs dans le Calvados."
         canonical={`${COMPANY.site}/a-propos`}
+        jsonLd={[
+          buildLocalBusinessSchema(),
+          buildPageSchema("AboutPage", "À propos des Jardiniers Normands", `${COMPANY.site}/a-propos`, "Équipe locale de jardiniers, paysagistes et élagueurs basée à Caen."),
+          buildBreadcrumbSchema([["Accueil", COMPANY.site + "/"], ["À propos", `${COMPANY.site}/a-propos`]]),
+        ]}
       />
 
       <section className="pt-32 pb-20 bg-[#FDFBF7]">

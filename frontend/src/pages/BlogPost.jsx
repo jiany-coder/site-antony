@@ -1,7 +1,29 @@
 import React from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { Clock, ArrowLeft, ArrowRight, Phone } from "lucide-react";
-import SEO, { buildArticleSchema } from "../components/SEO";
+import SEO, { buildArticleSchema, buildBreadcrumbSchema } from "../components/SEO";
+
+// Titre de page (balise title) : 60 caractères maximum pour ne pas être coupé dans Google.
+const META_TITLES = {
+  "jardin-juin-juillet-normandie-guide-2026": "Jardin en juin et juillet en Normandie : le guide 2026",
+  "prix-paysagiste-caen": "Prix paysagiste à Caen : combien coûte un jardinier ?",
+  "entretien-pelouse-caen": "Entretien pelouse à Caen : 10 conseils d'expert",
+  "creation-jardin-paysager": "Création de jardin paysager : les étapes clés",
+  "dessouchage-methodes-tarifs": "Dessouchage : méthodes, tarifs et conseils",
+  "pourquoi-elagueur-professionnel": "Pourquoi faire appel à un élagueur professionnel ?",
+  "conseils-paysagiste-normand": "10 conseils d'un paysagiste normand pour un jardin durable",
+  "jardin-bord-de-mer-ouistreham-plantes-entretien": "Jardin à Ouistreham : plantes et entretien face à la mer",
+  "jardinier-lisieux-entretien-jardin-pays-d-auge": "Jardinier à Lisieux : entretenir un jardin en Pays d'Auge",
+  "elagage-abattage-falaise-guide": "Élagage et abattage à Falaise : le guide pratique",
+  "contrat-entretien-jardin-prix-fonctionnement": "Contrat d'entretien de jardin : fonctionnement et prix",
+  "elagage-caen-guide-arbres-regles-prix": "Élagage à Caen : quand, combien et quelles règles ?",
+  "entretien-jardin-deauville-trouville": "Entretien de jardin à Deauville et Trouville",
+};
+const SUFFIX = " | Jardiniers Normands";
+const metaTitle = (post) => {
+  const t = META_TITLES[post.slug] || post.title;
+  return t.length + SUFFIX.length <= 60 ? t + SUFFIX : t;
+};
 import { COMPANY } from "../data/company";
 import { BLOG_POSTS, getPost } from "../data/blog_all";
 import ContactForm from "../components/ContactForm";
@@ -63,12 +85,12 @@ export default function BlogPost() {
   return (
     <>
       <SEO
-        title={`${post.title} | Blog – ${COMPANY.brand}`}
+        title={metaTitle(post)}
         description={post.excerpt}
         canonical={`${COMPANY.site}/blog/${slug}`}
         image={post.cover}
         type="article"
-        jsonLd={buildArticleSchema(post)}
+        jsonLd={[buildArticleSchema(post), buildBreadcrumbSchema([["Accueil", COMPANY.site + "/"], ["Blog", COMPANY.site + "/blog"], [post.title, `${COMPANY.site}/blog/${slug}`]])]}
       />
 
       <article>

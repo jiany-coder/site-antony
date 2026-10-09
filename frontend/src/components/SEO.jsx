@@ -112,6 +112,18 @@ export const buildBreadcrumbSchema = (items) => ({
   itemListElement: items.map(([name, item], i) => ({ "@type": "ListItem", position: i + 1, name, item })),
 });
 
+export const buildPageSchema = (type, name, url, description, extra = {}) => ({
+  "@context": "https://schema.org",
+  "@type": type,
+  name,
+  url,
+  description,
+  inLanguage: "fr-FR",
+  isPartOf: { "@type": "WebSite", name: COMPANY.brand, url: COMPANY.site },
+  about: { "@id": `${COMPANY.site}/#business` },
+  ...extra,
+});
+
 export const buildFAQSchema = (faq) => ({
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -132,6 +144,9 @@ export const buildArticleSchema = (post) => ({
   author: { "@type": "Organization", name: COMPANY.brand },
   publisher: { "@type": "Organization", name: COMPANY.brand, logo: { "@type": "ImageObject", url: COMPANY.logos.jardiniers } },
   description: post.excerpt,
+  mainEntityOfPage: `${COMPANY.site}/blog/${post.slug}`,
+  inLanguage: "fr-FR",
+  articleSection: post.category,
 });
 
 export default SEO;
