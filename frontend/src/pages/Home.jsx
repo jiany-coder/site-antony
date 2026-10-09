@@ -32,7 +32,7 @@ export default function Home() {
     <>
       <SEO
         title="Paysagiste Caen – Jardinier & Élagueur Calvados | Les Jardiniers Normands"
-        description="🌿 Paysagiste, jardinier et élagueur à Caen et dans tout le Calvados. Création jardin, élagage, abattage, démoussage. Devis gratuit ☎ 07 80 04 43 90."
+        description="🌿 Paysagiste, jardinier et élagueur à Caen et dans tout le Calvados. Création jardin, élagage, abattage, entretien. Devis gratuit ☎ 07 80 04 43 90."
         canonical={`${COMPANY.site}/`}
         jsonLd={jsonLd}
       />
@@ -79,14 +79,9 @@ export default function Home() {
               </a>
             </div>
             <div className="flex flex-wrap items-center gap-6 mt-10 text-[#FDFBF7]/80 text-sm">
-              <div className="flex gap-1">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-[#D4A841] text-[#D4A841]" strokeWidth={1} />
-                ))}
-              </div>
-              <span className="font-sans">Note moyenne 5/5 · 47+ avis Google</span>
+              <span className="font-sans">Fiche Google : Les Jardiniers Normands, Caen</span>
               <span className="hidden sm:inline-block w-px h-4 bg-[#FDFBF7]/30" />
-              <span className="font-sans">Assurance RC pro · Crédit d'impôt 50%</span>
+              <span className="font-sans">Assurance RC pro · Devis gratuit</span>
             </div>
           </div>
 
@@ -124,7 +119,7 @@ export default function Home() {
               </h2>
             </div>
             <p className="lg:max-w-md text-[#4A5550] leading-relaxed reveal">
-              Grimpeurs certifiés, équipements professionnels et techniques de démontage par rétention pour intervenir là où personne ne peut. Du jardin résidentiel au chantier complexe.
+              Grimpeurs, équipements professionnels et techniques de démontage par rétention pour intervenir là où personne ne peut. Du jardin résidentiel au chantier complexe.
             </p>
           </div>
 
@@ -217,7 +212,7 @@ export default function Home() {
       <StatsBar />
 
       {/* VILLES */}
-      <section className="py-24 sm:py-32 bg-[#FDFBF7]" data-testid="cities-section">
+      <section id="zones" className="py-24 sm:py-32 bg-[#FDFBF7]" data-testid="cities-section">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="text-center mb-14 reveal">
             <p className="text-xs font-sans font-bold tracking-[0.3em] uppercase text-[#1F3D2B] mb-4">Zones d'intervention</p>
@@ -254,13 +249,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* TESTIMONIALS */}
+      {TESTIMONIALS.length > 0 && (
       <section className="py-24 sm:py-32 bg-[#F4F1EA]" data-testid="testimonials-section">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="text-center mb-14 reveal">
-            <p className="text-xs font-sans font-bold tracking-[0.3em] uppercase text-[#1F3D2B] mb-4">Avis clients vérifiés</p>
+            <p className="text-xs font-sans font-bold tracking-[0.3em] uppercase text-[#1F3D2B] mb-4">Avis clients</p>
             <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-[#0A0F0D] font-light leading-tight tracking-tight">
-              <em className="italic">5 étoiles</em> sur Google
+              Ils nous ont fait <em className="italic">confiance</em>
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -272,6 +267,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      )}
 
       <GoogleReviewBanner />
 
@@ -288,7 +284,7 @@ export default function Home() {
 
       <CTASection
         title="Prêt à transformer votre extérieur ?"
-        subtitle="Devis gratuit sous 24h. Sans engagement. Découvrez pourquoi nos clients du Calvados nous recommandent."
+        subtitle="Devis gratuit, intervention sous 24 h après acceptation. Sans engagement."
         accent="Demandez votre devis"
       />
     </>
