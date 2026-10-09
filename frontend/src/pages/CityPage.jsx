@@ -68,7 +68,7 @@ export default function CityPage({ kind }) {
 
       <section className="relative min-h-[60vh] flex items-end">
         <div className="absolute inset-0">
-          <img src={HERO[kind]} alt={`${d.label} ${d.nom}`} className="w-full h-full object-cover" />
+          <img fetchPriority="high" decoding="async" width="1600" height="900" src={HERO[kind]} alt={`${d.label} ${d.nom}`} className="w-full h-full object-cover" />
           <div className="absolute inset-0 hero-overlay" />
         </div>
         <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20 w-full">

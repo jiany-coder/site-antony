@@ -218,7 +218,7 @@ export default function ServicePage() {
       {/* HERO */}
       <section className="relative min-h-[68vh] flex items-end" data-testid="service-hero">
         <div className="absolute inset-0">
-          <img src={service.image} alt={service.h1} className="w-full h-full object-cover" />
+          <img fetchPriority="high" decoding="async" width="1600" height="900" src={service.image} alt={service.h1} className="w-full h-full object-cover" />
           <div className="absolute inset-0 hero-overlay" />
         </div>
         <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20 w-full">

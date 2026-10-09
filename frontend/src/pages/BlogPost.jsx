@@ -92,7 +92,7 @@ export default function BlogPost() {
         <section className="pb-8">
           <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12">
             <div className="aspect-[16/9] overflow-hidden rounded-3xl">
-              <img src={post.cover} alt={post.title} className="w-full h-full object-cover" />
+              <img loading="lazy" decoding="async" src={post.cover} alt={post.title} className="w-full h-full object-cover" />
             </div>
           </div>
         </section>
@@ -120,7 +120,7 @@ export default function BlogPost() {
               {related.map((p) => (
                 <Link key={p.slug} to={`/blog/${p.slug}`} className="group block">
                   <div className="aspect-[5/4] overflow-hidden rounded-2xl mb-5">
-                    <img src={p.cover} alt={p.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                    <img loading="lazy" decoding="async" src={p.cover} alt={p.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                   </div>
                   <h3 className="font-serif text-xl text-[#0A0F0D] leading-tight mb-2 group-hover:text-[#1F3D2B]">{p.title}</h3>
                   <p className="text-sm text-[#4A5550]">{p.excerpt}</p>

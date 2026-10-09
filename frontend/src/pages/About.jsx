@@ -30,8 +30,8 @@ export default function About() {
           </div>
           <div className="lg:col-span-5 reveal">
             <div className="grid grid-cols-2 gap-4">
-              <img src="https://images.unsplash.com/photo-1576897955702-24ad19680db3?auto=format&fit=crop&w=800&q=80" alt="" className="rounded-2xl aspect-[3/4] object-cover" />
-              <img src="https://images.unsplash.com/photo-1762903938137-49b0a145e241?auto=format&fit=crop&w=800&q=80" alt="" className="rounded-2xl aspect-[3/4] object-cover mt-10" />
+              <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1576897955702-24ad19680db3?auto=format&fit=crop&w=800&q=80" alt="" className="rounded-2xl aspect-[3/4] object-cover" />
+              <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1762903938137-49b0a145e241?auto=format&fit=crop&w=800&q=80" alt="" className="rounded-2xl aspect-[3/4] object-cover mt-10" />
             </div>
           </div>
         </div>

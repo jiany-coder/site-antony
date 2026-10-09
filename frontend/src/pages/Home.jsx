@@ -34,8 +34,9 @@ export default function Home() {
       <section className="relative min-h-[92vh] flex items-center grain" data-testid="hero-section">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1597201278257-3687be27d954?auto=format&fit=crop&w=2000&q=85"
+            src="https://images.unsplash.com/photo-1597201278257-3687be27d954?auto=format&fit=crop&w=1400&q=70"
             alt="Paysagiste Caen Calvados — jardin paysager premium"
+            width="1400" height="933" fetchPriority="high" decoding="async"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 hero-overlay" />
@@ -81,14 +82,14 @@ export default function Home() {
           {/* Logo cluster */}
           <div className="lg:col-span-4 hidden lg:flex flex-col gap-4 items-end">
             <div className="bg-[#F2EBD9]/95 backdrop-blur p-7 rounded-3xl flex items-center gap-5 shadow-2xl">
-              <img src={COMPANY.logos.jardiniers} alt="" className="w-24 h-24 object-contain" />
+              <img loading="lazy" decoding="async" src={COMPANY.logos.jardiniers} alt="" className="w-24 h-24 object-contain" />
               <div>
                 <p className="text-xs font-sans font-bold tracking-[0.2em] uppercase text-[#1F3D2B]">Marque principale</p>
                 <p className="font-serif text-xl text-[#0A0F0D] leading-tight mt-1">Les Jardiniers<br/>Normands</p>
               </div>
             </div>
             <div className="bg-[#F2EBD9]/95 backdrop-blur p-7 rounded-3xl flex items-center gap-5 shadow-2xl">
-              <img src={COMPANY.logos.proElagage} alt="" className="w-24 h-20 object-contain" />
+              <img loading="lazy" decoding="async" src={COMPANY.logos.proElagage} alt="" className="w-24 h-20 object-contain" />
               <div>
                 <p className="text-xs font-sans font-bold tracking-[0.2em] uppercase text-[#1F3D2B]">Pôle technique</p>
                 <p className="font-serif text-xl text-[#0A0F0D] leading-tight mt-1">Pro Élagage 14<br/>Calvados</p>

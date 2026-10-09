@@ -27,7 +27,7 @@ export default function Blog() {
       <section className="pb-12">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <Link to={`/blog/${main.slug}`} className="group block relative aspect-[16/9] md:aspect-[21/9] overflow-hidden rounded-3xl reveal" data-testid="blog-featured">
-            <img src={main.cover} alt={main.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            <img loading="lazy" decoding="async" src={main.cover} alt={main.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0A0F0D]/85 via-[#0A0F0D]/40 to-transparent" />
             <div className="absolute inset-x-0 bottom-0 p-8 lg:p-14 text-[#FDFBF7]">
               <span className="inline-block text-xs font-sans font-bold tracking-[0.3em] uppercase bg-[#F2EBD9]/20 backdrop-blur-md px-3 py-1.5 rounded-full mb-5">{main.category}</span>

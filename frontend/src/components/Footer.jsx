@@ -12,8 +12,8 @@ export default function Footer() {
         {/* Brand */}
         <div className="md:col-span-4">
           <div className="flex items-center gap-3">
-            <img src={COMPANY.logos.jardiniers} alt="" className="h-14 w-14 object-contain rounded-full bg-[#F2EBD9]/10" />
-            <img src={COMPANY.logos.proElagage} alt="" className="h-12 w-auto object-contain rounded-full bg-[#F2EBD9]/10" />
+            <img loading="lazy" decoding="async" src={COMPANY.logos.jardiniers} alt="" className="h-14 w-14 object-contain rounded-full bg-[#F2EBD9]/10" />
+            <img loading="lazy" decoding="async" src={COMPANY.logos.proElagage} alt="" className="h-12 w-auto object-contain rounded-full bg-[#F2EBD9]/10" />
           </div>
           <h3 className="font-serif text-2xl text-[#FDFBF7] mt-6 mb-3">Les Jardiniers Normands</h3>
           <p className="text-sm leading-relaxed mb-6 text-[#FDFBF7]/70">

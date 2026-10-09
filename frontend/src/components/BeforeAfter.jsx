@@ -26,12 +26,12 @@ export default function BeforeAfter({ before, after, labelBefore = "Avant", labe
       onTouchEnd={() => (dragging.current = false)}
       data-testid="before-after-slider"
     >
-      <img src={after} alt={labelAfter} className="absolute inset-0 w-full h-full object-cover" />
+      <img loading="lazy" decoding="async" src={after} alt={labelAfter} className="absolute inset-0 w-full h-full object-cover" />
       <div
         className="absolute inset-y-0 left-0 overflow-hidden"
         style={{ width: `${pos}%` }}
       >
-        <img src={before} alt={labelBefore} className="absolute inset-0 h-full object-cover" style={{ width: `${ref.current?.getBoundingClientRect().width || 0}px` }} />
+        <img loading="lazy" decoding="async" src={before} alt={labelBefore} className="absolute inset-0 h-full object-cover" style={{ width: `${ref.current?.getBoundingClientRect().width || 0}px` }} />
       </div>
       <div
         className="absolute top-0 bottom-0 w-0.5 bg-[#F2EBD9] shadow-[0_0_20px_rgba(0,0,0,0.5)]"
