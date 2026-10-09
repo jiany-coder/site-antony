@@ -1,32 +1,15 @@
 import React from "react";
 import SEO from "../components/SEO";
 import { COMPANY } from "../data/company";
-import BeforeAfter from "../components/BeforeAfter";
+import { GALERIE, A_LA_UNE } from "../data/photos";
 import CTASection from "../components/CTASection";
-
-const GALLERY = [
-  { before: "https://customer-assets.emergentagent.com/job_paysage-caen-seo/artifacts/349b4rlo_abe%2023.jpg", after: "https://images.pexels.com/photos/32500250/pexels-photo-32500250.jpeg?auto=compress&cs=tinysrgb&w=1200", title: "Création complète – Caen", desc: "Aménagement paysager 350 m² avec terrasse bois et plantation d'essences locales." },
-  { before: "https://images.unsplash.com/photo-1576897955702-24ad19680db3?auto=format&fit=crop&w=1200&q=80", after: "https://images.unsplash.com/photo-1576897955702-24ad19680db3?auto=format&fit=crop&w=1200&q=80", title: "Refonte jardin – Deauville", desc: "Restructuration complète d'un jardin de villa avec piscine et pool house." },
-  { before: "https://images.pexels.com/photos/8989485/pexels-photo-32500250.jpeg?auto=compress&cs=tinysrgb&w=1200", after: "https://images.unsplash.com/photo-1762903938137-49b0a145e241?auto=format&fit=crop&w=1200&q=80", title: "Élagage chêne centenaire – Lisieux", desc: "Élagage de précision en taille raisonnée sur un sujet remarquable de 25m." },
-];
-
-const PHOTOS = [
-  "https://images.unsplash.com/photo-1474742509976-ddec6b387356?auto=format&fit=crop&w=1200&q=80",
-  "https://customer-assets.emergentagent.com/job_paysage-caen-seo/artifacts/349b4rlo_abe%2023.jpg",
-  "https://images.unsplash.com/photo-1597201278257-3687be27d954?auto=format&fit=crop&w=1200&q=80",
-  "https://images.pexels.com/photos/3280078/pexels-photo-3280078.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  "https://images.unsplash.com/photo-1597201278257-3687be27d954?auto=format&fit=crop&w=1200&q=80",
-  "https://customer-assets.emergentagent.com/job_paysage-caen-seo/artifacts/er21hu1d_abe%2024.jpg",
-  "https://images.pexels.com/photos/32500250/pexels-photo-32500250.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  "https://images.unsplash.com/photo-1762903938137-49b0a145e241?auto=format&fit=crop&w=1200&q=80",
-];
 
 export default function Realisations() {
   return (
     <>
       <SEO
-        title="Réalisations | Avant/Après – Les Jardiniers Normands Calvados"
-        description="Découvrez nos réalisations en paysagisme, élagage et entretien jardin dans le Calvados : avant/après, photos chantiers, projets clés en main."
+        title="Réalisations à Caen | Taille de haies, élagage – Les Jardiniers Normands"
+        description="Photos de nos chantiers à Caen et dans le Calvados : taille de haies, élagage, entretien de jardin. Devis gratuit ☎ 07 80 04 43 90."
         canonical={`${COMPANY.site}/realisations`}
       />
 
@@ -36,18 +19,18 @@ export default function Realisations() {
           <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl text-[#0A0F0D] font-light leading-[1] tracking-tight mb-5">
             Nos plus belles <em className="italic">transformations</em>
           </h1>
-          <p className="text-lg text-[#4A5550] max-w-2xl mx-auto">Faites glisser le curseur pour voir le résultat. Chaque chantier raconte une histoire.</p>
+          <p className="text-lg text-[#4A5550] max-w-2xl mx-auto">Taille de haies, élagage, entretien de jardin : des chantiers réels réalisés à Caen et dans le Calvados.</p>
         </div>
       </section>
 
       <section className="py-12 space-y-24">
-        {GALLERY.map((g, i) => (
+        {A_LA_UNE.map((g, i) => (
           <div key={i} className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center reveal">
             <div className={`lg:col-span-7 ${i % 2 ? "lg:order-2" : ""}`}>
-              <BeforeAfter before={g.before} after={g.after} />
+              <img src={g.photo.src} alt={g.photo.alt} width={g.photo.w} height={g.photo.h} loading={i === 0 ? "eager" : "lazy"} className="w-full max-h-[620px] object-cover rounded-3xl" />
             </div>
             <div className={`lg:col-span-5 ${i % 2 ? "lg:order-1" : ""}`}>
-              <p className="text-xs font-sans font-bold tracking-[0.3em] uppercase text-[#1F3D2B] mb-3">Projet #{i + 1}</p>
+              <p className="text-xs font-sans font-bold tracking-[0.3em] uppercase text-[#1F3D2B] mb-3">Chantier #{i + 1}</p>
               <h2 className="font-serif text-3xl sm:text-4xl text-[#0A0F0D] font-light leading-tight tracking-tight mb-5">{g.title}</h2>
               <p className="text-lg text-[#4A5550] leading-relaxed">{g.desc}</p>
             </div>
@@ -59,9 +42,9 @@ export default function Realisations() {
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <h2 className="font-serif text-3xl sm:text-4xl text-[#0A0F0D] font-light text-center mb-12">Galerie de nos chantiers</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {PHOTOS.map((src, i) => (
+            {GALERIE.map((p, i) => (
               <div key={i} className="aspect-square overflow-hidden rounded-2xl">
-                <img src={src} alt={`Réalisation ${i + 1}`} loading="lazy" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                <img src={p.src} alt={p.alt} width={p.w} height={p.h} loading="lazy" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
               </div>
             ))}
           </div>

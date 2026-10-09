@@ -15,15 +15,8 @@ import StatsBar from "../components/StatsBar";
 import CTASection from "../components/CTASection";
 import BeforeAfter from "../components/BeforeAfter";
 import GoogleReviewBanner from "../components/GoogleReviewBanner";
+import { GALERIE_ELAGAGE } from "../data/photos";
 
-const ELAGAGE_PHOTOS = [
-  "https://images.unsplash.com/photo-1762903938137-49b0a145e241?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1474742509976-ddec6b387356?auto=format&fit=crop&w=1200&q=80",
-  "https://customer-assets.emergentagent.com/job_paysage-caen-seo/artifacts/349b4rlo_abe%2023.jpg",
-  "https://customer-assets.emergentagent.com/job_paysage-caen-seo/artifacts/349b4rlo_abe%2023.jpg",
-  "https://customer-assets.emergentagent.com/job_paysage-caen-seo/artifacts/er21hu1d_abe%2024.jpg",
-  "https://customer-assets.emergentagent.com/job_paysage-caen-seo/artifacts/er21hu1d_abe%2024.jpg",
-];
 
 export default function Home() {
   const jsonLd = [buildLocalBusinessSchema(), buildFAQSchema(GLOBAL_FAQ)];
@@ -124,14 +117,16 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 lg:gap-6">
-            {ELAGAGE_PHOTOS.map((src, i) => (
+            {GALERIE_ELAGAGE.map((p, i) => (
               <div
                 key={i}
                 className={`relative overflow-hidden rounded-2xl reveal ${i === 0 ? "md:col-span-2 md:row-span-2 aspect-square md:aspect-auto" : "aspect-[4/5]"}`}
               >
                 <img
-                  src={src}
-                  alt={`Élagage Calvados — chantier ${i + 1}`}
+                  src={p.src}
+                  alt={p.alt}
+                  width={p.w}
+                  height={p.h}
                   loading="lazy"
                   className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 />
