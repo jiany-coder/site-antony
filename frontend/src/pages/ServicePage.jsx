@@ -18,8 +18,8 @@ const SERVICE_DETAILS = {
     benefits: [
       "Conception personnalisée 2D / 3D avant chantier",
       "Plantation d'essences adaptées au climat normand",
-      "Maçonnerie paysagère : terrasses, allées, murets",
-      "Création de bassins, pergolas et éclairages extérieurs",
+      "Massifs, haies, arbres et engazonnement",
+      "Choix de végétaux adaptés au sol et à l'exposition",
       "Suivi et entretien la première année",
     ],
     sections: [
@@ -29,15 +29,15 @@ const SERVICE_DETAILS = {
       },
       {
         h: "Notre démarche paysagère",
-        p: "Tout commence par un rendez-vous gratuit chez vous. Nous analysons votre terrain : exposition, sol, contraintes, mitoyenneté, PLU. Nous écoutons vos envies, votre budget, votre rythme de vie. Une esquisse est proposée sous 7 à 15 jours, puis affinée jusqu'au plan définitif. Le chantier démarre selon le planning convenu, avec un chef de chantier dédié.",
+        p: "Tout commence par un rendez-vous gratuit chez vous. Nous analysons votre terrain : exposition, sol, contraintes, mitoyenneté, PLU. Nous écoutons vos envies, votre budget, votre rythme de vie. Une esquisse est proposée rapidement, puis affinée jusqu'au plan définitif. Le chantier démarre selon le planning convenu, avec un chef de chantier dédié.",
       },
       {
         h: "Création de jardin sur mesure à Caen",
         p: "Du petit jardin de ville (50 m²) au grand parc privé (5 000+ m²), nous adaptons notre savoir-faire. Jardins contemporains épurés, jardins anglais luxuriants, espaces de détente avec piscine et pool house, jardins zen ou méditerranéens revisités pour la Normandie : chaque projet est unique.",
       },
       {
-        h: "Aménagement extérieur et maçonnerie paysagère",
-        p: "Au-delà des plantations, nous réalisons l'ensemble des éléments structurants : terrasses bois ou pierre, allées en pavés ou en stabilisé, murets en pierres sèches, escaliers, bassins, gabions, pergolas bois. Tous nos matériaux sont sélectionnés pour leur durabilité et leur esthétique.",
+        h: "Plantations, massifs et engazonnement",
+        p: "Au-delà des plantations, nous réalisons les éléments végétaux qui structurent votre jardin : massifs, haies, arbres et arbustes, engazonnement, paillage. Tous les végétaux sont choisis pour leur robustesse et leur esthétique.",
       },
     ],
   },
@@ -46,7 +46,7 @@ const SERVICE_DETAILS = {
     benefits: [
       "Contrat annuel d'entretien sur mesure (forfait mensuel)",
       "Prestations ponctuelles : remise en état, débroussaillage",
-      "Crédit d'impôt 50% pour les particuliers (services à la personne)",
+      "Devis gratuit, intervention sous 24 h après acceptation",
       "Matériel professionnel et entretenu (sécurité maximale)",
       "Évacuation et recyclage des déchets verts inclus",
     ],
@@ -57,26 +57,26 @@ const SERVICE_DETAILS = {
       },
       {
         h: "Contrat annuel ou prestation ponctuelle ?",
-        p: "Le contrat annuel est notre formule la plus appréciée à Caen : un calendrier de passages programmés (mensuel, bimensuel, quinzaine) selon votre surface, avec un référent unique qui connaît votre jardin. Vous bénéficiez d'un suivi régulier, d'un tarif fixe et du crédit d'impôt 50% sur le total annuel. La prestation ponctuelle convient si votre jardin a besoin d'une remise en état avant une vente, après les vacances, ou pour un événement.",
+        p: "Le contrat annuel est notre formule la plus appréciée à Caen : un calendrier de passages programmés (mensuel, bimensuel, quinzaine) selon votre surface, avec un référent unique qui connaît votre jardin. Vous bénéficiez d'un suivi régulier, d'un tarif fixe sur l'année. La prestation ponctuelle convient si votre jardin a besoin d'une remise en état avant une vente, après les vacances, ou pour un événement.",
       },
       {
-        h: "Crédit d'impôt 50% : faites jusqu'à 2 500 € d'économie",
-        p: "Les prestations d'entretien courant de jardin (tonte, taille de haie, débroussaillage, désherbage) sont éligibles au crédit d'impôt service à la personne, plafonné à 5 000 € de dépenses par an par foyer fiscal. Concrètement, si vous dépensez 1 200 € par an chez nous, l'État vous rembourse 600 €. Nous établissons l'attestation fiscale annuelle nécessaire à votre déclaration d'impôts.",
+        h: "Un entretien qui s'adapte à votre rythme",
+        p: "Tonte, taille de haie, débroussaillage, désherbage : nous fixons ensemble la fréquence des passages et le périmètre des travaux. Pour un particulier, certaines prestations d'entretien peuvent ouvrir droit, sous conditions, au crédit d'impôt service à la personne : demandez-nous si votre cas est concerné.",
       },
       {
         h: "Notre méthode jardinier à Caen",
-        p: "Premier rendez-vous gratuit chez vous : nous évaluons votre jardin, identifions les zones critiques, écoutons vos attentes. Devis détaillé sous 48h. Une fois validé, votre jardinier référent passe selon le planning convenu, avec son matériel professionnel (tondeuses autoportées, taille-haie thermique, débroussailleuses). En fin de prestation, le jardin est laissé propre, déchets verts évacués et recyclés. Vous recevez un compte-rendu après chaque passage.",
+        p: "Premier rendez-vous gratuit chez vous : nous évaluons votre jardin, identifions les zones critiques, écoutons vos attentes. Devis détaillé et gratuit. Une fois validé, votre jardinier référent passe selon le planning convenu, avec son matériel professionnel (tondeuses autoportées, taille-haie thermique, débroussailleuses). En fin de prestation, le jardin est laissé propre, déchets verts évacués et recyclés. Vous recevez un compte-rendu après chaque passage.",
       },
       {
         h: "Pourquoi choisir Les Jardiniers Normands à Caen ?",
-        p: "Notre force est notre ancrage local. Nous connaissons chaque quartier de Caen — Vaucelles, Saint-Jean, Calvaire-Saint-Pierre, Haie Vigné, Pierre Heuzé, Beaulieu — et adaptons nos passages aux particularités de chacun. Notre équipe est stable (peu de turnover), nos jardiniers sont salariés (pas de sous-traitance), formés en interne et équipés. Nous travaillons aussi pour des copropriétés, syndics et entreprises avec des contrats sur-mesure.",
+        p: "Notre force est notre ancrage local. Nous connaissons chaque quartier de Caen — Vaucelles, Saint-Jean, Calvaire-Saint-Pierre, Haie Vigné, Pierre Heuzé, Beaulieu — et adaptons nos passages aux particularités de chacun. Notre équipe est stable (peu de turnover), nos jardiniers sont expérimentés et équipés. Nous travaillons aussi pour des copropriétés, syndics et entreprises avec des contrats sur-mesure.",
       },
     ],
   },
   "elagage-caen": {
     intro: "Pro Élagage 14, branche spécialisée des Jardiniers Normands, intervient dans toute la région caennaise pour l'élagage de précision, la taille raisonnée et la sécurisation d'arbres en milieu urbain comme rural.",
     benefits: [
-      "Grimpeurs certifiés et équipés (cordes, harnais EN)",
+      "Grimpeurs équipés (cordes, harnais EN)",
       "Taille douce / raisonnée selon les essences",
       "Démontage par rétention en milieu contraint",
       "Évacuation et broyage des déchets verts",
@@ -93,16 +93,16 @@ const SERVICE_DETAILS = {
       },
       {
         h: "Élagage en milieu contraint",
-        p: "Notre spécialité : intervenir là où une nacelle ne passe pas. Cour intérieure, jardin clos, proximité de bâti ou de lignes électriques. Nos grimpeurs descendent les sections par rétention (cordage de freinage) afin de ne rien endommager. Nous travaillons régulièrement en partenariat avec Enedis pour les élagages sous lignes.",
+        p: "Notre spécialité : intervenir là où une nacelle ne passe pas. Cour intérieure, jardin clos, proximité de bâti ou de lignes électriques. Nos grimpeurs descendent les sections par rétention (cordage de freinage) afin de ne rien endommager.",
       },
       {
         h: "Sécurité, assurance, conformité",
-        p: "Toutes nos prestations sont couvertes par une assurance Responsabilité Civile Professionnelle. Nos équipes sont équipées EPI (casque visière, jambières anti-coupure, harnais Petzl), formées SST. Nous respectons strictement la réglementation environnementale (taille hors période de nidification quand possible).",
+        p: "Toutes nos prestations sont couvertes par une assurance Responsabilité Civile Professionnelle. Nos équipes sont équipées EPI (casque visière, jambières anti-coupure, harnais Petzl), expérimentées. Nous respectons strictement la réglementation environnementale (taille hors période de nidification quand possible).",
       },
     ],
   },
   "entretien-exterieur-caen": {
-    intro: "Confiez tout votre extérieur à un seul interlocuteur de confiance. À Caen, Les Jardiniers Normands proposent une offre globale d'entretien extérieur : entretien jardin, taille de haies, élagage, abattage, dessouchage, allée et terrasse. Une seule équipe, un seul devis, une qualité d'exécution constante.",
+    intro: "Confiez tout votre extérieur à un seul interlocuteur de confiance. À Caen, Les Jardiniers Normands proposent une offre globale d'entretien extérieur : entretien jardin, taille de haies, élagage, abattage, dessouchage. Une seule équipe, un seul devis, une qualité d'exécution constante.",
     benefits: [
       "Un interlocuteur unique pour tous vos travaux extérieurs",
       "Devis global ou par lot, parfaitement transparent",
@@ -113,7 +113,7 @@ const SERVICE_DETAILS = {
     sections: [
       {
         h: "Qu'inclut l'entretien extérieur global à Caen ?",
-        p: "Notre offre d'entretien extérieur à Caen est conçue comme un service clé en main. Elle comprend l'entretien du jardin (tonte, désherbage, soin des massifs), la taille des haies, l'élagage et l'abattage des arbres, le dessouchage mécanique, l'entretien des allées et terrasses, le ramassage automnal des feuilles, la mise en hiver des plantations sensibles. Bref, tout ce qui concerne vos espaces verts et arbres autour de votre maison ou de votre copropriété.",
+        p: "Notre offre d'entretien extérieur à Caen est conçue comme un service clé en main. Elle comprend l'entretien du jardin (tonte, désherbage, soin des massifs), la taille des haies, l'élagage et l'abattage des arbres, le dessouchage mécanique, le ramassage automnal des feuilles, la mise en hiver des plantations sensibles. Bref, tout ce qui concerne vos espaces verts et arbres autour de votre maison ou de votre copropriété.",
       },
       {
         h: "Pourquoi un seul prestataire pour tout votre extérieur ?",
@@ -129,7 +129,7 @@ const SERVICE_DETAILS = {
       },
       {
         h: "Tarifs entretien extérieur à Caen",
-        p: "Notre tarification est transparente, sans surprise. Pour un jardin résidentiel classique (300 à 500 m²) avec entretien régulier + 2 tailles de haie + un élagage annuel, comptez entre 80 et 250 €/mois lissés sur l'année. Devis personnalisé gratuit sous 48h. N'oubliez pas que la partie entretien courant ouvre droit au crédit d'impôt 50%, soit une économie substantielle.",
+        p: "Notre tarification est transparente, sans surprise. Pour un jardin résidentiel classique (300 à 500 m²) avec entretien régulier + 2 tailles de haie + un élagage annuel, comptez entre 80 et 250 €/mois lissés sur l'année. Devis personnalisé et gratuit. Pour un particulier, la partie entretien courant peut ouvrir droit, sous conditions, au crédit d'impôt service à la personne : demandez-nous si votre cas est concerné.",
       },
     ],
   },
@@ -142,11 +142,11 @@ const DEFAULT_SECTIONS = (service) => [
   },
   {
     h: `Notre méthode pour un ${service.title.toLowerCase()} parfait`,
-    p: `Tout commence par un diagnostic gratuit chez vous. Nous évaluons précisément les travaux à réaliser, les contraintes (accessibilité, voisinage, réglementation), votre budget et vos attentes. Nous rédigeons un devis détaillé sous 48h. Une fois validé, l'intervention est planifiée à votre convenance, avec nettoyage complet du chantier et évacuation des déchets verts.`,
+    p: `Tout commence par un diagnostic gratuit chez vous. Nous évaluons précisément les travaux à réaliser, les contraintes (accessibilité, voisinage, réglementation), votre budget et vos attentes. Nous rédigeons un devis détaillé et gratuit. Une fois validé, l'intervention est planifiée à votre convenance, avec nettoyage complet du chantier et évacuation des déchets verts.`,
   },
   {
     h: `Tarifs ${service.title.toLowerCase()} dans le Calvados`,
-    p: `Nos tarifs sont transparents, sans surprise. Nous appliquons des prix justes basés sur la difficulté réelle du chantier (volume, accès, hauteur, contraintes spécifiques). Le devis est toujours gratuit et sans engagement. Certaines prestations d'entretien peuvent ouvrir droit au crédit d'impôt service à la personne de 50%, dans la limite de 5 000 € par an.`,
+    p: `Nos tarifs sont transparents, sans surprise. Nous appliquons des prix justes basés sur la difficulté réelle du chantier (volume, accès, hauteur, contraintes spécifiques). Le devis est toujours gratuit et sans engagement. Pour un particulier, l'entretien courant du jardin peut ouvrir droit, sous conditions, au crédit d'impôt service à la personne : demandez-nous.`,
   },
   {
     h: `Zone d'intervention dans le Calvados`,
@@ -255,7 +255,7 @@ export default function ServicePage() {
         </div>
       </section>
 
-      {/* TESTIMONIALS */}
+      {TESTIMONIALS.length > 0 && (
       <section className="py-20 bg-[#F4F1EA]">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="flex items-end justify-between mb-12">
@@ -266,6 +266,7 @@ export default function ServicePage() {
           </div>
         </div>
       </section>
+      )}
 
       {/* FORM + FAQ */}
       <section className="py-24">
