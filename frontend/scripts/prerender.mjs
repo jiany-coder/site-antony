@@ -127,7 +127,7 @@ fs.writeFileSync(path.join(buildDir, "llms.txt"), [
   "> Paysagiste, jardinier et élagueur à Caen et dans le Calvados. Devis gratuit, intervention sous 24 h après acceptation du devis. Tél. 07 80 04 43 90. Lundi au samedi, 8 h à 20 h.", "",
   "## Pages principales",
   ...["/", "/paysagiste-caen", "/jardinier-caen", "/elagage-caen", "/abattage-arbre-caen", "/dessouchage-caen", "/taille-haie-caen", "/tonte-pelouse-caen",
-    "/entretien-jardin-caen", "/entretien-exterieur-caen", "/realisations", "/a-propos", "/blog", "/contact"].map((u) => `- ${SITE}${u}`), "",
+    "/entretien-jardin-caen", "/entretien-exterieur-caen", "/zone-d-intervention", "/realisations", "/a-propos", "/blog", "/contact"].map((u) => `- ${SITE}${u}`), "",
 ].join("\n"));
 
 const redirects = [];

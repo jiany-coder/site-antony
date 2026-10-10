@@ -10,7 +10,7 @@ import { BLOG_POSTS } from "../src/data/blog_all";
 export function routes() {
   const list = [
     "/", "/a-propos", "/realisations", "/contact", "/blog",
-    "/mentions-legales", "/politique-de-confidentialite",
+    "/zone-d-intervention", "/mentions-legales", "/politique-de-confidentialite",
     ...SERVICES.map((s) => `/${s.slug}`),
     ...BLOG_POSTS.map((p) => `/blog/${p.slug}`),
   ];

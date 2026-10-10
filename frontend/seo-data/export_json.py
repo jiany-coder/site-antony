@@ -56,6 +56,6 @@ cities=[]
 for c in sorted(B.communes,key=lambda c:(c["km"],c["nom"])):
     if c["slug"]=="caen": continue
     d=out[f"jardinier-{c['slug']}"]
-    cities.append(dict(slug=c["slug"],name=c["nom"],code=c["cp"],distance=f"{c['km']} km de Caen",population=f"{B.fr(c['pop'])} habitants",intro=d["geo"]))
+    cities.append(dict(slug=c["slug"],name=c["nom"],code=c["cp"],distance=f"{c['km']} km de Caen",population=f"{B.fr(c['pop'])} habitants",sector=B.REGION_LABEL[c["reg"]],intro=d["geo"]))
 json.dump(cities,open(os.path.join(OUT,"cities.json"),"w",encoding="utf-8"),ensure_ascii=False)
 print(len(cities),"cities")

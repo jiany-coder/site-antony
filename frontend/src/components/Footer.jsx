@@ -62,6 +62,7 @@ export default function Footer() {
           <ul className="space-y-2 text-sm">
             <li><Link to="/a-propos" className="hover:text-[#F2EBD9]">À propos</Link></li>
             <li><Link to="/realisations" className="hover:text-[#F2EBD9]">Réalisations</Link></li>
+            <li><Link to="/zone-d-intervention" className="hover:text-[#F2EBD9]">Zone d'intervention</Link></li>
             <li><Link to="/blog" className="hover:text-[#F2EBD9]">Blog</Link></li>
             <li><Link to="/contact" className="hover:text-[#F2EBD9]">Contact / Devis</Link></li>
             <li><Link to="/mentions-legales" className="hover:text-[#F2EBD9]">Mentions légales</Link></li>

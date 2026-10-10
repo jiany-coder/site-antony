@@ -16,6 +16,7 @@ import Contact from "./pages/Contact";
 import MentionsLegales from "./pages/MentionsLegales";
 import PolitiqueConfidentialite from "./pages/PolitiqueConfidentialite";
 import NotFound from "./pages/NotFound";
+import ZonePage from "./pages/ZonePage";
 
 import { CITIES } from "./data/cities";
 
@@ -28,6 +29,7 @@ export function AppRoutes() {
           <Route path="/a-propos" element={<About />} />
           <Route path="/realisations" element={<Realisations />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/zone-d-intervention" element={<ZonePage />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/mentions-legales" element={<MentionsLegales />} />

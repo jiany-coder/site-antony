@@ -42,9 +42,9 @@ COASTAL = {"Ouistreham", "Colleville-Montgomery", "Hermanville-sur-Mer", "Lion-s
            "Langrune-sur-Mer", "Saint-Aubin-sur-Mer", "Bernières-sur-Mer", "Courseulles-sur-Mer",
            "Merville-Franceville-Plage", "Cabourg", "Dives-sur-Mer", "Houlgate", "Blonville-sur-Mer",
            "Villers-sur-Mer", "Deauville", "Trouville-sur-Mer", "Touques", "Honfleur", "Port-en-Bessin-Huppain",
-           "Isigny-sur-Mer", "La Rivière-Saint-Sauveur"}
+           "Isigny-sur-Mer", "La Rivière-Saint-Sauveur", "Grandcamp-Maisy", "Ver-sur-Mer"}
 AUGE = {"Lisieux", "Pont-l'Évêque", "Mézidon Vallée d'Auge", "Livarot-Pays-d'Auge", "Orbec", "Valorbiquet",
-        "Saint-Pierre-en-Auge", "Dozulé", "Saint-Désir"}
+        "Saint-Pierre-en-Auge", "Dozulé", "Saint-Désir", "Équemauville"}
 BOCAGE = {"Villers-Bocage", "Tilly-sur-Seulles", "Aurseulles", "Caumont-sur-Aure", "Le Molay-Littry",
           "Les Monts d'Aunay", "Souleuvre en Bocage", "Valdallière", "Noues de Sienne", "Vire Normandie",
           "Condé-en-Normandie", "Val d'Arry", "Creully sur Seulles", "Bayeux", "Saint-Vigor-le-Grand"}
