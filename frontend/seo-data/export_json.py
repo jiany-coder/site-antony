@@ -38,7 +38,9 @@ for c in B.communes:
         faq=[lq,q2,B.FAQ_COMMON[svc][k%3]]
         h1=f"{S['h']} {a_(nom)} ({c['cp']})"
         title=f"{h1} | {B.BRAND}"
-        if len(title)>62: title=f"{S['h']} {a_(nom)} | {B.BRAND}"
+        if len(title)>60: title=f"{S['h']} {a_(nom)} | {B.BRAND}"
+        if len(title)>60: title=f"{S['h']} {a_(nom)} | Jardiniers Normands"
+        if len(title)>60: title=f"{S['h']} {a_(nom)}"[:60].rstrip()
         desc=f"{S['h']} {a_(nom)} ({c['cp']}) : {', '.join(t.lower() for t,_ in S['items'][:3])}. Devis gratuit, intervention sous {B.DELAY}."
         out[f"{svc}-{slug}"]=dict(svc=svc,slug=slug,nom=nom,cp=c["cp"],pop=c["pop"],km=c["km"],dir=c["dir"],region=B.REGION_LABEL[c["reg"]],
           title=title,desc=desc,h1=h1,intro=intro,geo=geo,special=special,popNote=pn,
