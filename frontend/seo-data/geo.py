@@ -42,9 +42,16 @@ COASTAL = {"Ouistreham", "Colleville-Montgomery", "Hermanville-sur-Mer", "Lion-s
            "Langrune-sur-Mer", "Saint-Aubin-sur-Mer", "Bernières-sur-Mer", "Courseulles-sur-Mer",
            "Merville-Franceville-Plage", "Cabourg", "Dives-sur-Mer", "Houlgate", "Blonville-sur-Mer",
            "Villers-sur-Mer", "Deauville", "Trouville-sur-Mer", "Touques", "Honfleur", "Port-en-Bessin-Huppain",
-           "Isigny-sur-Mer", "La Rivière-Saint-Sauveur", "Grandcamp-Maisy", "Ver-sur-Mer"}
+           "Isigny-sur-Mer", "La Rivière-Saint-Sauveur", "Grandcamp-Maisy", "Ver-sur-Mer",
+           "Auberville", "Gonneville-sur-Mer", "Varaville", "Villerville"}
 AUGE = {"Lisieux", "Pont-l'Évêque", "Mézidon Vallée d'Auge", "Livarot-Pays-d'Auge", "Orbec", "Valorbiquet",
-        "Saint-Pierre-en-Auge", "Dozulé", "Saint-Désir", "Équemauville"}
+        "Saint-Pierre-en-Auge", "Dozulé", "Saint-Désir", "Équemauville",
+        "Beuvillers", "Cambremer", "Coquainvilliers", "Courtonne-la-Meurdrac", "Courtonne-les-Deux-Églises", "Glos",
+        "Hermival-les-Vaux", "Marolles", "Méry-Bissières-en-Auge", "Moyaux", "Ouilly-le-Vicomte", "Le Pin",
+        "Le Pré-d'Auge", "Saint-Germain-de-Livet", "Saint-Martin-de-la-Lieue", "Saint-Martin-de-Mailloc",
+        "La Vespière-Friardel", "Ablon", "Genneville", "Gonneville-sur-Honfleur", "Saint-Arnoult",
+        "Saint-Gatien-des-Bois", "Tourgéville", "Blangy-le-Château", "Bonnebosq", "Bonneville-la-Louvet",
+        "Le Breuil-en-Auge", "Saint-Hymer", "Saint-Philbert-des-Champs", "Vimont", "Saint-Sylvain"}
 BOCAGE = {"Villers-Bocage", "Tilly-sur-Seulles", "Aurseulles", "Caumont-sur-Aure", "Le Molay-Littry",
           "Les Monts d'Aunay", "Souleuvre en Bocage", "Valdallière", "Noues de Sienne", "Vire Normandie",
           "Condé-en-Normandie", "Val d'Arry", "Creully sur Seulles", "Bayeux", "Saint-Vigor-le-Grand"}
