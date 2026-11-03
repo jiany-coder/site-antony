@@ -17,6 +17,7 @@ import MentionsLegales from "./pages/MentionsLegales";
 import PolitiqueConfidentialite from "./pages/PolitiqueConfidentialite";
 import NotFound from "./pages/NotFound";
 import ZonePage from "./pages/ZonePage";
+import MontpellierPage from "./pages/MontpellierPage";
 
 import { CITIES } from "./data/cities";
 
@@ -34,6 +35,9 @@ export function AppRoutes() {
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/mentions-legales" element={<MentionsLegales />} />
           <Route path="/politique-de-confidentialite" element={<PolitiqueConfidentialite />} />
+
+          {/* Page d'atterrissage Montpellier (campagne Google Ads, novembre 2026) */}
+          <Route path="/elagage-montpellier" element={<MontpellierPage />} />
 
           {/* Services principaux (Caen) */}
           <Route path="/paysagiste-caen" element={<ServicePage />} />

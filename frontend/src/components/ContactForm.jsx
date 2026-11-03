@@ -3,10 +3,11 @@ import axios from "axios";
 import { toast } from "sonner";
 import { Send, Loader2 } from "lucide-react";
 import { SERVICES } from "../data/services";
+import { track } from "../lib/track";
 
 const API = `${process.env.REACT_APP_BACKEND_URL || ""}/api`;
 
-export default function ContactForm({ defaultService = "", defaultCity = "" }) {
+export default function ContactForm({ defaultService = "", defaultCity = "", serviceOptions = null, cityPlaceholder = "Caen, Deauville, Lisieux..." }) {
   const [form, setForm] = useState({
     name: "", email: "", phone: "", city: defaultCity, service: defaultService, message: "",
   });
@@ -21,6 +22,7 @@ export default function ContactForm({ defaultService = "", defaultCity = "" }) {
     try {
       const { data } = await axios.post(`${API}/contact`, form);
       setDone(true);
+      track("generate_lead", { service: form.service, city: form.city });
       toast.success("Demande envoyée ! Nous vous recontactons sous 24h.");
       setForm({ name: "", email: "", phone: "", city: "", service: "", message: "" });
       setTimeout(() => setDone(false), 8000);
@@ -69,7 +71,7 @@ export default function ContactForm({ defaultService = "", defaultCity = "" }) {
           <label className="block text-xs font-sans font-semibold tracking-[0.18em] uppercase text-[#1F3D2B] mb-2">Ville</label>
           <input
             name="city" value={form.city} onChange={onChange}
-            placeholder="Caen, Deauville, Lisieux..."
+            placeholder={cityPlaceholder}
             className="w-full px-4 py-3.5 rounded-xl bg-[#FDFBF7] border border-[#E5E0D5] focus:outline-none focus:border-[#1F3D2B] focus:ring-2 focus:ring-[#1F3D2B]/20 transition"
             data-testid="contact-input-city"
           />
@@ -82,8 +84,8 @@ export default function ContactForm({ defaultService = "", defaultCity = "" }) {
             data-testid="contact-input-service"
           >
             <option value="">Sélectionnez un service</option>
-            {SERVICES.map((s) => (
-              <option key={s.slug} value={s.title}>{s.title}</option>
+            {(serviceOptions || SERVICES.map((s) => s.title)).map((title) => (
+              <option key={title} value={title}>{title}</option>
             ))}
             <option value="Autre">Autre / Plusieurs services</option>
           </select>
