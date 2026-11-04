@@ -11,7 +11,7 @@ export function routes() {
   const list = [
     "/", "/a-propos", "/realisations", "/contact", "/blog",
     "/zone-d-intervention", "/mentions-legales", "/politique-de-confidentialite",
-    "/elagage-montpellier",
+    "/elagage-toulouse",
     ...SERVICES.map((s) => `/${s.slug}`),
     ...BLOG_POSTS.map((p) => `/blog/${p.slug}`),
   ];

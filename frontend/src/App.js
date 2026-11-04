@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { Toaster } from "sonner";
 
@@ -17,7 +17,7 @@ import MentionsLegales from "./pages/MentionsLegales";
 import PolitiqueConfidentialite from "./pages/PolitiqueConfidentialite";
 import NotFound from "./pages/NotFound";
 import ZonePage from "./pages/ZonePage";
-import MontpellierPage from "./pages/MontpellierPage";
+import ToulousePage from "./pages/ToulousePage";
 
 import { CITIES } from "./data/cities";
 
@@ -36,8 +36,9 @@ export function AppRoutes() {
           <Route path="/mentions-legales" element={<MentionsLegales />} />
           <Route path="/politique-de-confidentialite" element={<PolitiqueConfidentialite />} />
 
-          {/* Page d'atterrissage Montpellier (campagne Google Ads, novembre 2026) */}
-          <Route path="/elagage-montpellier" element={<MontpellierPage />} />
+          {/* Page d'atterrissage Toulouse (campagne Google Ads, novembre 2026) */}
+          <Route path="/elagage-toulouse" element={<ToulousePage />} />
+          <Route path="/elagage-montpellier" element={<Navigate to="/elagage-toulouse" replace />} />
 
           {/* Services principaux (Caen) */}
           <Route path="/paysagiste-caen" element={<ServicePage />} />
