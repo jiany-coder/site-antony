@@ -7,9 +7,15 @@ const json = (o, status = 200) =>
 export async function onRequestPost({ request, env }) {
   let b;
   try { b = await request.json(); } catch { return json({ detail: [{ msg: "Requête invalide." }] }, 400); }
-  const name = String(b.name || "").trim(), email = String(b.email || "").trim(), phone = String(b.phone || "").trim();
-  const message = String(b.message || "").trim();
-  if (name.length < 2 || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email) || phone.length < 6 || message.length < 5)
+  let name = String(b.name || "").trim(), email = String(b.email || "").trim(), phone = String(b.phone || "").trim();
+  let message = String(b.message || "").trim();
+  const callback = b.callback === true; // demande de rappel rapide : seul le téléphone est obligatoire
+  if (callback) {
+    if (name.length < 2) name = "Demande de rappel";
+    if (message.length < 5) message = "Demande de rappel gratuit au " + phone;
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) email = "";
+    if (phone.length < 6) return json({ detail: [{ msg: "Merci d'indiquer votre numéro de téléphone." }] }, 422);
+  } else if (name.length < 2 || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email) || phone.length < 6 || message.length < 5)
     return json({ detail: [{ msg: "Merci de renseigner nom, e-mail, téléphone et message." }] }, 422);
   if (!env.RESEND_API_KEY) return json({ detail: [{ msg: "Envoi indisponible : appelez-nous au 07 80 04 43 90." }] }, 503);
   const city = String(b.city || "").slice(0, 80), service = String(b.service || "").slice(0, 120);
@@ -20,8 +26,8 @@ export async function onRequestPost({ request, env }) {
     body: JSON.stringify({
       from: env.SENDER_EMAIL || "onboarding@resend.dev",
       to: [env.OWNER_EMAIL || "schmittantony4@gmail.com"],
-      reply_to: email,
-      subject: `[Devis] ${name} – ${service || "Demande"} (${city || "Calvados"})`,
+      ...(email ? { reply_to: email } : {}),
+      subject: `${callback ? "[RAPPEL URGENT] " + phone + " – " : "[Devis] "}${name} – ${service || "Demande"} (${city || "Calvados"})`,
       html,
     }),
   });

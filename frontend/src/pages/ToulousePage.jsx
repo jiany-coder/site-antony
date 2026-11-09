@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
 import { ArrowRight, Phone, MapPin, CheckCircle2, ShieldCheck, Clock, BadgeCheck, Star, MessageCircle, Camera } from "lucide-react";
 import SEO, { buildLocalBusinessSchema, buildFAQSchema, buildBreadcrumbSchema } from "../components/SEO";
@@ -76,7 +77,81 @@ const QUOTE = [
 ];
 
 const PHOTOS = [CHANTIERS.thuyaEchelle, CHANTIERS.grandeHaie, CHANTIERS.laurierEchelle];
-const AVIS = TESTIMONIALS.slice(0, 3);
+const AVIS = [0, 4, 2].map((i) => TESTIMONIALS[i]).filter(Boolean);
+
+const API = `${process.env.REACT_APP_BACKEND_URL || ""}/api`;
+
+// Ouvert du lundi au samedi, 8 h - 20 h (heure de Paris)
+function useOpenNow() {
+  const [open, setOpen] = useState(null);
+  useEffect(() => {
+    try {
+      const f = new Intl.DateTimeFormat("fr-FR", { timeZone: "Europe/Paris", weekday: "short", hour: "numeric", hourCycle: "h23" }).formatToParts(new Date());
+      const day = f.find((x) => x.type === "weekday").value.toLowerCase();
+      const hour = parseInt(f.find((x) => x.type === "hour").value, 10);
+      setOpen(!day.startsWith("dim") && hour >= 8 && hour < 20);
+    } catch (e) { setOpen(null); }
+  }, []);
+  return open;
+}
+
+function CallbackForm({ position }) {
+  const [phone, setPhone] = useState("");
+  const [city, setCity] = useState("");
+  const [state, setState] = useState("idle");
+  const [started, setStarted] = useState(false);
+  const submit = async (e) => {
+    e.preventDefault();
+    setState("loading");
+    try {
+      await axios.post(`${API}/contact`, {
+        callback: true, phone, city: city || "Toulouse", service: "Rappel - Élagage / haie / abattage à Toulouse",
+        message: `Demande de rappel gratuit au ${phone}${city ? " (" + city + ")" : ""}`,
+      });
+      track("generate_lead", { page: "toulouse", position, type: "callback" });
+      setState("done");
+    } catch (err) {
+      setState("error");
+    }
+  };
+  if (state === "done")
+    return (
+      <div className="rounded-2xl bg-white/95 text-[#1F3D2B] p-5 font-sans" data-testid={`tls-callback-done-${position}`}>
+        <p className="font-semibold">Merci, c'est bien reçu.</p>
+        <p className="text-sm mt-1 text-[#4A5550]">Nous vous rappelons dès que possible (lundi au samedi, 8 h à 20 h). Pressé ? <a className="font-semibold underline" href={`tel:${COMPANY.phoneRaw}`} onClick={() => track("click_call", { page: "toulouse", position: "callback-done" })}>{COMPANY.phone}</a></p>
+      </div>
+    );
+  return (
+    <form
+      onSubmit={submit}
+      onFocus={() => { if (!started) { setStarted(true); track("form_start", { page: "toulouse", position }); } }}
+      className="rounded-2xl bg-white/95 p-5 font-sans max-w-xl"
+      data-testid={`tls-callback-${position}`}
+    >
+      <p className="font-semibold text-[#1F3D2B] text-base">Pas le temps d'appeler ? On vous rappelle.</p>
+      <div className="mt-3 grid grid-cols-1 sm:grid-cols-5 gap-2">
+        <input
+          required type="tel" inputMode="tel" autoComplete="tel" value={phone} onChange={(e) => setPhone(e.target.value)}
+          placeholder="Votre téléphone" aria-label="Votre téléphone"
+          className="sm:col-span-2 px-4 py-3 rounded-xl border border-[#E5E0D5] bg-[#FDFBF7] text-[#0A0F0D] focus:outline-none focus:ring-2 focus:ring-[#1F3D2B]/30"
+        />
+        <input
+          value={city} onChange={(e) => setCity(e.target.value)} autoComplete="address-level2"
+          placeholder="Commune" aria-label="Commune"
+          className="sm:col-span-2 px-4 py-3 rounded-xl border border-[#E5E0D5] bg-[#FDFBF7] text-[#0A0F0D] focus:outline-none focus:ring-2 focus:ring-[#1F3D2B]/30"
+        />
+        <button
+          type="submit" disabled={state === "loading"}
+          className="sm:col-span-1 px-4 py-3 rounded-xl bg-[#1F3D2B] text-[#FDFBF7] font-semibold hover:bg-[#14281C] disabled:opacity-60"
+        >
+          {state === "loading" ? "…" : "Rappel"}
+        </button>
+      </div>
+      {state === "error" && <p className="text-sm text-red-700 mt-2">Envoi impossible : appelez-nous au {COMPANY.phone}.</p>}
+      <p className="text-xs text-[#4A5550] mt-2">Gratuit, sans engagement. Votre numéro sert uniquement à vous rappeler.</p>
+    </form>
+  );
+}
 
 export default function ToulousePage() {
   const url = `${COMPANY.site}${PATH}`;
@@ -85,6 +160,7 @@ export default function ToulousePage() {
   const waHref = `https://wa.me/${wa}?text=${waText}`;
   const call = (position) => () => track("click_call", { page: "toulouse", position });
   const whatsapp = (position) => () => track("click_whatsapp", { page: "toulouse", position });
+  const openNow = useOpenNow();
   const ld = [
     buildLocalBusinessSchema(),
     {
@@ -126,6 +202,12 @@ export default function ToulousePage() {
             <MapPin className="w-4 h-4 text-[#F2EBD9]" strokeWidth={1.75} />
             <span className="text-xs font-sans font-semibold tracking-[0.18em] uppercase text-[#F2EBD9]">Élagage · Haies · Abattage à Toulouse</span>
           </div>
+          {openNow !== null && (
+            <p className="flex items-center gap-2 text-sm font-sans font-semibold text-[#FDFBF7] mb-4" data-testid="tls-open-now">
+              <span className={`inline-block w-2.5 h-2.5 rounded-full ${openNow ? "bg-[#4ADE80] animate-pulse" : "bg-[#FBBF24]"}`} />
+              {openNow ? "On décroche maintenant (lun-sam, 8 h-20 h)" : "Fermé pour l'instant : laissez votre numéro, on vous rappelle (lun-sam, 8 h-20 h)"}
+            </p>
+          )}
           <h1 className="font-serif text-4xl sm:text-5xl lg:text-7xl font-light leading-[1.02] tracking-tight text-[#FDFBF7] max-w-4xl">
             Élagage à Toulouse :
             <span className="italic block">un arbre à tailler ou à sécuriser ?</span>
@@ -153,6 +235,7 @@ export default function ToulousePage() {
           >
             <Camera className="w-4 h-4" /> Envoyer des photos sur WhatsApp
           </a>
+          <div className="mt-6"><CallbackForm position="hero" /></div>
         </div>
       </section>
 
