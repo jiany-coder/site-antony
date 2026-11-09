@@ -13,6 +13,7 @@ export default function ContactForm({ defaultService = "", defaultCity = "", ser
   });
   const [loading, setLoading] = useState(false);
   const [done, setDone] = useState(false);
+  const [started, setStarted] = useState(false);
 
   const onChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
@@ -34,7 +35,7 @@ export default function ContactForm({ defaultService = "", defaultCity = "", ser
   };
 
   return (
-    <form onSubmit={submit} className="space-y-5" data-testid="contact-form">
+    <form onSubmit={submit} onFocus={() => { if (!started) { setStarted(true); track("form_start", { service: defaultService }); } }} className="space-y-5" data-testid="contact-form">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
           <label className="block text-xs font-sans font-semibold tracking-[0.18em] uppercase text-[#1F3D2B] mb-2">Nom complet *</label>

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Phone, MapPin, CheckCircle2, ShieldCheck, Clock, BadgeCheck, Star, MessageCircle } from "lucide-react";
+import { ArrowRight, Phone, MapPin, CheckCircle2, ShieldCheck, Clock, BadgeCheck, Star, MessageCircle, Camera } from "lucide-react";
 import SEO, { buildLocalBusinessSchema, buildFAQSchema, buildBreadcrumbSchema } from "../components/SEO";
 import { COMPANY } from "../data/company";
 import { TESTIMONIALS } from "../data/testimonials";
@@ -10,8 +10,8 @@ import ContactForm from "../components/ContactForm";
 import { track } from "../lib/track";
 
 const PATH = "/elagage-toulouse";
-const TITLE = "Élagage et taille de haie à Toulouse | Devis gratuit";
-const DESC = `Élagage, taille de haie, abattage et dessouchage à Toulouse et alentours en novembre 2026. Équipe professionnelle, devis gratuit ☎ ${COMPANY.phone}`;
+const TITLE = "Élagage à Toulouse (31) | Taille de haie & abattage – Devis";
+const DESC = `Élagage, taille de haie, abattage et dessouchage à Toulouse et alentours. Devis gratuit, réponse rapide, déchets verts évacués. ☎ ${COMPANY.phone}`;
 
 const COMMUNES = [
   "Toulouse", "Blagnac", "Colomiers", "Tournefeuille", "Balma", "Ramonville-Saint-Agne",
@@ -37,12 +37,8 @@ const SERVICES = [
 
 const FAQ = [
   [
-    "Pourquoi une équipe normande à Toulouse ?",
-    "Nous travaillons habituellement à Caen et dans le Calvados. Pendant tout le mois de novembre 2026, nous sommes présents à Toulouse et dans les communes alentour pour des chantiers d'élagage, de taille de haie et d'abattage.",
-  ],
-  [
-    "Jusqu'à quand êtes-vous disponibles ?",
-    "Pendant tout le mois de novembre 2026. Ensuite, l'équipe repart en Normandie : pour garantir un créneau, il vaut mieux nous appeler tôt.",
+    "Intervenez-vous bien à Toulouse ?",
+    "Oui. Nous intervenons à Toulouse et dans les communes alentour pour l'élagage, la taille de haie, l'abattage et le dessouchage. Appelez-nous ou envoyez des photos pour un devis rapide.",
   ],
   [
     "Quelle zone couvrez-vous autour de Toulouse ?",
@@ -53,8 +49,16 @@ const FAQ = [
     "Oui, le devis est gratuit et sans engagement. Pour aller plus vite, vous pouvez nous envoyer quelques photos de l'arbre ou de la haie par WhatsApp au " + COMPANY.phone + ".",
   ],
   [
+    "Comment est calculé le prix d'un élagage ou d'une taille de haie ?",
+    "Le prix dépend de la hauteur, de l'accès, de la quantité à tailler et de l'évacuation des déchets verts. Avec quelques photos et la commune, nous vous donnons un prix clair avant toute intervention.",
+  ],
+  [
     "Les déchets verts sont-ils évacués ?",
     "Oui, nous évacuons les déchets verts et laissons le chantier propre. L'assurance responsabilité civile professionnelle couvre les travaux.",
+  ],
+  [
+    "Faut-il une autorisation pour abattre un arbre ?",
+    "Dans la plupart des cas, non pour un arbre de jardin privé, mais certaines zones (espaces protégés, arbres classés) sont réglementées. Nous vous conseillons lors du devis.",
   ],
 ];
 
@@ -65,6 +69,12 @@ const TRUST = [
   { Icon: CheckCircle2, label: "20 ans d'expérience", desc: "Jardin et arbres" },
 ];
 
+const QUOTE = [
+  ["1", "Vous envoyez quelques photos", "Par WhatsApp ou via le formulaire, avec la commune."],
+  ["2", "Vous recevez un prix clair", "Devis gratuit, détaillé, sans engagement."],
+  ["3", "Nous intervenons et nettoyons", "Chantier planifié avec vous, déchets verts évacués."],
+];
+
 const PHOTOS = [CHANTIERS.thuyaEchelle, CHANTIERS.grandeHaie, CHANTIERS.laurierEchelle];
 const AVIS = TESTIMONIALS.slice(0, 3);
 
@@ -72,6 +82,9 @@ export default function ToulousePage() {
   const url = `${COMPANY.site}${PATH}`;
   const wa = COMPANY.whatsapp.replace(/\D/g, "");
   const waText = encodeURIComponent("Bonjour, je souhaite un devis pour de l'élagage ou une taille de haie à Toulouse.");
+  const waHref = `https://wa.me/${wa}?text=${waText}`;
+  const call = (position) => () => track("click_call", { page: "toulouse", position });
+  const whatsapp = (position) => () => track("click_whatsapp", { page: "toulouse", position });
   const ld = [
     buildLocalBusinessSchema(),
     {
@@ -91,11 +104,14 @@ export default function ToulousePage() {
     buildFAQSchema(FAQ.map(([q, a]) => ({ q, a }))),
   ];
 
+  const btnMain = "inline-flex items-center justify-center gap-2 bg-[#F2EBD9] text-[#1F3D2B] px-8 py-4 rounded-full font-sans font-semibold text-lg hover:bg-white hover:-translate-y-1 hover:shadow-xl transition-all";
+  const btnGhost = "inline-flex items-center justify-center gap-2 bg-transparent text-[#FDFBF7] px-8 py-4 rounded-full font-sans font-semibold text-base border-2 border-[#F2EBD9]/40 hover:bg-[#F2EBD9] hover:text-[#1F3D2B] transition-all";
+
   return (
     <>
       <SEO title={TITLE} description={DESC} canonical={url} image="/photos/taille-haie-thuya-echelle-jardin.webp" jsonLd={ld} />
 
-      <section className="relative min-h-[70vh] flex items-end">
+      <section className="relative min-h-[78vh] flex items-end">
         <div className="absolute inset-0">
           <img
             fetchPriority="high" decoding="async" width="1600" height="900"
@@ -105,35 +121,38 @@ export default function ToulousePage() {
           />
           <div className="absolute inset-0 hero-overlay" />
         </div>
-        <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-16 sm:py-20 w-full">
+        <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-14 sm:py-20 w-full">
           <div className="inline-flex items-center gap-2 bg-[#F2EBD9]/15 backdrop-blur-md border border-[#F2EBD9]/30 px-4 py-2 rounded-full mb-6">
             <MapPin className="w-4 h-4 text-[#F2EBD9]" strokeWidth={1.75} />
-            <span className="text-xs font-sans font-semibold tracking-[0.18em] uppercase text-[#F2EBD9]">Disponibles à Toulouse · Novembre 2026</span>
+            <span className="text-xs font-sans font-semibold tracking-[0.18em] uppercase text-[#F2EBD9]">Élagage · Haies · Abattage à Toulouse</span>
           </div>
           <h1 className="font-serif text-4xl sm:text-5xl lg:text-7xl font-light leading-[1.02] tracking-tight text-[#FDFBF7] max-w-4xl">
-            Élagage, taille de haie et abattage
-            <span className="italic block">à Toulouse</span>
+            Élagage à Toulouse :
+            <span className="italic block">un arbre à tailler ou à sécuriser ?</span>
           </h1>
           <p className="text-lg sm:text-xl text-[#FDFBF7]/85 max-w-2xl mt-7 leading-relaxed">
-            Une équipe professionnelle présente à Toulouse et dans un rayon de 30 minutes pendant tout le mois de novembre. Devis gratuit, réponse rapide.
+            Élagage, taille de haie, abattage et dessouchage à Toulouse et dans les communes voisines. Prix clair avant intervention, déchets verts évacués.
           </p>
+          <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-2 max-w-2xl text-[#FDFBF7]/90 text-sm font-sans">
+            {["Devis gratuit et sans engagement", "Réponse rapide, même par WhatsApp", "Assurance responsabilité civile pro", "Chantier laissé propre"].map((t) => (
+              <li key={t} className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-[#F2EBD9] shrink-0" /> {t}</li>
+            ))}
+          </ul>
           <div className="flex flex-col sm:flex-row gap-4 mt-9">
-            <a
-              href={`tel:${COMPANY.phoneRaw}`}
-              onClick={() => track("click_call", { page: "toulouse", position: "hero" })}
-              className="inline-flex items-center justify-center gap-2 bg-[#F2EBD9] text-[#1F3D2B] px-8 py-4 rounded-full font-sans font-semibold text-lg hover:bg-white hover:-translate-y-1 hover:shadow-xl transition-all"
-              data-testid="tls-hero-call"
-            >
+            <a href={`tel:${COMPANY.phoneRaw}`} onClick={call("hero")} className={btnMain} data-testid="tls-hero-call">
               <Phone className="w-5 h-5" /> Appeler le {COMPANY.phone}
             </a>
-            <a
-              href="#devis"
-              className="inline-flex items-center justify-center gap-2 bg-transparent text-[#FDFBF7] px-8 py-4 rounded-full font-sans font-semibold text-base border-2 border-[#F2EBD9]/40 hover:bg-[#F2EBD9] hover:text-[#1F3D2B] transition-all"
-              data-testid="tls-hero-devis"
-            >
-              Devis gratuit <ArrowRight className="w-5 h-5" />
+            <a href="#devis" className={btnGhost} data-testid="tls-hero-devis">
+              Recevoir mon devis gratuit <ArrowRight className="w-5 h-5" />
             </a>
           </div>
+          <a
+            href={waHref} target="_blank" rel="noopener noreferrer" onClick={whatsapp("hero")}
+            className="inline-flex items-center gap-2 mt-5 text-[#F2EBD9] font-sans text-sm underline underline-offset-4"
+            data-testid="tls-hero-whatsapp"
+          >
+            <Camera className="w-4 h-4" /> Envoyer des photos sur WhatsApp
+          </a>
         </div>
       </section>
 
@@ -157,7 +176,7 @@ export default function ToulousePage() {
             Nos interventions à Toulouse
           </h2>
           <p className="text-lg text-[#4A5550] max-w-3xl mb-12 leading-relaxed">
-            Nos trois spécialités : l'élagage, la taille de haie et l'abattage. Nous réalisons aussi l'entretien de jardin, la tonte et le débroussaillage pour les clients qui le souhaitent.
+            Trois spécialités : l'élagage, la taille de haie et l'abattage. Nous réalisons aussi l'entretien de jardin et le débroussaillage sur demande.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {SERVICES.map((s) => (
@@ -166,7 +185,7 @@ export default function ToulousePage() {
                 <p className="text-[#4A5550] leading-relaxed flex-1">{s.text}</p>
                 <a
                   href={`tel:${COMPANY.phoneRaw}`}
-                  onClick={() => track("click_call", { page: "toulouse", position: `service-${s.title}` })}
+                  onClick={call(`service-${s.title}`)}
                   className="inline-flex items-center gap-2 mt-6 text-[#1F3D2B] font-sans font-semibold text-sm"
                 >
                   <Phone className="w-4 h-4" /> Demander un devis par téléphone
@@ -179,13 +198,10 @@ export default function ToulousePage() {
 
       <section className="py-20 bg-[#1F3D2B] text-[#FDFBF7]">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          <h2 className="font-serif text-3xl sm:text-4xl text-[#F2EBD9] font-light tracking-tight mb-12">Comment ça se passe</h2>
+          <h2 className="font-serif text-3xl sm:text-4xl text-[#F2EBD9] font-light tracking-tight mb-3">Un devis clair avant de décider</h2>
+          <p className="text-[#FDFBF7]/75 mb-12 max-w-2xl">Pas de mauvaise surprise : vous connaissez le prix avant que nous commencions.</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {[
-              ["1", "Vous nous contactez", "Un appel ou un message WhatsApp avec quelques photos de l'arbre ou de la haie suffit."],
-              ["2", "Devis gratuit", "Nous vous donnons un prix clair, sans engagement, rapidement."],
-              ["3", "Intervention planifiée", "Nous planifions le chantier pendant notre présence à Toulouse, puis nous évacuons les déchets verts."],
-            ].map(([n, t, d]) => (
+            {QUOTE.map(([n, t, d]) => (
               <div key={n} className="border-l-2 border-[#F2EBD9]/30 pl-6">
                 <p className="font-serif text-5xl font-light text-[#F2EBD9] leading-none">{n}</p>
                 <p className="font-sans font-semibold mt-4 mb-2">{t}</p>
@@ -194,19 +210,10 @@ export default function ToulousePage() {
             ))}
           </div>
           <div className="mt-12 flex flex-col sm:flex-row gap-4">
-            <a
-              href={`tel:${COMPANY.phoneRaw}`}
-              onClick={() => track("click_call", { page: "toulouse", position: "steps" })}
-              className="inline-flex items-center justify-center gap-2 bg-[#F2EBD9] text-[#1F3D2B] px-8 py-4 rounded-full font-sans font-semibold hover:bg-white transition-all"
-            >
+            <a href={`tel:${COMPANY.phoneRaw}`} onClick={call("steps")} className={btnMain}>
               <Phone className="w-5 h-5" /> {COMPANY.phone}
             </a>
-            <a
-              href={`https://wa.me/${wa}?text=${waText}`}
-              target="_blank" rel="noopener noreferrer"
-              onClick={() => track("click_whatsapp", { page: "toulouse", position: "steps" })}
-              className="inline-flex items-center justify-center gap-2 bg-transparent text-[#F2EBD9] px-8 py-4 rounded-full font-sans font-semibold border-2 border-[#F2EBD9]/40 hover:bg-[#F2EBD9] hover:text-[#1F3D2B] transition-all"
-            >
+            <a href={waHref} target="_blank" rel="noopener noreferrer" onClick={whatsapp("steps")} className={btnGhost}>
               <MessageCircle className="w-5 h-5" /> Envoyer des photos sur WhatsApp
             </a>
           </div>
@@ -215,7 +222,8 @@ export default function ToulousePage() {
 
       <section className="py-20 sm:py-24">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          <h2 className="font-serif text-3xl sm:text-4xl text-[#0A0F0D] font-light tracking-tight mb-10">Quelques chantiers de l'équipe</h2>
+          <h2 className="font-serif text-3xl sm:text-4xl text-[#0A0F0D] font-light tracking-tight mb-3">Nos réalisations</h2>
+          <p className="text-[#4A5550] mb-10">Quelques chantiers de taille de haie et d'élagage réalisés par l'équipe.</p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {PHOTOS.map((p) => (
               <img
@@ -231,7 +239,7 @@ export default function ToulousePage() {
       <section className="py-20 bg-[#F4F1EA]">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <h2 className="font-serif text-3xl sm:text-4xl text-[#0A0F0D] font-light tracking-tight mb-3">Ils nous ont fait confiance</h2>
-          <p className="text-[#4A5550] mb-10">Avis publiés sur notre fiche Google.</p>
+          <p className="text-[#4A5550] mb-10">Avis clients publiés sur notre fiche Google (5/5).</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {AVIS.map((t) => (
               <figure key={t.name} className="bg-white p-7 rounded-2xl border border-[#E5E0D5]">
@@ -241,7 +249,7 @@ export default function ToulousePage() {
                   ))}
                 </div>
                 <blockquote className="text-[#0A0F0D] leading-relaxed">{t.text}</blockquote>
-                <figcaption className="text-sm text-[#4A5550] mt-4">{t.name} · {t.date}</figcaption>
+                <figcaption className="text-sm text-[#4A5550] mt-4">{t.name}</figcaption>
               </figure>
             ))}
           </div>
@@ -265,14 +273,14 @@ export default function ToulousePage() {
 
       <section id="devis" className="py-20 sm:py-24 bg-[#F4F1EA] scroll-mt-24">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12">
-          <div className="lg:col-span-6">
+          <div className="lg:col-span-6 order-2 lg:order-1">
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#0A0F0D] font-light leading-tight mb-8">Questions fréquentes</h2>
             <FAQAccordion items={FAQ.map(([q, a]) => ({ q, a }))} />
           </div>
-          <div className="lg:col-span-6">
+          <div className="lg:col-span-6 order-1 lg:order-2">
             <div className="bg-white p-8 rounded-2xl border border-[#E5E0D5]">
               <h3 className="font-serif text-3xl text-[#0A0F0D] mb-2">Devis gratuit à Toulouse</h3>
-              <p className="text-[#4A5550] mb-6">Décrivez votre projet, nous vous répondons rapidement. Pressé ? Appelez le <a className="font-semibold text-[#1F3D2B]" href={`tel:${COMPANY.phoneRaw}`}>{COMPANY.phone}</a>.</p>
+              <p className="text-[#4A5550] mb-6">Décrivez votre besoin et indiquez votre commune, nous vous répondons rapidement. Pressé ? Appelez le <a className="font-semibold text-[#1F3D2B]" href={`tel:${COMPANY.phoneRaw}`} onClick={call("form")}>{COMPANY.phone}</a>.</p>
               <ContactForm
                 defaultService="Élagage à Toulouse"
                 defaultCity="Toulouse"
@@ -285,27 +293,39 @@ export default function ToulousePage() {
                   "Entretien jardin à Toulouse",
                 ]}
               />
+              <p className="text-xs text-[#4A5550]/80 mt-4 text-center">Vos coordonnées servent uniquement à vous répondre pour ce devis.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-16 bg-[#0A0F0D] text-[#FDFBF7] text-center">
+      <section className="py-16 pb-28 md:pb-16 bg-[#0A0F0D] text-[#FDFBF7] text-center">
         <div className="max-w-3xl mx-auto px-6">
           <h2 className="font-serif text-3xl sm:text-4xl font-light text-[#F2EBD9] mb-4">Un arbre ou une haie à faire à Toulouse ?</h2>
-          <p className="text-[#FDFBF7]/80 mb-8">Nous sommes sur place en novembre. Appelez-nous pour réserver un créneau.</p>
-          <a
-            href={`tel:${COMPANY.phoneRaw}`}
-            onClick={() => track("click_call", { page: "toulouse", position: "footer" })}
-            className="inline-flex items-center justify-center gap-2 bg-[#F2EBD9] text-[#1F3D2B] px-8 py-4 rounded-full font-sans font-semibold text-lg hover:bg-white transition-all"
-          >
+          <p className="text-[#FDFBF7]/80 mb-8">Appelez-nous ou envoyez des photos : vous avez un prix clair rapidement.</p>
+          <a href={`tel:${COMPANY.phoneRaw}`} onClick={call("footer")} className={btnMain}>
             <Phone className="w-5 h-5" /> {COMPANY.phone}
           </a>
           <p className="text-xs text-[#FDFBF7]/50 mt-8">
-            <Link to="/" className="underline">Les Jardiniers Normands</Link> · Pro Élagage 14 · Basés à Caen
+            <Link to="/" className="underline">Les Jardiniers Normands</Link> · Pro Élagage 14
           </p>
         </div>
       </section>
+
+      <div className="md:hidden fixed bottom-0 inset-x-0 z-50 grid grid-cols-2 gap-2 p-3 bg-[#FDFBF7]/95 backdrop-blur border-t border-[#E5E0D5]" data-testid="tls-sticky-bar">
+        <a
+          href={`tel:${COMPANY.phoneRaw}`} onClick={call("sticky")}
+          className="inline-flex items-center justify-center gap-2 bg-[#1F3D2B] text-[#FDFBF7] py-3.5 rounded-full font-sans font-semibold"
+        >
+          <Phone className="w-5 h-5" /> Appeler
+        </a>
+        <a
+          href="#devis"
+          className="inline-flex items-center justify-center gap-2 border-2 border-[#1F3D2B] text-[#1F3D2B] py-3.5 rounded-full font-sans font-semibold"
+        >
+          Devis gratuit
+        </a>
+      </div>
     </>
   );
 }

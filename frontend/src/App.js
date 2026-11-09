@@ -36,7 +36,7 @@ export function AppRoutes() {
           <Route path="/mentions-legales" element={<MentionsLegales />} />
           <Route path="/politique-de-confidentialite" element={<PolitiqueConfidentialite />} />
 
-          {/* Page d'atterrissage Toulouse (campagne Google Ads, novembre 2026) */}
+          {/* Page d'atterrissage Toulouse (campagne Google Ads) */}
           <Route path="/elagage-toulouse" element={<ToulousePage />} />
           <Route path="/elagage-montpellier" element={<Navigate to="/elagage-toulouse" replace />} />
 

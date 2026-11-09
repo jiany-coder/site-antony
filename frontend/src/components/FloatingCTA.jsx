@@ -12,7 +12,7 @@ export default function FloatingCTA() {
     ? "Bonjour, je souhaite un devis pour de l'élagage ou une taille de haie à Toulouse."
     : "Bonjour, je souhaite un devis pour votre service de paysagisme/élagage à Caen.";
   return (
-    <div className="fixed right-4 bottom-4 z-50 flex flex-col gap-3" data-testid="floating-cta">
+    <div className={`fixed right-4 z-50 flex flex-col gap-3 ${toulouse ? "bottom-24 md:bottom-4" : "bottom-4"}`} data-testid="floating-cta">
       <a
         href={`https://wa.me/${wa}?text=${encodeURIComponent(waText)}`}
         onClick={() => track("click_whatsapp", { page: pathname, position: "floating" })}
