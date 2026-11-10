@@ -1,10 +1,22 @@
 // Formulaire de devis : envoie un e-mail via Resend (Cloudflare Pages Function).
 // Variables à définir dans Cloudflare Pages : RESEND_API_KEY (secret), OWNER_EMAIL, SENDER_EMAIL.
 const esc = (s) => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+// CORS : la page d'atterrissage Ads (elagage-toulouse*.pages.dev) envoie ses demandes de rappel ici.
+const ALLOWED = /^https:\/\/([a-z0-9-]+\.)?elagage-toulouse[a-z0-9-]*\.pages\.dev$/;
+const corsFor = (request) => {
+  const o = request.headers.get("origin") || "";
+  return ALLOWED.test(o) ? { "access-control-allow-origin": o, "vary": "origin" } : {};
+};
+let CORS = {};
 const json = (o, status = 200) =>
-  new Response(JSON.stringify(o), { status, headers: { "content-type": "application/json" } });
+  new Response(JSON.stringify(o), { status, headers: { "content-type": "application/json", ...CORS } });
+
+export async function onRequestOptions({ request }) {
+  return new Response(null, { status: 204, headers: { ...corsFor(request), "access-control-allow-methods": "POST, OPTIONS", "access-control-allow-headers": "content-type", "access-control-max-age": "86400" } });
+}
 
 export async function onRequestPost({ request, env }) {
+  CORS = corsFor(request);
   let b;
   try { b = await request.json(); } catch { return json({ detail: [{ msg: "Requête invalide." }] }, 400); }
   let name = String(b.name || "").trim(), email = String(b.email || "").trim(), phone = String(b.phone || "").trim();
