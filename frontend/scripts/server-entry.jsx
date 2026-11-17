@@ -3,7 +3,7 @@ import React from "react";
 import { renderToString } from "react-dom/server";
 import { StaticRouter } from "react-router";
 import { AppRoutes } from "../src/App";
-import { CITIES, ALL_CITIES } from "../src/data/cities";
+import { CITIES } from "../src/data/cities";
 import { SERVICES } from "../src/data/services";
 import { BLOG_POSTS } from "../src/data/blog_all";
 
@@ -18,15 +18,9 @@ export function routes() {
   return [...new Set(list)];
 }
 
-// Communes qui n'ont plus de page propre (hors rayon de 50 km ou moins de 1 500 habitants) : redirigées en 301.
+// Aucune commune n'est supprimée : toutes gardent leur page.
 export function removedPages() {
-  const keep = new Set(CITIES.map((c) => c.slug));
-  const out = [];
-  for (const c of ALL_CITIES) {
-    if (keep.has(c.slug)) continue;
-    for (const k of ["paysagiste", "jardinier", "elagage"]) out.push(`/${k}-${c.slug}`);
-  }
-  return out;
+  return [];
 }
 
 export function render(url) {
