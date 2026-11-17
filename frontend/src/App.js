@@ -17,7 +17,6 @@ import MentionsLegales from "./pages/MentionsLegales";
 import PolitiqueConfidentialite from "./pages/PolitiqueConfidentialite";
 import NotFound from "./pages/NotFound";
 import ZonePage from "./pages/ZonePage";
-import ToulousePage from "./pages/ToulousePage";
 
 import { CITIES } from "./data/cities";
 
@@ -36,9 +35,9 @@ export function AppRoutes() {
           <Route path="/mentions-legales" element={<MentionsLegales />} />
           <Route path="/politique-de-confidentialite" element={<PolitiqueConfidentialite />} />
 
-          {/* Page d'atterrissage Toulouse (campagne Google Ads) */}
-          <Route path="/elagage-toulouse" element={<ToulousePage />} />
-          <Route path="/elagage-montpellier" element={<Navigate to="/elagage-toulouse" replace />} />
+          {/* Anciennes pages Toulouse / Montpellier : redirigées vers l'élagage à Caen */}
+          <Route path="/elagage-toulouse" element={<Navigate to="/elagage-caen" replace />} />
+          <Route path="/elagage-montpellier" element={<Navigate to="/elagage-caen" replace />} />
 
           {/* Services principaux (Caen) */}
           <Route path="/paysagiste-caen" element={<ServicePage />} />
