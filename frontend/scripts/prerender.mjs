@@ -39,7 +39,7 @@ await build({
 });
 
 const require = createRequire(import.meta.url);
-const { render, routes } = require(path.join(tmp, "server.cjs"));
+const { render, routes, removedPages } = require(path.join(tmp, "server.cjs"));
 
 // Domaine : une seule source de vérité, src/data/company.js (champ site).
 const companySrc = fs.readFileSync(path.join(root, "src/data/company.js"), "utf8");
@@ -131,11 +131,16 @@ fs.writeFileSync(path.join(buildDir, "llms.txt"), [
 ].join("\n"));
 
 const redirects = [];
+// Ancienne page de campagne Toulouse / Montpellier -> élagage à Caen
+redirects.push("/elagage-toulouse /elagage-caen 301", "/elagage-montpellier /elagage-caen 301");
 for (const svc of ["paysagiste", "jardinier", "elagage"]) {
   for (const old of ["saline", "may-sur-orne", "saint-martin-de-fontenay"]) redirects.push(`/${svc}-${old} /${svc}-caen 301`);
   redirects.push(`/${svc}-le-hom /${svc}-thury-harcourt-le-hom 301`);
   redirects.push(`/${svc}-trouville /${svc}-trouville-sur-mer 301`);
 }
+// Communes hors du rayon de 50 km ou de moins de 1 500 habitants : plus de page propre, 301 vers la zone d'intervention
+const seen = new Set(list);
+for (const u of removedPages()) if (!seen.has(u)) redirects.push(`${u} /zone-d-intervention 301`);
 redirects.push("/blog/comment-demousser-toiture /blog 301", "/blog/nettoyage-facade-techniques-tarifs /blog 301");
 fs.writeFileSync(path.join(buildDir, "_redirects"), redirects.join("\n") + "\n");
 fs.writeFileSync(path.join(buildDir, "_headers"),
