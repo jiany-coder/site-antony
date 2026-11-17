@@ -13,7 +13,7 @@ export const COMPANY = {
   hours: "Lun-Sam : 8h00 – 20h00",
   whatsapp: "+33780044390",
   logos: {
-    jardiniers: "https://lesjardiniersnormands.com/logo-les-jardiniers-normands-192.webp",
+    jardiniers: "https://lesjardiniersnormands.com/logo-jn-256.png",
     proElagage: "https://lesjardiniersnormands.com/logo-pro-elagage-14-192.webp",
   },
   social: {
