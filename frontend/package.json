@@ -59,9 +59,11 @@
   },
   "scripts": {
     "start": "craco start",
+    "prebuild": "node scripts/decode-assets.mjs",
     "build": "craco build",
     "test": "craco test",
     "gen": "python3 seo-data/export_json.py src/data",
+    "prebuild:static": "node scripts/decode-assets.mjs",
     "build:static": "npm run gen && craco build && node scripts/prerender.mjs"
   },
   "browserslist": {

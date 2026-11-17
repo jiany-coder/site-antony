@@ -28,23 +28,22 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
         <div className="flex items-center justify-between h-20 lg:h-24">
-          <Link to="/" className="flex items-center gap-3" data-testid="logo-link">
-            <img src={COMPANY.logos.jardiniers} alt="Les Jardiniers Normands" width="64" height="64" className="h-14 w-14 lg:h-16 lg:w-16 object-contain" />
-            <div className="hidden sm:block leading-tight">
+          <Link to="/" className="flex items-center gap-3 shrink-0" data-testid="logo-link">
+            <img src={COMPANY.logos.jardiniers} alt="Les Jardiniers Normands" width="64" height="64" className="h-14 w-14 lg:h-16 lg:w-16 shrink-0 object-contain" />
+            <div className="hidden sm:block leading-tight whitespace-nowrap">
               <div className="font-serif text-[#0A0F0D] text-xl lg:text-2xl font-medium tracking-tight">Les Jardiniers Normands</div>
               <div className="text-[10px] lg:text-xs tracking-[0.18em] uppercase text-[#1F3D2B] font-sans font-semibold">Pro Élagage 14 · Calvados</div>
             </div>
-            <img src={COMPANY.logos.proElagage} alt="Pro Élagage 14 Calvados" className="hidden md:block h-14 w-14 lg:h-16 lg:w-16 object-contain rounded-full" />
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-7" data-testid="desktop-nav">
+          <nav className="hidden xl:flex items-center gap-6" data-testid="desktop-nav">
             {NAV.map((n) => (
               <NavLink
                 key={n.to}
                 to={n.to}
                 end={n.to === "/"}
                 className={({ isActive }) =>
-                  `text-sm font-sans link-underline ${isActive ? "text-[#1F3D2B] font-semibold" : "text-[#4A5550] hover:text-[#1F3D2B]"}`
+                  `text-sm font-sans whitespace-nowrap link-underline ${isActive ? "text-[#1F3D2B] font-semibold" : "text-[#4A5550] hover:text-[#1F3D2B]"}`
                 }
                 data-testid={`nav-${n.to.replace(/\//g, "") || "home"}`}
               >
@@ -56,20 +55,20 @@ export default function Header() {
           <div className="flex items-center gap-3">
             <a
               href={`tel:${COMPANY.phoneRaw}`}
-              className="hidden md:inline-flex items-center gap-2 text-[#1F3D2B] font-sans font-semibold text-sm"
+              className="hidden 2xl:inline-flex items-center gap-2 whitespace-nowrap text-[#1F3D2B] font-sans font-semibold text-sm"
               data-testid="header-phone"
             >
               <Phone className="w-4 h-4" strokeWidth={1.75} /> {COMPANY.phone}
             </a>
             <Link
               to="/contact"
-              className="hidden md:inline-flex items-center justify-center bg-[#1F3D2B] text-[#FDFBF7] px-5 py-2.5 rounded-full font-sans font-semibold text-sm transition-all duration-300 hover:bg-[#14281C] hover:-translate-y-0.5 hover:shadow-lg"
+              className="hidden md:inline-flex shrink-0 whitespace-nowrap items-center justify-center bg-[#1F3D2B] text-[#FDFBF7] px-5 py-2.5 rounded-full font-sans font-semibold text-sm transition-all duration-300 hover:bg-[#14281C] hover:-translate-y-0.5 hover:shadow-lg"
               data-testid="header-cta-devis"
             >
               Devis gratuit
             </Link>
             <button
-              className="lg:hidden p-2 -mr-2 text-[#1F3D2B]"
+              className="xl:hidden p-2 -mr-2 text-[#1F3D2B]"
               onClick={() => setOpen((v) => !v)}
               aria-label="Menu"
               data-testid="mobile-menu-toggle"
@@ -81,7 +80,7 @@ export default function Header() {
       </div>
 
       {open && (
-        <div className="lg:hidden border-t border-[#1F3D2B]/10 bg-[#FDFBF7]" data-testid="mobile-menu">
+        <div className="xl:hidden border-t border-[#1F3D2B]/10 bg-[#FDFBF7]" data-testid="mobile-menu">
           <nav className="max-w-7xl mx-auto px-5 py-4 flex flex-col gap-1">
             {NAV.map((n) => (
               <NavLink
