@@ -16,7 +16,7 @@ for c in B.communes:
             geo=("Caen est le point de départ de nos interventions : nous connaissons les quartiers, du centre-ville à Vaucelles, Venoix, Saint-Gilles, la Guérinière ou le Chemin Vert, et leurs contraintes d'accès.")
         else:
             geo=(f"{nom} ({c['cp']}), {B.pop_class(c['pop'])} de {B.fr(c['pop'])} habitants, se situe {dist}, dans le secteur {B.REGION_LABEL[c['reg']]}. Notre équipe est basée à Caen : le déplacement est simple à organiser et intégré au devis.")
-        special=local.LOCAL.get(slug,"") or local_extra.LOCAL.get(slug,"")
+        special=local_extra.LOCAL.get(slug,"") or local.LOCAL.get(slug,"")
         if not special and nom!="Caen":
             # Repli factuel unique par commune : positions des deux voisines les plus proches (calculé à partir des coordonnées)
             n1,n2=c["near"][0],c["near"][1]

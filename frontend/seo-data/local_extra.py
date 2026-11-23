@@ -1,9 +1,26 @@
 # -*- coding: utf-8 -*-
-"""Phrases propres aux communes du nord de Caen (complète local.py, sans l'écraser)."""
+"""Textes locaux orientés particuliers pour 20 communes prioritaires.
+Ces entrées ont la priorité sur local.py (voir export_json.py). Aucun chantier, prix ni chiffre inventé."""
 
 LOCAL = {
-    "periers-sur-le-dan": "Périers-sur-le-Dan, petite commune au nord de Caen, compte des jardins de village et de petites propriétés : nous regroupons les interventions sur une même visite pour limiter le déplacement.",
-    "villons-les-buissons": "Villons-les-Buissons, au nord-ouest de Caen, est une commune rurale où les haies autour des propriétés demandent une taille régulière, avant le printemps et à l'automne.",
-    "anisy": "Anisy, au nord de Caen, est un village de la plaine nord : les jardins y sont de taille moyenne et les haies de clôture servent aussi de brise-vent.",
-    "colomby-anguerny": "Colomby-Anguerny, au nord de Caen, associe bourg et habitations plus récentes : les pelouses et les haies de clôture forment l'essentiel des demandes d'entretien.",
+    "bieville-beuville": "Biéville-Beuville, au nord de Caen, est une commune résidentielle. Pour un particulier, l'entretien courant porte surtout sur la tonte, la taille des haies de séparation et le désherbage des allées. Un passage régulier évite qu'une haie prenne trop d'ampleur d'un coup.",
+    "mathieu": "Mathieu, au nord de Caen, est une commune de plaine. Les particuliers y demandent surtout la tonte de pelouses étendues et la taille des haies, qui jouent aussi le rôle de brise-vent. Un contrat d'entretien annuel permet de répartir ces passages toute la saison.",
+    "cairon": "Cairon, à l'ouest de Caen, est un village résidentiel. Chez les particuliers, la demande la plus fréquente est l'entretien régulier : tonte, taille des haies et désherbage des massifs. Un paillage des massifs réduit l'arrosage en été.",
+    "epron": "Épron, au nord de Caen, est une commune résidentielle aux jardins soignés. Les particuliers font surtout appel pour la tonte, la taille des haies et la création de petits massifs. Un entretien régulier en saison suffit souvent pour garder un jardin net.",
+    "saint-contest": "Saint-Contest, au nord de Caen, compte beaucoup de maisons avec jardin. Pour un particulier, les demandes courantes sont la tonte, la taille des haies de lotissement et l'élagage d'un arbre devenu trop haut. Le devis est gratuit et sans engagement.",
+    "cambes-en-plaine": "Cambes-en-Plaine, au nord de Caen, est une commune de plaine où les jardins s'ouvrent sur les champs. Le vent y est plus présent qu'en ville : les particuliers font souvent planter des haies brise-vent et entretenir les grandes pelouses.",
+    "louvigny": "Louvigny, au bord de l'Orne au sud-ouest de Caen, est une commune où les particuliers ont souvent de grands arbres. L'élagage de sécurité et la taille des haies sont les demandes les plus fréquentes, avant ou après l'hiver.",
+    "fontaine-etoupefour": "Fontaine-Étoupefour, au sud-ouest de Caen, est une commune résidentielle. Chez les particuliers, l'entretien courant (tonte, haies, désherbage) domine, avec des terrains parfois humides l'hiver près de l'Odon.",
+    "bretteville-sur-odon": "Bretteville-sur-Odon, à l'ouest de Caen, compte de nombreux lotissements récents. Pour un particulier, les demandes courantes sont la création de pelouse, la plantation de haies et l'entretien régulier des jardins de taille moyenne.",
+    "verson": "Verson, à l'ouest de Caen, associe bourg ancien et lotissements. Les particuliers demandent surtout l'entretien régulier, la taille des haies et parfois l'élagage des vieux arbres du bourg.",
+    "rots": "Rots, à l'ouest de Caen, est un bourg de plaine. Les particuliers font appel pour la tonte, la taille des haies de clôture et le désherbage, avec des interventions regroupées pour limiter le déplacement.",
+    "hermanville-sur-mer": "Hermanville-sur-Mer, sur la Côte de Nacre, mêle maisons de village et villas. Les particuliers y font surtout entretenir pelouses et haies, avec des végétaux résistants au sel, car les embruns abîment vite les plantes sensibles.",
+    "colleville-montgomery": "Colleville-Montgomery, sur la Côte de Nacre, compte beaucoup de résidences secondaires. Pour les propriétaires qui ne sont pas sur place, nous proposons un entretien programmé : tonte, taille et suivi du jardin entre deux séjours.",
+    "lion-sur-mer": "Lion-sur-Mer, station balnéaire de la Côte de Nacre, a des villas anciennes. Les particuliers demandent surtout la taille des haies, l'entretien des pelouses et la protection des plantes contre le vent d'ouest et les embruns.",
+    "luc-sur-mer": "Luc-sur-Mer, station balnéaire de la Côte de Nacre, compte des villas et des jardins exposés au sel. Les particuliers font appel pour l'entretien régulier et la taille des haies, avec des végétaux robustes adaptés au littoral.",
+    "ouistreham": "Ouistreham, entre mer et canal, est une commune où les particuliers ont des jardins de taille variée. L'entretien courant, la taille des haies et les végétaux résistants au vent marin sont les demandes les plus fréquentes.",
+    "periers-sur-le-dan": "Périers-sur-le-Dan, petit village au nord de Caen, compte peu d'habitants. Pour un particulier, nous regroupons les interventions sur une même visite pour limiter le déplacement : tonte, taille de haies et débroussaillage.",
+    "villons-les-buissons": "Villons-les-Buissons, au nord-ouest de Caen, est une commune rurale. Les particuliers demandent surtout la taille des haies, la tonte des grands terrains et le débroussaillage des abords de propriété.",
+    "anisy": "Anisy, au nord de Caen, est un village de la plaine. Pour les particuliers, l'entretien régulier et la taille des haies de clôture sont les demandes courantes, avec des terrains souvent ouverts et exposés au vent.",
+    "colomby-anguerny": "Colomby-Anguerny, au nord de Caen, est une commune résidentielle. Les particuliers font surtout appel pour la tonte, la taille des haies et l'entretien courant du jardin, en regroupant les passages sur la saison.",
 }
