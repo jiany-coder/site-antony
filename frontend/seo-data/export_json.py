@@ -16,6 +16,12 @@ for c in B.communes:
         else:
             geo=(f"{nom} ({c['cp']}), {B.pop_class(c['pop'])} de {B.fr(c['pop'])} habitants, se situe {dist}, dans le secteur {B.REGION_LABEL[c['reg']]}. Notre équipe est basée à Caen : le déplacement est simple à organiser et intégré au devis.")
         special=local.LOCAL.get(slug,"")
+        if not special and nom!="Caen":
+            # Repli factuel unique par commune : positions des deux voisines les plus proches (calculé à partir des coordonnées)
+            n1,n2=c["near"][0],c["near"][1]
+            d1,d2=round(B.km(c["pos"],n1["pos"])),round(B.km(c["pos"],n2["pos"]))
+            dir1=B.direction(c["pos"],n1["pos"])
+            special=(f"{nom} se trouve {dir1} de {n1['nom']} ({max(d1,1)} km) et près de {n2['nom']} ({max(d2,1)} km) : nous enchaînons souvent plusieurs chantiers dans ce secteur, ce qui permet d'optimiser le déplacement depuis Caen.")
         k=zlib.crc32((slug+svc).encode()); its=S["items"]
         first=its[k%5]; second=its[(k+2)%5]
         fk="tree" if svc=="elagage" else "hedge"
