@@ -3,7 +3,8 @@ import { BLOG_POSTS as BASE_POSTS } from "./blog";
 import { NEW_POSTS } from "./blog_new";
 import { MORE_POSTS } from "./blog_more";
 import { VILLES_POSTS } from "./blog_villes";
+import { PAYSAGISTE_POSTS } from "./blog_paysagiste";
 
-export const BLOG_POSTS = [...VILLES_POSTS, ...MORE_POSTS, ...NEW_POSTS, ...BASE_POSTS].sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
+export const BLOG_POSTS = [...PAYSAGISTE_POSTS, ...VILLES_POSTS, ...MORE_POSTS, ...NEW_POSTS, ...BASE_POSTS].sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
 
 export const getPost = (slug) => BLOG_POSTS.find((p) => p.slug === slug);
