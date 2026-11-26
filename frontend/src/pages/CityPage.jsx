@@ -154,7 +154,7 @@ export default function CityPage({ kind }) {
             </table>
           </div>
           <p className="text-sm text-[#4A5550] mt-3">
-            Prix indicatifs, constatés sur le marché local. <Link to="/tarifs-jardinier-paysagiste-elagage-caen" className="text-[#1F3D2B] underline">Voir tous les tarifs</Link>
+            Prix indicatifs, constatés sur le marché local. <Link to={`/${kind}-caen`} className="text-[#1F3D2B] underline">Voir notre offre {d.label.toLowerCase()} à Caen</Link>
           </p>
 
           <h2 className="font-serif text-3xl sm:text-4xl text-[#0A0F0D] font-medium tracking-tight mt-12 mb-5">Fiche pratique : {d.nom}</h2>
@@ -192,6 +192,12 @@ export default function CityPage({ kind }) {
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <h2 className="font-serif text-3xl sm:text-4xl text-[#0A0F0D] font-light mb-10 text-center">Nos services à {d.nom}</h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {[["/abattage-arbre-caen", "Abattage d'arbre dans le Calvados"], ["/taille-haie-caen", "Taille de haie dans le Calvados"]].map(([to, label]) => (
+              <Link key={to} to={to} className="bg-white p-5 rounded-2xl border border-[#E5E0D5] hover:border-[#1F3D2B] transition-colors sm:order-last">
+                <p className="font-serif text-lg text-[#0A0F0D] leading-tight">{label}, dont {d.nom}</p>
+                <p className="text-xs text-[#1F3D2B] mt-3 font-sans font-semibold">Découvrir →</p>
+              </Link>
+            ))}
             {SERVICE_LINKS.map(([k, label]) => (
               <Link key={k} to={`/${k}-${d.slug}`} className="bg-white p-5 rounded-2xl border border-[#E5E0D5] hover:border-[#1F3D2B] transition-colors">
                 <p className="font-serif text-lg text-[#0A0F0D] leading-tight">{label} à {d.nom}</p>
@@ -226,7 +232,7 @@ export default function CityPage({ kind }) {
                 {d.label} {o.nom} ({o.km} km)
               </Link>
             ))}
-            <Link to="/#zones" className="px-4 py-2 rounded-full bg-[#1F3D2B] text-sm font-sans text-[#FDFBF7]">Toutes les communes desservies</Link>
+            <Link to="/zone-d-intervention" className="px-4 py-2 rounded-full bg-[#1F3D2B] text-sm font-sans text-[#FDFBF7]">Toutes les communes du Calvados</Link>
           </div>
         </div>
       </section>
