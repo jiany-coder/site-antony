@@ -89,7 +89,7 @@ function pageLinks(slug) {
   const city = CITIES.find((c) => `-${slug}-`.includes(`-${c.slug}-`));
   const links = [];
   if (city) links.push([`/${t.svc}-${city.slug}`, `${t.a2.charAt(0).toUpperCase() + t.a2.slice(1)} à ${city.name}`]);
-  links.push([t.base, `Notre service de ${t.a} à Caen`]);
+  links.push([t.base, `${t.a.charAt(0).toUpperCase() + t.a.slice(1)} à Caen : notre service`]);
   if (t.base !== "/elagage-caen" && t.svc === "elagage") links.push(["/elagage-caen", "Élagueur grimpeur à Caen et dans le Calvados"]);
   if (t.base !== "/paysagiste-caen" && t.svc !== "paysagiste") links.push(["/paysagiste-caen", "Paysagiste à Caen"]);
   links.push(["/zone-d-intervention", "Toutes nos communes d'intervention dans le Calvados"]);
