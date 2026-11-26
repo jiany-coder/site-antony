@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { Clock, ArrowLeft, ArrowRight, Phone } from "lucide-react";
+import { CITIES } from "../data/cities";
 import SEO, { buildArticleSchema, buildBreadcrumbSchema } from "../components/SEO";
 
 // Titre de page (balise title) : 60 caractères maximum pour ne pas être coupé dans Google.
@@ -75,12 +76,48 @@ function md(content) {
   return html;
 }
 
+// Maillage interne : relie chaque article aux pages de service et à la page commune qui correspondent à son sujet.
+const TOPICS = [
+  { re: /abattage|dessouchage|elagage|elagueur|arbre/, svc: "elagage", base: "/abattage-arbre-caen", a: "abattage d'arbre", a2: "élagage et abattage" },
+  { re: /haie/, svc: "jardinier", base: "/taille-haie-caen", a: "taille de haie", a2: "jardinier et taille de haie" },
+  { re: /pelouse|tonte|mousse/, svc: "jardinier", base: "/tonte-pelouse-caen", a: "tonte de pelouse", a2: "jardinier" },
+  { re: /paysagiste|creation|amenager|plantes|projet-jardin/, svc: "paysagiste", base: "/paysagiste-caen", a: "paysagiste", a2: "création de jardin" },
+  { re: /entretien|jardinier|jardin/, svc: "jardinier", base: "/jardinier-caen", a: "jardinier", a2: "entretien de jardin" },
+];
+function pageLinks(slug) {
+  const t = TOPICS.find((x) => x.re.test(slug)) || TOPICS[4];
+  const city = CITIES.find((c) => `-${slug}-`.includes(`-${c.slug}-`));
+  const links = [];
+  if (city) links.push([`/${t.svc}-${city.slug}`, `${t.a2.charAt(0).toUpperCase() + t.a2.slice(1)} à ${city.name}`]);
+  links.push([t.base, `Notre service de ${t.a} à Caen`]);
+  if (t.base !== "/elagage-caen" && t.svc === "elagage") links.push(["/elagage-caen", "Élagueur grimpeur à Caen et dans le Calvados"]);
+  if (t.base !== "/paysagiste-caen" && t.svc !== "paysagiste") links.push(["/paysagiste-caen", "Paysagiste à Caen"]);
+  links.push(["/zone-d-intervention", "Toutes nos communes d'intervention dans le Calvados"]);
+  return links.slice(0, 4);
+}
+function relatedPosts(slug) {
+  const words = (x) => new Set(x.split("-").filter((w) => w.length > 4));
+  const mine = words(slug);
+  const city = CITIES.find((c) => `-${slug}-`.includes(`-${c.slug}-`));
+  return BLOG_POSTS.filter((p) => p.slug !== slug)
+    .map((p) => {
+      let sc = 0;
+      for (const w of words(p.slug)) if (mine.has(w)) sc++;
+      if (city && `-${p.slug}-`.includes(`-${city.slug}-`)) sc += 2;
+      return [sc, p];
+    })
+    .sort((a, b) => b[0] - a[0])
+    .slice(0, 3)
+    .map((x) => x[1]);
+}
+
 export default function BlogPost() {
   const { slug } = useParams();
   const post = getPost(slug);
   if (!post) return <Navigate to="/blog" replace />;
 
-  const related = BLOG_POSTS.filter((p) => p.slug !== slug).slice(0, 3);
+  const related = relatedPosts(slug);
+  const links = pageLinks(slug);
 
   return (
     <>
@@ -122,6 +159,15 @@ export default function BlogPost() {
         <section className="py-12">
           <div className="max-w-3xl mx-auto px-6 sm:px-8 lg:px-12">
             <div className="prose-blog" dangerouslySetInnerHTML={{ __html: md(post.content) }} />
+
+            <div className="mt-12 p-6 rounded-2xl bg-[#F4F1EA]" data-testid="blog-service-links">
+              <p className="text-xs font-sans font-bold tracking-[0.3em] uppercase text-[#1F3D2B] mb-3">Pour aller plus loin</p>
+              <ul className="space-y-2">
+                {links.map(([to, label]) => (
+                  <li key={to}><Link to={to} className="font-sans font-semibold text-[#1F3D2B] underline underline-offset-4">{label}</Link></li>
+                ))}
+              </ul>
+            </div>
 
             <div className="mt-14 p-8 rounded-2xl bg-[#1F3D2B] text-[#FDFBF7]">
               <p className="text-xs font-sans font-bold tracking-[0.3em] uppercase text-[#F2EBD9] mb-3">Besoin d'un devis ?</p>

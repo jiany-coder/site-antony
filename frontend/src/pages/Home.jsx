@@ -23,8 +23,8 @@ export default function Home() {
   return (
     <>
       <SEO
-        title="Paysagiste, Jardinier & Élagueur à Caen | Jardiniers Normands"
-        description="🌿 Paysagiste, jardinier et élagueur à Caen et dans tout le Calvados. Création jardin, élagage, abattage, entretien. Devis gratuit ☎ 07 80 04 43 90."
+        title="Jardiniers Normands | Paysagiste, élagueur, Calvados"
+        description="Les Jardiniers Normands et Pro Élagage 14 : paysagiste, jardinier et élagueur dans tout le Calvados. Élagage, abattage, taille de haie, entretien. Devis gratuit ☎ 07 80 04 43 90."
         canonical={`${COMPANY.site}/`}
         jsonLd={jsonLd}
       />
@@ -34,7 +34,7 @@ export default function Home() {
         <div className="absolute inset-0">
           <img
             src="/photos/taille-grande-haie-thuya-echelle.webp"
-            alt="Paysagiste Caen Calvados — jardin paysager premium"
+            alt="Taille de grande haie de thuyas dans le Calvados"
             width="1100" height="825" fetchPriority="high" decoding="async"
             className="w-full h-full object-cover"
           />
